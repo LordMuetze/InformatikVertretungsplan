@@ -1,6 +1,5 @@
-from PyQt5 import QtWidgets, uic
+from mainView import MainWindow
 
-app = QtWidgets.QApplication([])
-mainWindow = uic.loadUi("Vertretungsplan.ui")
-mainWindow.show()
-app.exec()
+#Start Application and open GUI
+if __name__ == "__main__":
+    app = MainWindow()
