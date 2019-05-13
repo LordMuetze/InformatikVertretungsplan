@@ -8,19 +8,18 @@ class MainWindow:
 
         #create main window
         self.app = QtWidgets.QApplication([])
-        self.MainWindow = uic.loadUi("Vertretungsplan.ui")
-        self.mW = self.MainWindow #Shorter attribute name for shorter code
+        self.mW = uic.loadUi("Vertretungsplan.ui")
 
         #create model and set attribute
         #view calls model, not vice-versa! --> no self.view in model
         self.model = Vertretungsplan()
 
         #Connections
-        #self.mW.{Ausloeser}.{Aktion}.connect({MethodenAufruf})
-        #Bsp.: self.mW.pushButton.clicked.connect(self.test)
+        #self.mainWindow.{Ausloeser}.{Aktion}.connect({MethodenAufruf})
+        #Bsp.: self.mainWindow.pushButton.clicked.connect(self.test)
 
         #launch GUI --> last step of __init__
-        self.MainWindow.show()
+        self.mW.show()
         self.app.exec()
 #--------------------------------------------------
 
