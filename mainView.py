@@ -18,7 +18,7 @@ class MainWindow:
         #self.mainWindow.{Ausloeser}.{Aktion}.connect({MethodenAufruf})
         #Bsp.: self.mainWindow.pushButton.clicked.connect(self.test)
 
-        #launch GUI --> last step of __init__
+        #launch GUI --> last step of __init__ because starts loop
         self.mW.show()
         self.app.exec()
 #--------------------------------------------------
