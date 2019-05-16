@@ -100,6 +100,7 @@ class Raum:
         self.bezeichner = bezeichner
         self.stundenliste = []
         self.stundenplan = [[],[],[],[],[]]
+        self.blockiert = []
 
         Raum.Raumliste.append(self)
         self.addStunde(stunde)
@@ -108,6 +109,9 @@ class Raum:
     def addStunde(self,stunde):
         self.stundenliste.append(stunde)
         self.stundenplan = Tools.sortStundenliste(self.stundenliste)
+    
+    def addBlockiert(self,tag,von,bis):
+        self.blockiert.append(Blockierung(tag,von,bis))
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -140,11 +144,15 @@ class Lehrer:
 
         Lehrer.Lehrerliste.append(self)
         self.addStunde(stunde)
+        self.blockiert = []
 
     
     def addStunde(self,stunde):
         self.stundenliste.append(stunde)
         self.stundenplan = Tools.sortStundenliste(self.stundenliste)
+    
+    def addBlockiert(self,tag,von,bis):
+        self.blockiert.append(Blockierung(tag,von,bis))
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -171,6 +179,25 @@ class Fach:
     def __init__(self,bezeichner):
         self.bezeichner = bezeichner
         Fach.Fachliste.append(self)
+#--------------------------------------------------
+#--------------------------------------------------
+
+
+#--------------------------------------------------
+#--------------------------------------------------
+class Blockierung:
+    #--------------------------------------------------
+        # attributes:
+        #   tag: 0-4 (mo-fr)
+        #   von/bis: 0-10; if bis is smaller than von bis is replaced by 10 (end of day)
+    #--------------------------------------------------
+    def __init__(self,tag:int,von:int,bis:int):
+        self.tag = tag
+        self.von = von
+        if bis < von:
+            self.bis = 10
+        else:
+            self.bis = bis
 #--------------------------------------------------
 #--------------------------------------------------
 
