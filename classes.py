@@ -1,4 +1,5 @@
 from tools import Tools
+from datetime import date
 
 #--------------------------------------------------
     # class Stunde creates objects from all other
@@ -25,9 +26,9 @@ class Stunde:
         self.stunde = stunde
 
 
-    def getStunde(self):
+    def Stunde(self):
         return self.stunde
-    def getTag(self):
+    def Tag(self):
         return self.tag
 #--------------------------------------------------
 #--------------------------------------------------
@@ -113,7 +114,7 @@ class Raum:
         self.stundenplan = Tools.sortStundenliste(self.stundenliste)
     
     def addBlockiert(self,tag,von,bis):
-        self.blockiert.append(Blockierung(tag,von,bis))
+        self.blockiert.append(Blockierung(self,tag,von,bis))
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -154,7 +155,7 @@ class Lehrer:
         self.stundenplan = Tools.sortStundenliste(self.stundenliste)
     
     def addBlockiert(self,tag,von,bis):
-        self.blockiert.append(Blockierung(tag,von,bis))
+        self.blockiert.append(Blockierung(self,tag,von,bis))
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -187,18 +188,39 @@ class Fach:
 
 #--------------------------------------------------
 #--------------------------------------------------
+class Tag(date):
+    def __init__(self,jahr:int,monat:int,tag:int):
+        super().__init__()
+        self.blockierteLehrer = []
+        self.blockierteRaeume = []
+
+    def addBlockierterLehrer(self,lehrer):
+        self.blockierteLehrer.append(lehrer)
+    def addBlockierterRaum(self,raum):
+        self.blockierteRaeume.append(raum)
+#--------------------------------------------------
+#--------------------------------------------------
+
+
+#--------------------------------------------------
+#--------------------------------------------------
 class Blockierung:
     #--------------------------------------------------
         # attributes:
-        #   tag: 0-4 (mo-fr)
+        #   tag: Tag object
         #   von/bis: 0-10; if bis is smaller than von bis is replaced by 10 (end of day)
     #--------------------------------------------------
-    def __init__(self,tag:int,von:int,bis:int):
+    def __init__(self,blockiertesObject,tag:int,von:int,bis:int):
         self.tag = tag
         self.von = von
         if bis < von:
             self.bis = 10
         else:
             self.bis = bis
+
+        if type(blockiertesObject) == Lehrer:
+            self.tag.addBlockierterLehrer(blockiertesObject)
+        elif type(blockiertesObject) == Raum:
+            self.tag.addBlockierterRaum(blockiertesObject)
 #--------------------------------------------------
 #--------------------------------------------------
