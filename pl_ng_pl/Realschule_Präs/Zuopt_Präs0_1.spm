@@ -1,0 +1,962 @@
+// Zuordnungen: Di, 30. Dez 2008, 14:05:45
+
+P100A           Fr 1            vorbesetzt.
+P101A           Di 1            vorbesetzt.
+P102A           Do 1            vorbesetzt.
+P103A           Mi 1            vorbesetzt.
+P104A           Do 4            vorbesetzt.
+P105A           Mo 1            vorbesetzt.
+P106A           Mi 1            vorbesetzt.
+P107A           Fr 1            vorbesetzt.
+P108A           Di 1            vorbesetzt.
+P109A           Fr 1            vorbesetzt.
+P110A           Di 1            vorbesetzt.
+P111A           Mi 1            vorbesetzt.
+P112A           Mo 1            vorbesetzt.
+P113A           Mo 1            vorbesetzt.
+P114A           Do 1            vorbesetzt.
+P115A           Mo 1            vorbesetzt.
+P116A           Di 1            vorbesetzt.
+P117A           Fr 1            vorbesetzt.
+P118A           Mi 1            vorbesetzt.
+P119A           Fr 1            vorbesetzt.
+P120A           Mo 1            vorbesetzt.
+P121A           Mi 1            vorbesetzt.
+P122A           Do 1            vorbesetzt.
+P123A           Fr 1            vorbesetzt.
+P124A           Do 3            vorbesetzt.
+P125A           Mo 3            vorbesetzt.
+P126A           Fr 3            vorbesetzt.
+P127A           Mo 2            vorbesetzt.
+P128A           Mo 2            vorbesetzt.
+P129A           Di 4            vorbesetzt.
+P130A           Do 3            vorbesetzt.
+P131A           Di 1            vorbesetzt.
+P132A           Do 3            vorbesetzt.
+P133A           Di 5            vorbesetzt.
+P134A           Do 2            vorbesetzt.
+P135A           Mo 3            vorbesetzt.
+P136A           Mi 2            vorbesetzt.
+P137A           Fr 2            vorbesetzt.
+P138A           Do 3            vorbesetzt.
+P139A           Mo 2            vorbesetzt.
+P140A           Mo 3            vorbesetzt.
+P141A           Mi 4            vorbesetzt.
+P142A           Fr 2            vorbesetzt.
+P143A           Mo 3            vorbesetzt.
+P144A           Mo 5            vorbesetzt.
+P145A           Mo 2            vorbesetzt.
+P146A           Do 5            vorbesetzt.
+P147A           Mo 4            vorbesetzt.
+P148A           Di 2            vorbesetzt.
+P149A           Fr 5            vorbesetzt.
+P150A           Mo 4            vorbesetzt.
+P151A           Di 4            vorbesetzt.
+P152A           Mo 2            vorbesetzt.
+P153A           Do 4            vorbesetzt.
+P154A           Do 2            vorbesetzt.
+P155A           Di 4            vorbesetzt.
+P156A           Fr 4            vorbesetzt.
+P157A           Di 4            vorbesetzt.
+P158A           Mo 4            vorbesetzt.
+P159A           Fr 1            vorbesetzt.
+P160A           Mi 4            vorbesetzt.
+P161A           Fr 2            vorbesetzt.
+P162A           Di 4            vorbesetzt.
+P163A           Mi 2            vorbesetzt.
+P164A           Mo 3            vorbesetzt.
+P165A           Do 5            vorbesetzt.
+P167A           Di 2            vorbesetzt.
+P168A           Mo 1            vorbesetzt.
+P169A           Mo 4            vorbesetzt.
+P170A           Di 6    rPr‰s2  vorbesetzt.
+P172A           Do 4    rPr‰s2  vorbesetzt.
+P174A           Mo 6    rPr‰s2  vorbesetzt.
+P177A           Do 5    rPr‰s2  vorbesetzt.
+P178A           Fr 2    rPr‰s1  vorbesetzt.
+P180A           Mi 4    rPr‰s1  vorbesetzt.
+P181A           Fr 4    rPr‰s1  vorbesetzt.
+P183A           Mo 2    rPr‰s1  vorbesetzt.
+P184A           Di 2    rPr‰s2  vorbesetzt.
+P185A           Mi 2    rPr‰s2  vorbesetzt.
+P187A           Di 5    rPr‰s2  vorbesetzt.
+P188A           Mo 4    rPr‰s2  vorbesetzt.
+P190A           Mo 1    rPr‰s1  vorbesetzt.
+P191A           Di 4    rPr‰s2  vorbesetzt.
+P192A           Mo 4    rPr‰s1  vorbesetzt.
+P194A           Mi 1    rPr‰s2  vorbesetzt.
+P197A           Mi 6    rPr‰s1  vorbesetzt.
+P198A           Mo 3    rPr‰s2  vorbesetzt.
+P199A           Do 1    rPr‰s3  vorbesetzt.
+P200A           Mo 1    rPr‰s3  vorbesetzt.
+P202A           Fr 2    rPr‰s2  vorbesetzt.
+P204A           Mi 5    rPr‰s2  vorbesetzt.
+P207A           Mi 4    rPr‰s2  vorbesetzt.
+P208A           Di 6    rPr‰s1  vorbesetzt.
+P209A           Di 1    rPr‰s3  vorbesetzt.
+P212A           Do 2    rPr‰s1  vorbesetzt.
+P213A           Do 3    rPr‰s2  vorbesetzt.
+P214A           Fr 6    rPr‰s2  vorbesetzt.
+P215A           Do 6    rPr‰s2  vorbesetzt.
+P218A           Di 1    rPr‰s2  vorbesetzt.
+P219A           Mi 3    rPr‰s1  vorbesetzt.
+P221A           Fr 1    rPr‰s1  vorbesetzt.
+P222A           Do 4    rPr‰s1  vorbesetzt.
+P224A           Mo 1    rPr‰s2  vorbesetzt.
+P225A           Mi 1    rPr‰s3  vorbesetzt.
+P226A                           offen.
+P228A           Do 1    rPr‰s2  vorbesetzt.
+P229A           Di 4    rPr‰s1  vorbesetzt.
+P230A           Mi 6    rPr‰s2  vorbesetzt.
+P231A           Fr 1    rPr‰s2  vorbesetzt.
+P232A           Di 3    rPr‰s1  vorbesetzt.
+P233A           Di 2    rPr‰s1  vorbesetzt.
+P234A           Fr 3    rPr‰s1  vorbesetzt.
+P235A           Mo 2    rPr‰s2  vorbesetzt.
+P236A           Do 3    rPr‰s1  vorbesetzt.
+P237A           Fr 3    rPr‰s2  vorbesetzt.
+P238A           Di 5    rPr‰s1  vorbesetzt.
+P239A           Mo 5    rPr‰s2  vorbesetzt.
+P240A                           offen.
+P241A                           offen.
+P242A           Fr 6    rPr‰s1  vorbesetzt.
+P243A           Mi 3    rPr‰s2  vorbesetzt.
+P244A           Fr 4    rPr‰s2  vorbesetzt.
+P245A           Mi 2    rPr‰s1  vorbesetzt.
+P246A           Do 1    rPr‰s1  vorbesetzt.
+P247A           Di 3    rPr‰s2  vorbesetzt.
+P248A           Mo 6    rPr‰s1  vorbesetzt.
+P249A           Mi 5    rPr‰s1  vorbesetzt.
+P250A           Mi 1    rPr‰s1  vorbesetzt.
+P251A           Do 2    rPr‰s2  vorbesetzt.
+P252A           Fr 5    rPr‰s1  vorbesetzt.
+P253A           Do 6    rPr‰s1  vorbesetzt.
+P256A           Do 5    rPr‰s1  vorbesetzt.
+P257A           Di 1    rPr‰s1  vorbesetzt.
+P258A           Mo 5    rPr‰s1  vorbesetzt.
+P259A           Fr 1    rPr‰s3  vorbesetzt.
+P260A           Mo 3    rPr‰s1  vorbesetzt.
+P261A           Fr 5    rPr‰s2  vorbesetzt.
+R100A           Mo 1    SH      vorbesetzt.
+R101A           Di 1    SH      vorbesetzt.
+R102A           Di 5    SH      vorbesetzt.
+R103A           Mi 1    SH      vorbesetzt.
+R104A           Do 1    SH      vorbesetzt.
+R105A           Fr 1    SH      vorbesetzt.
+R106A           Mo 2    rPr‰s3  vorbesetzt.
+R107A           Di 2    rPr‰s3  vorbesetzt.
+R108A           Mi 2    rPr‰s3  vorbesetzt.
+R109A           Do 2    rPr‰s3  vorbesetzt.
+R110A           Fr 2    rPr‰s3  vorbesetzt.
+K100A           Di 6            vorbesetzt.
+K101A           Do 6            vorbesetzt.
+K102A           Do 6            vorbesetzt.
+K103A           Mo 6            vorbesetzt.
+K104A           Fr 6            vorbesetzt.
+K105A           Mo 6            vorbesetzt.
+K106A           Do 6            vorbesetzt.
+K107A           Mo 6            vorbesetzt.
+K108A           Fr 6            vorbesetzt.
+K109A           Mi 6            vorbesetzt.
+K110A           Mo 6            vorbesetzt.
+U05A01A         Fr 6            vorbesetzt.
+U05A01B         Do 2            vorbesetzt.
+U05A02A         Mo 3            vorbesetzt.
+U05A02B         Fr 3            vorbesetzt.
+U05A02C         Mi 1            vorbesetzt.
+U05A02D         Do 5            vorbesetzt.
+U05A03A         Mi 5            vorbesetzt.
+U05A03B         Fr 2            vorbesetzt.
+U05A03C         Do 3            vorbesetzt.
+U05A03D         Di 5            vorbesetzt.
+U05A03E         Mo 1            vorbesetzt.
+U05A04A         Mi 6            vorbesetzt.
+U05A04B         Do 4            vorbesetzt.
+U05A04C         Mo 2            vorbesetzt.
+U05A04D         Fr 1            vorbesetzt.
+U05A04E         Di 2            vorbesetzt.
+U05A05A         Fr 5    RBio    vorbesetzt.
+U05A05B         Mi 4    RPhy‹   vorbesetzt.
+U05A06A         Di 1            vorbesetzt.
+U05A06B         Do 1            vorbesetzt.
+U05A07A         Mo 4    rKu     vorbesetzt.
+U05A08A         Mo 4    RWer1   vorbesetzt.
+U05A09A         Mi 3            vorbesetzt.
+U05A09B         Fr 4    MS      vorbesetzt.
+U05A10A         Di 3    G1      vorbesetzt.
+U05A11A         Di 3    RS      vorbesetzt.
+U05A12A         Fr 6            vorbesetzt.
+U05A12B         Do 2            vorbesetzt.
+U05B01A         Fr 6            vorbesetzt.
+U05B01B         Do 2            vorbesetzt.
+U05B03A         Mi 5            vorbesetzt.
+U05B03B         Fr 1            vorbesetzt.
+U05B03C         Mo 4            vorbesetzt.
+U05B03D         Di 1            vorbesetzt.
+U05B03E         Do 3            vorbesetzt.
+U05B04A         Mi 6            vorbesetzt.
+U05B04B         Fr 3            vorbesetzt.
+U05B04C         Do 1            vorbesetzt.
+U05B04D         Di 5            vorbesetzt.
+U05B04E         Mo 3            vorbesetzt.
+U05B05A         Mi 1            vorbesetzt.
+U05B05B         Di 2            vorbesetzt.
+U05B05C         Do 4            vorbesetzt.
+U05B05D         Fr 5            vorbesetzt.
+U05B05E         Mo 2            vorbesetzt.
+U05B06A         Mo 5    RPhy‹   vorbesetzt.
+U05B06B         Fr 4    RPhy‹   vorbesetzt.
+U05B07A         Di 6            vorbesetzt.
+U05B07B         Fr 2            vorbesetzt.
+U05B08A         Mi 2    RWer1   vorbesetzt.
+U05B09A         Mi 2    RWer2   vorbesetzt.
+U05B10A         Do 5            vorbesetzt.
+U05B10B         Mo 1    MS      vorbesetzt.
+U05B12A         Di 3    G2      vorbesetzt.
+U05C01A         Mi 6            vorbesetzt.
+U05C01B         Fr 3            vorbesetzt.
+U05C01C         Mo 3            vorbesetzt.
+U05C01D         Di 5            vorbesetzt.
+U05C01E         Do 1            vorbesetzt.
+U05C02A         Di 6            vorbesetzt.
+U05C02B         Mi 3            vorbesetzt.
+U05C02C         Do 3            vorbesetzt.
+U05C02D         Fr 5            vorbesetzt.
+U05C02E         Mo 2            vorbesetzt.
+U05C03A         Mo 1            vorbesetzt.
+U05C03B         Fr 4            vorbesetzt.
+U05C03C         Di 1            vorbesetzt.
+U05C03D         Mi 4            vorbesetzt.
+U05C03E         Do 2            vorbesetzt.
+U05C04A         Fr 1    RBio    vorbesetzt.
+U05C04B         Mi 1    RPhy‹   vorbesetzt.
+U05C05A         Mi 5            vorbesetzt.
+U05C05B         Mo 4            vorbesetzt.
+U05C06A         Do 4    RWer1   vorbesetzt.
+U05C07A         Do 4    RWer2   vorbesetzt.
+U05C08A         Fr 2            vorbesetzt.
+U05C08B         Mi 2    MS      vorbesetzt.
+U05C09A         Di 3    SH      vorbesetzt.
+U05C11A         Mo 5            vorbesetzt.
+U05C11B         Di 2            vorbesetzt.
+U06A01A         Mi 6            vorbesetzt.
+U06A01B         Fr 4            vorbesetzt.
+U06A02A         Do 5            vorbesetzt.
+U06A02B         Di 3            vorbesetzt.
+U06A02C         Mi 3            vorbesetzt.
+U06A02D         Fr 5            vorbesetzt.
+U06A02E         Mo 3            vorbesetzt.
+U06A03A         Mi 5            vorbesetzt.
+U06A03B         Di 4            vorbesetzt.
+U06A03C         Do 4            vorbesetzt.
+U06A03D         Mo 5            vorbesetzt.
+U06A03E         Fr 1            vorbesetzt.
+U06A04A         Fr 6            vorbesetzt.
+U06A04B         Do 1            vorbesetzt.
+U06A04C         Mi 2            vorbesetzt.
+U06A04D         Di 5            vorbesetzt.
+U06A05A         Di 6    RPhy‹   vorbesetzt.
+U06A05B         Do 2    RPhy‹   vorbesetzt.
+U06A06A         Mo 6            vorbesetzt.
+U06A06B         Mi 4            vorbesetzt.
+U06A07A         Fr 2            vorbesetzt.
+U06A07B         Mi 1            vorbesetzt.
+U06A08A         Mo 1    RWer1   vorbesetzt.
+U06A09A         Mo 1    RWer2   vorbesetzt.
+U06A10A         Fr 3    MS      vorbesetzt.
+U06A10B         Do 3            vorbesetzt.
+U06A11A         Di 1    G1      vorbesetzt.
+U06A12A         Di 1    G2      vorbesetzt.
+U06B01A         Mo 5            vorbesetzt.
+U06B01B         Do 2            vorbesetzt.
+U06B02A         Mo 5            vorbesetzt.
+U06B02B         Do 2            vorbesetzt.
+U06B03A         Do 5            vorbesetzt.
+U06B03B         Di 1            vorbesetzt.
+U06B03C         Mi 1            vorbesetzt.
+U06B03D         Fr 4            vorbesetzt.
+U06B03E         Mo 1            vorbesetzt.
+U06B04A         Di 6            vorbesetzt.
+U06B04B         Mo 4            vorbesetzt.
+U06B04C         Mi 2            vorbesetzt.
+U06B04D         Fr 5            vorbesetzt.
+U06B04E         Do 3            vorbesetzt.
+U06B05A         Di 5            vorbesetzt.
+U06B05B         Mo 3            vorbesetzt.
+U06B05C         Fr 3            vorbesetzt.
+U06B05D         Mi 5            vorbesetzt.
+U06B06A         Do 4    RPhy‹   vorbesetzt.
+U06B06B         Di 4    RBio    vorbesetzt.
+U06B07A         Mi 6            vorbesetzt.
+U06B07B         Do 1            vorbesetzt.
+U06B08A         Do 6            vorbesetzt.
+U06B08B         Di 2            vorbesetzt.
+U06B09A         Fr 1    RWer1   vorbesetzt.
+U06B10A         Fr 1    RWer2   vorbesetzt.
+U06B11A         Fr 6    MS      vorbesetzt.
+U06B11B         Di 3            vorbesetzt.
+U06B12A         Mi 3    G1      vorbesetzt.
+U06B13A         Mi 3    G2      vorbesetzt.
+U06C01A         Mo 5            vorbesetzt.
+U06C01B         Do 2            vorbesetzt.
+U06C02A         Mo 6            vorbesetzt.
+U06C02B         Mi 4            vorbesetzt.
+U06C02C         Di 4            vorbesetzt.
+U06C02D         Fr 4            vorbesetzt.
+U06C02E         Do 3            vorbesetzt.
+U06C03A         Di 6            vorbesetzt.
+U06C03B         Mo 3            vorbesetzt.
+U06C03C         Fr 1            vorbesetzt.
+U06C03D         Do 5            vorbesetzt.
+U06C03E         Mi 1            vorbesetzt.
+U06C04A         Di 3            vorbesetzt.
+U06C04B         Mi 3            vorbesetzt.
+U06C04C         Mo 4            vorbesetzt.
+U06C04D         Do 1            vorbesetzt.
+U06C05A         Di 5    RBio    vorbesetzt.
+U06C05B         Fr 3    RBio    vorbesetzt.
+U06C06A         Mi 2            vorbesetzt.
+U06C06B         Fr 2            vorbesetzt.
+U06C07A         Do 6            vorbesetzt.
+U06C07B         Mo 2            vorbesetzt.
+U06C08A         Mi 5    rKu     vorbesetzt.
+U06C09A         Fr 5    MS      vorbesetzt.
+U06C09B         Mo 1            vorbesetzt.
+U06D01A         Mi 5            vorbesetzt.
+U06D01B         Fr 1            vorbesetzt.
+U06D02A         Mi 5            vorbesetzt.
+U06D02B         Fr 1            vorbesetzt.
+U06D03A         Di 6            vorbesetzt.
+U06D03B         Do 1            vorbesetzt.
+U06D03C         Mi 2            vorbesetzt.
+U06D03D         Fr 5            vorbesetzt.
+U06D03E         Mo 3            vorbesetzt.
+U06D04A         Do 4            vorbesetzt.
+U06D04B         Mi 1            vorbesetzt.
+U06D04C         Fr 2            vorbesetzt.
+U06D04D         Di 1            vorbesetzt.
+U06D04E         Mo 1            vorbesetzt.
+U06D05A         Mi 3            vorbesetzt.
+U06D05B         Do 3            vorbesetzt.
+U06D05C         Di 2            vorbesetzt.
+U06D05D         Mo 5            vorbesetzt.
+U06D06A         Fr 6    RPhy‹   vorbesetzt.
+U06D06B         Mo 2    RPhy‹   vorbesetzt.
+U06D07A         Mo 6            vorbesetzt.
+U06D07B         Di 4            vorbesetzt.
+U06D08A         Do 2            vorbesetzt.
+U06D08B         Di 3            vorbesetzt.
+U06D09A         Fr 3    G1      vorbesetzt.
+U06D10A         Fr 3    G2      vorbesetzt.
+U06D11A         Di 5    MS      vorbesetzt.
+U06D11B         Mi 4            vorbesetzt.
+U06D12A         Do 5    rKu     vorbesetzt.
+U06E02A         Di 6            vorbesetzt.
+U06E02B         Mi 4            vorbesetzt.
+U06E02C         Mo 3            vorbesetzt.
+U06E02D         Fr 5            vorbesetzt.
+U06E02E         Do 2            vorbesetzt.
+U06E03A         Fr 6            vorbesetzt.
+U06E03B         Di 4            vorbesetzt.
+U06E03C         Mo 4            vorbesetzt.
+U06E03D         Do 5            vorbesetzt.
+U06E03E         Mi 3            vorbesetzt.
+U06E04A         Fr 2            vorbesetzt.
+U06E04B         Mi 2            vorbesetzt.
+U06E04C         Di 1            vorbesetzt.
+U06E04D         Mo 5            vorbesetzt.
+U06E05A         Di 5    RPhy‹   vorbesetzt.
+U06E05B         Do 1    RPhy‹   vorbesetzt.
+U06E06A         Do 4            vorbesetzt.
+U06E06B         Mi 1            vorbesetzt.
+U06E07A         Do 6            vorbesetzt.
+U06E07B         Di 2            vorbesetzt.
+U06E10A         Mi 6    MS      vorbesetzt.
+U06E10B         Di 3            vorbesetzt.
+U06E11A         Mo 1    rKu     vorbesetzt.
+U07A01A         Mo 6            vorbesetzt.
+U07A01B         Do 1            vorbesetzt.
+U07A02A         Mo 6            vorbesetzt.
+U07A02B         Do 1            vorbesetzt.
+U07A03A         Mi 6            vorbesetzt.
+U07A03B         Do 4            vorbesetzt.
+U07A03C         Fr 4            vorbesetzt.
+U07A03D         Mo 5            vorbesetzt.
+U07A04A         Fr 5            vorbesetzt.
+U07A04B         Di 3            vorbesetzt.
+U07A05A         Fr 6            vorbesetzt.
+U07A05B         Di 4            vorbesetzt.
+U07A05C         Mi 1            vorbesetzt.
+U07A05D         Do 3            vorbesetzt.
+U07A06A         Mi 5    RPhy‹   vorbesetzt.
+U07A06B         Fr 3    RPhy‹   vorbesetzt.
+U07A07A         Mo 3            vorbesetzt.
+U07A07B         Do 2            vorbesetzt.
+U07A08A         Di 1    rKu     vorbesetzt.
+U07A09A         Di 6    MS      vorbesetzt.
+U07A10A         Fr 1    G1      vorbesetzt.
+U07A11A         Mi 3    K¸      vorbesetzt.
+U07A12A         Mo 1    K¸      vorbesetzt.
+U07A13A         Do 6            vorbesetzt.
+U07A13B         Mi 2            vorbesetzt.
+U07A13C         Mo 4            vorbesetzt.
+U07A13D         Di 5            vorbesetzt.
+U07A14A         Do 5    RPhy‹   vorbesetzt.
+U07A14B         Di 2    RPhy‹   vorbesetzt.
+U07A15A         Fr 1    G2      vorbesetzt.
+U07A16A         Mi 3    InfUN   vorbesetzt.
+U07A17A         Mo 1    Aqua    vorbesetzt.
+U07B01A         Fr 3            vorbesetzt.
+U07B01B         Mo 2            vorbesetzt.
+U07B02A         Fr 3            vorbesetzt.
+U07B02B         Mo 2            vorbesetzt.
+U07B03A         Mo 6            vorbesetzt.
+U07B03B         Do 1            vorbesetzt.
+U07B03C         Di 3            vorbesetzt.
+U07B03D         Mi 5            vorbesetzt.
+U07B04A         Do 6            vorbesetzt.
+U07B04B         Di 1            vorbesetzt.
+U07B05A         Mi 6            vorbesetzt.
+U07B05B         Fr 1            vorbesetzt.
+U07B05C         Di 4            vorbesetzt.
+U07B05D         Do 5            vorbesetzt.
+U07B06A         Fr 2    RBio    vorbesetzt.
+U07B06B         Mi 4    RBio    vorbesetzt.
+U07B07A         Di 5            vorbesetzt.
+U07B07B         Do 2            vorbesetzt.
+U07B08A         Mo 5    MS      vorbesetzt.
+U07B09A         Do 3    K¸      vorbesetzt.
+U07B10A         Fr 6    rKu     vorbesetzt.
+U07B12A         Fr 5            vorbesetzt.
+U07B12B         Mi 3            vorbesetzt.
+U07B12C         Di 2            vorbesetzt.
+U07B13A         Fr 4            vorbesetzt.
+U07B13B         Mi 2            vorbesetzt.
+U07B13C         Mo 1            vorbesetzt.
+U07B14A         Di 6            vorbesetzt.
+U07B14B         Mo 1            vorbesetzt.
+U07B14C         Do 4            vorbesetzt.
+U07B22A         Mi 1    K¸      vorbesetzt.
+U07B23A         Mo 3    G1      vorbesetzt.
+U07B27A         Di 6    InfUN   vorbesetzt.
+U07B27B         Mi 1    InfOB   vorbesetzt.
+U07B28A         Fr 4    InfUN   vorbesetzt.
+U07B28B         Do 3    InfUN   vorbesetzt.
+U07C01A         Mo 6            vorbesetzt.
+U07C01B         Do 1            vorbesetzt.
+U07C03A         Do 8            vorbesetzt.
+U07C04A         Fr 6            vorbesetzt.
+U07C04B         Mi 1            vorbesetzt.
+U07C04C         Mo 2            vorbesetzt.
+U07C04D         Do 2            vorbesetzt.
+U07C05A         Di 6            vorbesetzt.
+U07C05B         Fr 4            vorbesetzt.
+U07C06A         Do 6            vorbesetzt.
+U07C06B         Mi 4            vorbesetzt.
+U07C06C         Di 1            vorbesetzt.
+U07C06D         Fr 5            vorbesetzt.
+U07C07A         Do 5            vorbesetzt.
+U07C07B         Di 2            vorbesetzt.
+U07C07C         Mi 3            vorbesetzt.
+U07C08A         Mo 1    RPhy‹   vorbesetzt.
+U07C08B         Mi 2    RPhy‹   vorbesetzt.
+U07C09A         Mo 5            vorbesetzt.
+U07C09B         Do 4            vorbesetzt.
+U07C10A         Mi 5    MS      vorbesetzt.
+U07C11A         Fr 1    RS      vorbesetzt.
+U07C13A         Di 3    K¸      vorbesetzt.
+U07C14A         Do 3    rKu     vorbesetzt.
+U07C15A         Di 5            vorbesetzt.
+U07C15B         Fr 3            vorbesetzt.
+U07C15C         Mo 3            vorbesetzt.
+U07C16A         Di 3    RWer2   vorbesetzt.
+U07C27A         Mo 3    K¸      vorbesetzt.
+U07C31A         Mi 6    InfOB   vorbesetzt.
+U07C31B         Mo 4    InfOB   vorbesetzt.
+U07C32A         Mi 6    InfUN   vorbesetzt.
+U07C32B         Fr 3    InfUN   vorbesetzt.
+U07D01A         Fr 3            vorbesetzt.
+U07D01B         Mo 2            vorbesetzt.
+U07D03A         Do 1            vorbesetzt.
+U07D03C         Di 1            vorbesetzt.
+U07D03D         Mo 3            vorbesetzt.
+U07D04A         Di 6            vorbesetzt.
+U07D04B         Do 4            vorbesetzt.
+U07D04C         Mi 4            vorbesetzt.
+U07D04D         Fr 5            vorbesetzt.
+U07D05A         Do 3            vorbesetzt.
+U07D05B         Mo 1            vorbesetzt.
+U07D05C         Mi 2            vorbesetzt.
+U07D05D         Fr 4            vorbesetzt.
+U07D06A         Do 6    RPhy‹   vorbesetzt.
+U07D06B         Mi 1    RBio    vorbesetzt.
+U07D07A         Fr 6            vorbesetzt.
+U07D07B         Mi 3            vorbesetzt.
+U07D08A         Do 5            vorbesetzt.
+U07D08B         Mo 4            vorbesetzt.
+U07D09A         Do 2    MS      vorbesetzt.
+U07D10A         Di 3    RWer1   vorbesetzt.
+U07D11A         Mi 5    K¸      vorbesetzt.
+U07D12A         Mo 5    K¸      vorbesetzt.
+U07D15A         Di 3    rKu     vorbesetzt.
+U07D17A         Mi 5    Aqua    vorbesetzt.
+U07D18A         Mo 5    InfOB   vorbesetzt.
+U08A01A         Do 6            vorbesetzt.
+U08A01B         Mo 3            vorbesetzt.
+U08A02A         Do 4            vorbesetzt.
+U08A02B         Fr 4            vorbesetzt.
+U08A02C         Di 4            vorbesetzt.
+U08A02D         Mi 5            vorbesetzt.
+U08A03A         Fr 3            vorbesetzt.
+U08A03B         Di 2            vorbesetzt.
+U08A03C         Mo 2            vorbesetzt.
+U08A03D         Do 5            vorbesetzt.
+U08A04A         Mo 6    RPhy‹   vorbesetzt.
+U08A04B         Mi 3    RPhy1   vorbesetzt.
+U08A04C         Fr 1    RPhy‹   vorbesetzt.
+U08A05A         Mo 5    RBio    vorbesetzt.
+U08A05B         Do 3    RBio    vorbesetzt.
+U08A06A         Fr 6            vorbesetzt.
+U08A06B         Di 1            vorbesetzt.
+U08A07A         Do 1    InfOB   vorbesetzt.
+U08A08A         Fr 2    MS      vorbesetzt.
+U08A09A         Mi 1    G1      vorbesetzt.
+U08A10A         Mi 1    G2      vorbesetzt.
+U08A11A         Do 6            vorbesetzt.
+U08A11B         Mo 3            vorbesetzt.
+U08A12A         Mi 4            vorbesetzt.
+U08A12B         Di 3            vorbesetzt.
+U08A12C         Mo 1            vorbesetzt.
+U08A12D         Fr 5            vorbesetzt.
+U08A13A         Mi 6            vorbesetzt.
+U08A13B         Mo 4            vorbesetzt.
+U08A14A         Di 5    InfOB   vorbesetzt.
+U08A15A         Di 5    Aqua    vorbesetzt.
+U08B01A         Fr 6            vorbesetzt.
+U08B01B         Mo 4            vorbesetzt.
+U08B02A         Fr 6            vorbesetzt.
+U08B02B         Mo 4            vorbesetzt.
+U08B04A         Do 5            vorbesetzt.
+U08B04B         Di 3            vorbesetzt.
+U08B05A         Mo 5            vorbesetzt.
+U08B05B         Do 2            vorbesetzt.
+U08B05C         Fr 1            vorbesetzt.
+U08B05D         Di 1            vorbesetzt.
+U08B06A         Di 6            vorbesetzt.
+U08B06B         Fr 3            vorbesetzt.
+U08B06C         Mi 4            vorbesetzt.
+U08B07A         Mo 6    RPhy1   vorbesetzt.
+U08B07B         Di 4    RPhy1   vorbesetzt.
+U08B08A         Mo 2    RBio    vorbesetzt.
+U08B08B         Do 1    RBio    vorbesetzt.
+U08B09A         Fr 5            vorbesetzt.
+U08B09B         Di 2            vorbesetzt.
+U08B10A         Mi 6            vorbesetzt.
+U08B10B         Fr 2            vorbesetzt.
+U08B11A         Di 5            vorbesetzt.
+U08B11B         Do 3            vorbesetzt.
+U08B12A         Do 6    MS      vorbesetzt.
+U08B13A         Mi 1    RS      vorbesetzt.
+U08B14A         Mo 3    InfUN   vorbesetzt.
+U08B14B         Mi 3    InfOB   vorbesetzt.
+U08B15A         Mo 3    Aqua    vorbesetzt.
+U08B15B         Mi 3    Aqua    vorbesetzt.
+U08B16A         Fr 4            vorbesetzt.
+U08B16B         Do 4            vorbesetzt.
+U08B16C         Mo 1            vorbesetzt.
+U08B16D         Mi 5            vorbesetzt.
+U08B17A         Di 8    G1      vorbesetzt.
+U08C04A         Do 5            vorbesetzt.
+U08C04B         Mi 3            vorbesetzt.
+U08C04C         Di 2            vorbesetzt.
+U08C04D         Fr 5            vorbesetzt.
+U08C05A         Mo 6            vorbesetzt.
+U08C05B         Do 3            vorbesetzt.
+U08C06A         Mo 5            vorbesetzt.
+U08C06B         Fr 3            vorbesetzt.
+U08C06C         Mi 4            vorbesetzt.
+U08C06D         Di 5            vorbesetzt.
+U08C07A         Do 1    RPhy1   vorbesetzt.
+U08C07B         Mo 3    RPhy1   vorbesetzt.
+U08C08A         Mi 6    RBio    vorbesetzt.
+U08C08B         Mo 1    RBio    vorbesetzt.
+U08C09A         Di 4            vorbesetzt.
+U08C09B         Fr 4            vorbesetzt.
+U08C10A         Do 2            vorbesetzt.
+U08C10B         Mo 2            vorbesetzt.
+U08C11A         Do 6            vorbesetzt.
+U08C11B         Di 3            vorbesetzt.
+U08C12A         Di 1    MS      vorbesetzt.
+U08C14A         Mi 5    InfUN   vorbesetzt.
+U08C14B         Fr 2    InfUN   vorbesetzt.
+U08C15A         Mi 5    InfOB   vorbesetzt.
+U08C15B         Fr 2    InfOB   vorbesetzt.
+U08C16A         Di 6            vorbesetzt.
+U08C16B         Fr 1            vorbesetzt.
+U08C16C         Do 4            vorbesetzt.
+U08D01A         Fr 6            vorbesetzt.
+U08D01B         Mi 4            vorbesetzt.
+U08D02A         Do 3            vorbesetzt.
+U08D02B         Fr 4            vorbesetzt.
+U08D02C         Mi 3            vorbesetzt.
+U08D02D         Di 5            vorbesetzt.
+U08D03A         Mi 6            vorbesetzt.
+U08D03B         Mo 3            vorbesetzt.
+U08D03C         Do 4            vorbesetzt.
+U08D03D         Fr 5            vorbesetzt.
+U08D04A         Mo 6            vorbesetzt.
+U08D04B         Fr 1            vorbesetzt.
+U08D04C         Do 1            vorbesetzt.
+U08D05A         Fr 3    RPhy1   vorbesetzt.
+U08D05B         Di 3    RPhy1   vorbesetzt.
+U08D06A         Mi 5    RBio    vorbesetzt.
+U08D06B         Mo 4    RBio    vorbesetzt.
+U08D07A         Do 5            vorbesetzt.
+U08D07B         Di 4            vorbesetzt.
+U08D08A         Do 6            vorbesetzt.
+U08D08B         Mo 1            vorbesetzt.
+U08D09A         Di 6            vorbesetzt.
+U08D09B         Fr 2            vorbesetzt.
+U08D10A         Di 8    G2      vorbesetzt.
+U08D11A         Mo 2    MS      vorbesetzt.
+U08D12A         Mo 5            vorbesetzt.
+U08D12B         Do 2            vorbesetzt.
+U08D13A         Di 1    InfUN   vorbesetzt.
+U08D14A         Di 1    InfOB   vorbesetzt.
+U08E03A         Mo 6            vorbesetzt.
+U08E03B         Fr 3            vorbesetzt.
+U08E03C         Do 3            vorbesetzt.
+U08E03D         Di 5            vorbesetzt.
+U08E04A         Mi 5            vorbesetzt.
+U08E04B         Do 2            vorbesetzt.
+U08E04C         Mo 1            vorbesetzt.
+U08E04D         Fr 5            vorbesetzt.
+U08E05A         Mo 2            vorbesetzt.
+U08E05B         Fr 4            vorbesetzt.
+U08E05C         Mi 4            vorbesetzt.
+U08E06A         Mi 6    RPhy‹   vorbesetzt.
+U08E06B         Fr 2    RPhy‹   vorbesetzt.
+U08E07A         Di 6            vorbesetzt.
+U08E07B         Do 1            vorbesetzt.
+U08E08A         Mi 3    MS      vorbesetzt.
+U08E09A         Mo 5            vorbesetzt.
+U08E09B         Fr 1            vorbesetzt.
+U08E10A         Di 1    RWer1   vorbesetzt.
+U08E11A         Di 1    RWer2   vorbesetzt.
+U08E15A         Di 3    InfOB   vorbesetzt.
+U08E16A         Fr 6    RBio    vorbesetzt.
+U08E16B         Do 4    RBio    vorbesetzt.
+U08E17A         Do 5            vorbesetzt.
+U08E17B         Mo 4            vorbesetzt.
+U08E18A         Di 3    Aqua    vorbesetzt.
+U09A01A         Di 6            vorbesetzt.
+U09A01B         Mi 2            vorbesetzt.
+U09A02A         Di 6            vorbesetzt.
+U09A02B         Mi 2            vorbesetzt.
+U09A03A         Di 8            vorbesetzt.
+U09A04A         Mo 6            vorbesetzt.
+U09A04B         Do 4            vorbesetzt.
+U09A04C         Mi 1            vorbesetzt.
+U09A04D         Di 4            vorbesetzt.
+U09A05A         Do 6            vorbesetzt.
+U09A05B         Di 3            vorbesetzt.
+U09A05C         Mo 3            vorbesetzt.
+U09A06A         Mi 4            vorbesetzt.
+U09A06B         Fr 2            vorbesetzt.
+U09A06C         Di 1            vorbesetzt.
+U09A06D         Do 5            vorbesetzt.
+U09A07A         Di 5    RPhy1   vorbesetzt.
+U09A07B         Do 3    RPhy1   vorbesetzt.
+U09A07C         Mo 2    RPhy1   vorbesetzt.
+U09A08A         Mo 4    RCh     vorbesetzt.
+U09A08B         Fr 4    RCh     vorbesetzt.
+U09A09A         Mo 5            vorbesetzt.
+U09A09B         Mi 3            vorbesetzt.
+U09A10A         Mi 5            vorbesetzt.
+U09A10B         Fr 3            vorbesetzt.
+U09A11A         Fr 5    InfOB   vorbesetzt.
+U09A12A         Fr 1    MS      vorbesetzt.
+U09A13A         Mi 8    G1      vorbesetzt.
+U09A14A         Do 1    G1      vorbesetzt.
+U09A15A         Fr 5    InfUN   vorbesetzt.
+U09A16A         Mi 6            vorbesetzt.
+U09A16B         Mo 1            vorbesetzt.
+U09B01A         Di 6            vorbesetzt.
+U09B01B         Mi 2            vorbesetzt.
+U09B03A         Do 6            vorbesetzt.
+U09B03B         Fr 2            vorbesetzt.
+U09B03C         Mi 3            vorbesetzt.
+U09B03D         Di 5            vorbesetzt.
+U09B04A         Fr 6            vorbesetzt.
+U09B04B         Di 2            vorbesetzt.
+U09B05A         Do 3            vorbesetzt.
+U09B05B         Di 3            vorbesetzt.
+U09B05C         Mo 4            vorbesetzt.
+U09B06A         Do 5    RPhy1   vorbesetzt.
+U09B06B         Mo 1    RPhy1   vorbesetzt.
+U09B07A         Fr 3    RCh     vorbesetzt.
+U09B07B         Di 4    RCh     vorbesetzt.
+U09B08A         Mi 6            vorbesetzt.
+U09B08B         Mo 3            vorbesetzt.
+U09B09A         Mo 5            vorbesetzt.
+U09B09B         Do 4            vorbesetzt.
+U09B10A         Mo 6    MS      vorbesetzt.
+U09B11A         Do 1    G2      vorbesetzt.
+U09B12A         Fr 1    InfOB   vorbesetzt.
+U09B12B         Mi 4    Aqua    vorbesetzt.
+U09B13A         Fr 5            vorbesetzt.
+U09B13B         Mi 1            vorbesetzt.
+U09B13C         Mo 2            vorbesetzt.
+U09B14A         Fr 1    InfUN   vorbesetzt.
+U09B14B         Mi 4    InfOB   vorbesetzt.
+U09B16A         Mi 5            vorbesetzt.
+U09B16B         Di 1            vorbesetzt.
+U09B16C         Fr 4            vorbesetzt.
+U09C01A         Fr 2            vorbesetzt.
+U09C01B         Mo 1            vorbesetzt.
+U09C02A         Fr 2            vorbesetzt.
+U09C02B         Mo 1            vorbesetzt.
+U09C03A         Mi 5            vorbesetzt.
+U09C03B         Di 2            vorbesetzt.
+U09C03C         Mo 2            vorbesetzt.
+U09C03D         Fr 5            vorbesetzt.
+U09C04A         Di 4            vorbesetzt.
+U09C04B         Mo 3            vorbesetzt.
+U09C05A         Di 5            vorbesetzt.
+U09C05B         Fr 4            vorbesetzt.
+U09C05C         Do 4            vorbesetzt.
+U09C06A         Do 5            vorbesetzt.
+U09C06B         Di 1            vorbesetzt.
+U09C06C         Mo 4            vorbesetzt.
+U09C07A         Fr 6    RCh     vorbesetzt.
+U09C07B         Mi 3    RCh     vorbesetzt.
+U09C08A         Do 3            vorbesetzt.
+U09C08B         Di 3            vorbesetzt.
+U09C09A         Di 6            vorbesetzt.
+U09C09B         Do 2            vorbesetzt.
+U09C09C         Mi 2            vorbesetzt.
+U09C10A         Do 6            vorbesetzt.
+U09C10B         Mi 4            vorbesetzt.
+U09C11A         Do 1    MS      vorbesetzt.
+U09C12A         Mi 1    InfUN   vorbesetzt.
+U09C12B         Fr 3    InfOB   vorbesetzt.
+U09C13A         Mi 1    Aqua    vorbesetzt.
+U09C13B         Fr 3    Aqua    vorbesetzt.
+U09C14A         Mi 6    RPhy1   vorbesetzt.
+U09C14B         Fr 1    RPhy1   vorbesetzt.
+U09C15A         Mo 5    RS      vorbesetzt.
+U09D01A         Fr 2            vorbesetzt.
+U09D01B         Mo 1            vorbesetzt.
+U09D04A         Mi 6            vorbesetzt.
+U09D04B         Fr 4            vorbesetzt.
+U09D04C         Mo 2            vorbesetzt.
+U09D04D         Do 5            vorbesetzt.
+U09D05A         Di 5            vorbesetzt.
+U09D05B         Do 4            vorbesetzt.
+U09D06A         Mi 5            vorbesetzt.
+U09D06B         Di 4            vorbesetzt.
+U09D06C         Fr 1            vorbesetzt.
+U09D07A         Fr 5            vorbesetzt.
+U09D07B         Di 3            vorbesetzt.
+U09D07C         Mi 2            vorbesetzt.
+U09D08A         Fr 6    RPhy1   vorbesetzt.
+U09D08B         Di 1    RPhy1   vorbesetzt.
+U09D09A         Do 6    RCh     vorbesetzt.
+U09D09B         Di 2    RCh     vorbesetzt.
+U09D10A         Mo 6            vorbesetzt.
+U09D10B         Mi 3            vorbesetzt.
+U09D11A         Mo 5            vorbesetzt.
+U09D11B         Fr 3            vorbesetzt.
+U09D11C         Mi 1            vorbesetzt.
+U09D12A         Di 6            vorbesetzt.
+U09D12B         Mi 4            vorbesetzt.
+U09D13A         Mo 3    MS      vorbesetzt.
+U09D14A         Do 1    RS      vorbesetzt.
+U09D15A         Mo 4    Aqua    vorbesetzt.
+U09D15B         Do 3    Aqua    vorbesetzt.
+U09D17A         Di 6            vorbesetzt.
+U09D17B         Do 3            vorbesetzt.
+U09D18A         Fr 3            vorbesetzt.
+U09D18B         Mi 4            vorbesetzt.
+U09D19A         Mo 3    RWer2   vorbesetzt.
+U09E01A         Mo 6            vorbesetzt.
+U09E01B         Di 4            vorbesetzt.
+U09E01C         Do 4            vorbesetzt.
+U09E01D         Mi 5            vorbesetzt.
+U09E02A         Do 3            vorbesetzt.
+U09E02B         Di 3            vorbesetzt.
+U09E02C         Mo 2            vorbesetzt.
+U09E03A         Mo 5            vorbesetzt.
+U09E03B         Mi 1            vorbesetzt.
+U09E03C         Do 2            vorbesetzt.
+U09E04A         Mi 6    RCh     vorbesetzt.
+U09E04B         Mo 3    RCh     vorbesetzt.
+U09E05A         Di 6            vorbesetzt.
+U09E05B         Fr 3            vorbesetzt.
+U09E06A         Di 5            vorbesetzt.
+U09E06B         Do 1            vorbesetzt.
+U09E07A         Di 1            vorbesetzt.
+U09E07B         Fr 1            vorbesetzt.
+U09E08A         Mi 2            vorbesetzt.
+U09E08B         Mo 4            vorbesetzt.
+U09E09A         Do 5    MS      vorbesetzt.
+U09E10A         Fr 4    RWer1   vorbesetzt.
+U09E11A         Fr 4    RWer2   vorbesetzt.
+U09E14A         Mi 3    RS      vorbesetzt.
+U09E16A         Do 6    RPhy1   vorbesetzt.
+U09E16B         Di 2    RPhy1   vorbesetzt.
+U10A01A         Mi 6            vorbesetzt.
+U10A01B         Fr 1            vorbesetzt.
+U10A02A         Mi 6            vorbesetzt.
+U10A02B         Fr 1            vorbesetzt.
+U10A03A         Mo 5            vorbesetzt.
+U10A03B         Di 1            vorbesetzt.
+U10A03C         Fr 3            vorbesetzt.
+U10A03D         Mi 5            vorbesetzt.
+U10A04A         Fr 4            vorbesetzt.
+U10A04B         Mi 2            vorbesetzt.
+U10A05A         Fr 6            vorbesetzt.
+U10A05B         Di 2            vorbesetzt.
+U10A05C         Mi 3            vorbesetzt.
+U10A06A         Mi 4            vorbesetzt.
+U10A06B         Di 4            vorbesetzt.
+U10A06C         Mo 3            vorbesetzt.
+U10A06D         Fr 5            vorbesetzt.
+U10A07A         Di 6    RPhy1   vorbesetzt.
+U10A07B         Do 4    RPhy1   vorbesetzt.
+U10A07C         Fr 2    RPhy1   vorbesetzt.
+U10A08A         Di 5    RCh     vorbesetzt.
+U10A08B         Do 3    RCh     vorbesetzt.
+U10A09A         Di 3    RBio    vorbesetzt.
+U10A10A         Do 2            vorbesetzt.
+U10A11A         Mo 6            vorbesetzt.
+U10A12A         Do 1            vorbesetzt.
+U10A13A         Do 5    InfOB   vorbesetzt.
+U10A14A         Mi 1    MS      vorbesetzt.
+U10A15A         Mo 1    G1      vorbesetzt.
+U10A17A         Do 5    Aqua    vorbesetzt.
+U10A18A         Mo 1    G2      vorbesetzt.
+U10B01A         Mi 6            vorbesetzt.
+U10B01B         Fr 1            vorbesetzt.
+U10B03A         Fr 5            vorbesetzt.
+U10B03B         Di 4            vorbesetzt.
+U10B03C         Do 4            vorbesetzt.
+U10B03D         Mi 1            vorbesetzt.
+U10B04A         Fr 6            vorbesetzt.
+U10B04B         Mi 3            vorbesetzt.
+U10B05A         Mi 5            vorbesetzt.
+U10B05B         Do 3            vorbesetzt.
+U10B05C         Mo 4            vorbesetzt.
+U10B06A         Fr 4            vorbesetzt.
+U10B06B         Mo 3            vorbesetzt.
+U10B06C         Di 1            vorbesetzt.
+U10B07A         Mi 4    RPhy1   vorbesetzt.
+U10B07B         Do 2    RPhy1   vorbesetzt.
+U10B08A         Fr 2    RCh     vorbesetzt.
+U10B08B         Di 3    RCh     vorbesetzt.
+U10B09A         Di 6    RBio    vorbesetzt.
+U10B10A         Do 1            vorbesetzt.
+U10B11A         Mo 1            vorbesetzt.
+U10B12A         Mi 2            vorbesetzt.
+U10B12B         Fr 3            vorbesetzt.
+U10B12C         Mo 2            vorbesetzt.
+U10B13A         Di 5            vorbesetzt.
+U10B14A         Di 2    MS      vorbesetzt.
+U10B15A         Mo 5    G1      vorbesetzt.
+U10B18A         Do 5    InfUN   vorbesetzt.
+U10B19A         Mo 5    G2      vorbesetzt.
+U10C01A         Fr 2            vorbesetzt.
+U10C01B         Mi 3            vorbesetzt.
+U10C02A         Do 6            vorbesetzt.
+U10C02B         Di 1            vorbesetzt.
+U10C02C         Mi 4            vorbesetzt.
+U10C02D         Fr 3            vorbesetzt.
+U10C03A         Di 5            vorbesetzt.
+U10C03B         Mi 1            vorbesetzt.
+U10C04A         Mi 6            vorbesetzt.
+U10C04B         Fr 1            vorbesetzt.
+U10C04C         Mo 3            vorbesetzt.
+U10C05A         Fr 6            vorbesetzt.
+U10C05B         Mo 2            vorbesetzt.
+U10C05C         Di 4            vorbesetzt.
+U10C06A         Mi 5    RPhy1   vorbesetzt.
+U10C06B         Fr 4    RPhy1   vorbesetzt.
+U10C07A         Do 2    RCh     vorbesetzt.
+U10C07B         Mo 1    RCh     vorbesetzt.
+U10C08A         Do 5    RBio    vorbesetzt.
+U10C09A         Fr 5            vorbesetzt.
+U10C10A         Do 3            vorbesetzt.
+U10C11A         Do 1            vorbesetzt.
+U10C11B         Di 2            vorbesetzt.
+U10C11C         Mo 4            vorbesetzt.
+U10C12A         Di 6            vorbesetzt.
+U10C13A         Di 3    MS      vorbesetzt.
+U10C14A         Mi 2    Aqua    vorbesetzt.
+U10C14B         Do 4    Aqua    vorbesetzt.
+U10C15A         Mi 2    InfUN   vorbesetzt.
+U10C15B         Do 4    InfUN   vorbesetzt.
+U10C16A         Fr 2            vorbesetzt.
+U10C16B         Mi 3            vorbesetzt.
+U10D03A         Do 6            vorbesetzt.
+U10D03B         Mi 1            vorbesetzt.
+U10D03C         Fr 3            vorbesetzt.
+U10D03D         Di 5            vorbesetzt.
+U10D04A         Di 6            vorbesetzt.
+U10D04B         Fr 2            vorbesetzt.
+U10D05A         Do 5            vorbesetzt.
+U10D05B         Mo 3            vorbesetzt.
+U10D05C         Di 3            vorbesetzt.
+U10D06A         Mo 6            vorbesetzt.
+U10D06B         Do 3            vorbesetzt.
+U10D06C         Mi 3            vorbesetzt.
+U10D07A         Fr 5    RPhy1   vorbesetzt.
+U10D07B         Mo 4    RPhy1   vorbesetzt.
+U10D08A         Mo 5    RCh     vorbesetzt.
+U10D08B         Do 1    RCh     vorbesetzt.
+U10D09A         Do 2    RBio    vorbesetzt.
+U10D10A         Fr 4            vorbesetzt.
+U10D11A         Mi 5            vorbesetzt.
+U10D12A         Di 1            vorbesetzt.
+U10D13A         Di 4    MS      vorbesetzt.
+U10D14A         Mo 1    RS      vorbesetzt.
+U10D16A         Fr 6            vorbesetzt.
+U10D16B         Di 2            vorbesetzt.
+U10D16C         Mi 4            vorbesetzt.
+U10D17A         Mi 2    InfOB   vorbesetzt.
+U10D17B         Do 4    InfOB   vorbesetzt.
+U10E03A         Mo 6            vorbesetzt.
+U10E03B         Di 3            vorbesetzt.
+U10E03C         Fr 3            vorbesetzt.
+U10E03D         Mi 4            vorbesetzt.
+U10E04A         Mi 6            vorbesetzt.
+U10E04B         Di 1            vorbesetzt.
+U10E04C         Do 4            vorbesetzt.
+U10E05A         Fr 4            vorbesetzt.
+U10E05B         Mi 1            vorbesetzt.
+U10E05C         Di 4            vorbesetzt.
+U10E06A         Di 6    RCh     vorbesetzt.
+U10E06B         Fr 1    RCh     vorbesetzt.
+U10E07A         Do 6    RBio    vorbesetzt.
+U10E08A         Fr 5            vorbesetzt.
+U10E09A         Do 5            vorbesetzt.
+U10E09B         Di 2            vorbesetzt.
+U10E10A         Di 5            vorbesetzt.
+U10E11A         Mi 5            vorbesetzt.
+U10E12A         Fr 6            vorbesetzt.
+U10E12B         Mo 3            vorbesetzt.
+U10E13A         Mo 4    MS      vorbesetzt.
+U10E16A         Do 1    RWer1   vorbesetzt.
+U10E17A         Do 1    RWer2   vorbesetzt.
+U10E19A         Mo 5    RPhy1   vorbesetzt.
+U10E19B         Mi 2    RPhy1   vorbesetzt.
+UW01A                           offen.
+UW02A                           offen.
+UW03A                           offen.
+UW04A                           offen.
+UW05A                           offen.
+UW06A                           offen.
+UW07A                           offen.
+UW08A                           offen.
+UW09A                           offen.
+UW10A                           offen.
+UW11A                           offen.

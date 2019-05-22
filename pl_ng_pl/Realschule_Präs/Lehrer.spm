@@ -1,0 +1,49 @@
+// Lehrer
+
+AL 6B -m -n "Albert" -n0 "RSL" -n2 "Helmut" -n3 "H. Albert" -n5 "AL". // Albert
+AM -w -n "Amann" -n0 "RSL" -n2 "Hilde" -n3 "H. Amann" -n5 "AM". // Amann
+BE -w -n "Berg" -n0 "FLzA" -n2 "Anna" -n3 "A. Berg" -n5 "BE". // Berg
+BL -w -n "Biehlmeier" -n0 "RSL" -n2 "Andrea" -n3 "A. Biehlmeier" -n5 "BL". // Biehlmeier
+DU 7A -m -n "Dusig" -n0 "RSL" -n2 "Willi" -n3 "W. Dusig" -n5 "DU". // Dusig
+EU 5C -w -n "Euler" -n0 "RSL" -n2 "Martina" -n3 "M. Euler" -n5 "EU". // Euler
+GI -m -n "Giese" -n0 "StR" -n2 "Franz" -n3 "F. Giese" -n5 "GI". // Giese
+GL -w -n "Gluth" -n0 "FLzA" -n2 "Martina" -n3 "M. Gluth" -n5 "GL". // Gluth
+GR 9A -w -n "Grull" -n0 "RSLzA" -n2 "Susanne" -n3 "S. Grull" -n5 "GR". // Grull
+HB -m -n "Habler" -n2 "Bernhard" -n3 "B. Habler" -n5 "HB". // Habler
+HA 10E -w -n "Hamm" -n0 "RSL" -n2 "Erna" -n3 "E. Hamm" -n5 "HA". // Hamm
+HS 8D -w -n "Hassler" -n2 "Gerda" -n3 "G. Hassler" -n5 "HS". // Hassler
+HO 6D -w -n "Hoffmann" -n0 "RSL" -n2 "Susi" -n3 "S. Hoffmann" -n5 "HO". // Hoffmann
+JU -w -n "Jung" -n0 "StR" -n2 "Sandra" -n3 "S. Jung" -n5 "JU". // Jung
+KL -m -n "Klinger" -n0 "RSL" -n2 "Dieter" -n3 "D. Klinger" -n5 "KL". // Klinger
+KI -w -n "Knieling" -n0 "ZwRSK" -n2 "Doris" -n3 "D. Knieling" -n5 "KI". // Knieling
+KA 10A -m -n "Kral" -n0 "StR" -n2 "Karl" -n3 "K. Kral" -n5 "KA". // Kral
+LA 10B -m -n "Landner" -n0 "RSL" -n2 "Ludwig" -n3 "L. Landner" -n5 "LA". // Landner
+MO 5B -w -n "Moser" -n0 "RSL" -n2 "Monika" -n3 "M. Moser" -n5 "MO". // Moser
+MÜ 9E -m -n "Müller" -n0 "RSLzA" -n2 "Hans" -n3 "H. Müller" -n5 "MÜ". // Müller
+NA 7B -w -n "Nagler" -n0 "RSL" -n2 "Helga" -n3 "H. Nagler" -n5 "NA". // Nagler
+NE 7D -w -n "Neun" -n2 "Karin" -n3 "K. Neun" -n5 "NE". // Neun
+PA -w -n "Pasler" -n0 "StR" -n2 "Gerda" -n3 "G. Pasler" -n5 "PA". // Pasler
+RA 6A -m -n "Rauh" -n2 "Johannes" -n3 "J. Rauh" -n5 "RA". // Rauh
+RU 7C -w -n "Reemtsma" -n0 "RSL" -n2 "Sabrina" -n3 "S. Reemtsma" -n5 "RU". // Reemtsma
+RE -w -n "Reis" -n0 "StR" -n2 "Wilna" -n3 "W. Reis" -n5 "RE". // Reis
+SA -m -n "Satzinger" -n0 "RSL" -n2 "Ludwig" -n3 "L. Satzinger" -n5 "SA". // Satzinger
+SN 10D -w -n "Schirmeier" -n0 "RSLzA" -n2 "Jens" -n3 "J. Schirmeier" -n5 "SN". // Schirmeier
+SM -m -n "Schmidt" -n0 "RSR" -n2 "Hannes" -n3 "H. Schmidt" -n5 "SM". // Schmidt
+SC 8A -m -n "Schwarz" -n0 "RSL" -n2 "Alois" -n3 "A. Schwarz" -n5 "SC". // Schwarz
+SI 6C -m -n "Singer" -n0 "StR" -n2 "Helmuth" -n3 "H. Singer" -n5 "SI". // Singer
+SR -m -n "Sirrel" -n2 "Jakob" -n3 "J. Sirrel" -n5 "SR". // Sirrel
+SP 5A -w -n "Sperber" -n0 "RSLzA" -n2 "Martha" -n3 "M. Sperber" -n5 "SP". // Sperber
+SG 9D -w -n "Spiegel" -n0 "RSL" -n2 "Martina" -n3 "M. Spiegel" -n5 "SG". // Spiegel
+ST 9C -w -n "Stark" -n2 "Philo" -n3 "P. Stark" -n5 "ST". // Stark
+TI -w -n "Tönnes" -n0 "RSR" -n2 "Hanna" -n3 "H. Tönnes" -n5 "TI". // Tönnes
+TA 8B -w -n "Trautmann" -n0 "StR" -n2 "Anita" -n3 "A. Trautmann" -n5 "TA". // Trautmann
+TR 6E -w -n "Turba" -n2 "Jasmin" -n3 "J. Turba" -n5 "TR". // Turba
+TU 9B -w -n "Turm" -n0 "RSL" -n2 "Elfriede" -n3 "E. Turm" -n5 "TU". // Turm
+UL 8E -m -n "Ullmann" -n0 "RSL" -n2 "Jörg" -n3 "J. Ullmann" -n5 "UL". // Ullmann
+VM -m -n "Vielmann" -n0 "so" -n2 "Johann" -n3 "J. Vielmann" -n5 "VM". // Vielmann
+VI 10C -w -n "Vilser" -n0 "RSL" -n2 "Nadja" -n3 "N. Vilser" -n5 "VI". // Vilser
+VO -w -n "Volz" -n0 "FL" -n2 "Nina" -n3 "N. Volz" -n5 "VO". // Volz
+WA -w -n "Wangler" -n0 "RSL" -n2 "Doris" -n3 "D. Wangler" -n5 "WA". // Wangler
+WE -m -n "Wegner" -n0 "RSL" -n2 "Klaus" -n3 "K. Wegner" -n5 "WE". // Wegner
+ZI 8C -m -n "Zink" -n0 "RSK" -n2 "Franz" -n3 "F. Zink" -n5 "ZI". // Zink
+

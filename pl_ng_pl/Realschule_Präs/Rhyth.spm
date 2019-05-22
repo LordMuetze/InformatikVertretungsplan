@@ -1,0 +1,29 @@
+// Rhythmisierung
+// "TagOpt 0." bedeutet keine Rhythmisierung innerhalb des Tages, das ist 
+//                     auch der Standard und wird verwendet, wenn diese Zeile ganz fehlt)
+// "TagOpt 1." bedeutet Rhythmisierung von der ersten Stunde an.
+// "TagOpt 2." bedeutet erst nach der zweiten Stunde 
+
+# 1.
+TagOpt 0.
+D  -rh 25.
+E  -rh 30.
+F  -rh 30.
+M  -rh 30.
+Ph  -rh 15.
+Ch  -rh 15.
+BwR  -rh 10.
+WR  -rh 10.
+KR  -rh 5.
+EvR  -rh 5.
+Eth  -rh 5.
+B  -rh 8.
+G  -rh 8.
+IT  -rh 8.
+Ek  -rh 8.
+Sk  -rh 5.
+HE  -rh 5.
+Mu  -rh 1.
+Ku  -rh 1.
+Sm  -rh 1.
+Sw  -rh 1.

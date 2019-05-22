@@ -1,0 +1,997 @@
+// Freie Stunden und Tage der Lehrer
+P100A    12      BL   s1  ND.       
+P101A    12      GI   Di1 ND.       
+P102A    12      HB   s1  ND.       
+P103A    2       HB   s1  ND.       
+P104A    3       HS   s1s4 ND.      
+P105A    12      JU   Mo1 ND.       
+P106A    12      NE   s1  ND.       
+P107A    12      NE   Fr1 ND.       
+P108A    12      PA   s1  ND.       
+P109A    4       RU   s1  ND.       
+P110A    12      RE   s1  ND.       
+P111A    12      SM   Mi1 NV.       
+P112A    12      SR   s1  ND.       
+P113A    12      SG   s1  ND.       
+P114A    12      ST   s1  ND.       
+P115A    12      TI   s1  ND.       
+P116A    12      VM   s1  ND.       
+P117A    12      VM   Fr1 ND.       
+P118A    12      VI   s1  ND.       
+P119A    12      WA   s1  ND.       
+P120A    12      VO   Mo1 ND.       
+P121A    12      VO   Mi1 ND.       
+P122A    12      VO   Do1 ND.       
+P123A    12      VO   Fr1 ND.       
+P124A    1       Spre Pseudo AL  vormA.    
+P125A    1       Spre Pseudo AM  vormA.
+P126A    1       Spre Pseudo BE  vormA.    
+P127A    1       Spre Pseudo BL  vormA.    
+P128A    1       Spre Pseudo DU  vormA.    
+P129A    1       Spre Pseudo EU  vormA.    
+P130A    1       Spre Pseudo GI  vormA.    
+P131A    1       Spre Pseudo GL  vormA.    
+P132A    1       Spre Pseudo GR  vormA.    
+P133A    1       Spre Pseudo HB  vormA.    
+P134A    1       Spre Pseudo HA  vormA.    
+P135A    1       Spre Pseudo HS  vormA.    
+P136A    1       Spre Pseudo HO  vormA.    
+P137A    1       Spre Pseudo JU  vormA.    
+P138A    1       Spre Pseudo KL  vormA.    
+P139A    1       Spre Pseudo KI  vormA.    
+P140A    1       Spre Pseudo KA  vormA.    
+P141A    1       Spre Pseudo LA  vormA.    
+P142A    1       Spre Pseudo MO  vormA.    
+P143A    1       Spre Pseudo MÜ  vormA.    
+P144A    1       Spre PV NA  vormA.
+P145A    1       Spre Pseudo NE  vormA.    
+P146A    1       Spre Pseudo PA  vormA.    
+P147A    1       Spre Pseudo RA  vormA.    
+P148A    1       Spre Pseudo RU  vormA.    
+P149A    1       Spre Pseudo RE  vormA.    
+P150A    1       Spre Pseudo SA  vormA.    
+P151A    1       Spre Pseudo SN  vormA.    
+P152A    1       Spre Pseudo SM  vormA.    
+P153A    1       Spre Pseudo SC  vormA.    
+P154A    1       Spre Pseudo SI  vormA.    
+P155A    1       Spre Pseudo SR  vormA.    
+P156A    1       Spre Pseudo SP  vormA.    
+P157A    1       Spre Pseudo SG  vormA.    
+P158A    1       Spre Pseudo ST  vormA.    
+P159A    1       Spre Pseudo TI  vormA.    
+P160A    1       Spre Pseudo TA  vormA.    
+P161A    1       Spre Pseudo TR  vormA.    
+P162A    1       Spre Pseudo TU  vormA.    
+P163A    1       Spre Pseudo UL  vormA.    
+P164A    1       Spre Pseudo VM  vormA.    
+P165A    1       Spre Pseudo VI  vormA.    
+P167A    1       Spre Pseudo WA  vormA.    
+P168A    1       Spre Pseudo WE  vormA.    
+P169A    1       Spre Pseudo ZI  vormA.    
+P170A    1       Präs Pseudo AL  vormA rPräs.     // #(rPräs) 
+P172A    1       Präs Pseudo AM  vormA rPräs .     // #(rPräs)
+P174A    1       Präs Pseudo BE  vormA rPräs.     // #(rPräs) 
+P177A    1       Präs Pseudo BL  vormA rPräs.     // #(rPräs) 
+P178A    1       Präs Pseudo DU  vormA rPräs.     // #(rPräs) 
+P180A    1       Präs Pseudo EU  vormA rPräs.     // #(rPräs) 
+P181A    1       Präs Pseudo EU  vormA rPräs.     // #(rPräs) 
+P183A    1       Präs Pseudo GI  vormA rPräs.     // #(rPräs) 
+P184A    1       Präs Pseudo GL  vormA rPräs.     // #(rPräs) 
+P185A    1       Präs Pseudo GL  vormA rPräs.     // #(rPräs) 
+P187A    1       Präs Pseudo GR  vormA rPräs.     // #(rPräs) 
+P188A    1       Präs Pseudo HB  vormA rPräs.     // #(rPräs) 
+P190A    1       Präs Pseudo HA  vormA rPräs.     // #(rPräs) 
+P191A    1       Präs Pseudo HA  vormA rPräs.     // #(rPräs) 
+P192A    1       Präs Pseudo HS  vormA rPräs.     // #(rPräs) 
+P194A    1       Präs Pseudo HO  vormA rPräs.     // #(rPräs) 
+P197A    1       Präs Pseudo JU  vormA rPräs.     // #(rPräs) 
+P198A    1       Präs Pseudo KL  vormA rPräs.     // #(rPräs)
+P199A    1       Präs Pseudo KL  vormA rPräs Multi.     // #(rPräs)
+P200A    1       Präs Pseudo KI  vormA rPräs.     // #(rPräs) 
+P202A    1       Präs Pseudo KA  vormA rPräs.     // #(rPräs) 
+P204A    1       Präs Pseudo LA  vormA rPräs.     // #(rPräs) 
+P207A    1       Präs Pseudo MO  vormA rPräs.     // #(rPräs) 
+P208A    1       Präs Pseudo MÜ  vormA rPräs.     // #(rPräs)
+P209A    1       Präs Pseudo MÜ  vormA rPräs Multi.     // #(rPräs)
+P212A    1       Präs Pseudo NE  vormA rPräs.     // #(rPräs)
+P213A    1       Präs Pseudo NE  vormA rPräs Multi.     // #(rPräs)
+P214A    1       Präs Pseudo PA  vormA rPräs.     // #(rPräs)
+P215A    1       Präs Pseudo PA  vormA rPräs  Multi.     // #(rPräs)
+P218A    1       Präs Pseudo RU  vormA rPräs.     // #(rPräs) 
+P219A    1       Präs Pseudo RU  vormA rPräs.     // #(rPräs) 
+P221A    1       Präs Pseudo RE  vormA rPräs.     // #(rPräs) 
+P222A    1       Präs Pseudo SA  vormA rPräs.     // #(rPräs) 
+P224A    1       Präs Pseudo SN  vormA rPräs.     // #(rPräs) 
+P225A    1       Präs Pseudo SN  vormA rPräs.     // #(rPräs) 
+P226A    1       Präs Pseudo SM  vormA rPräs.     // #(rPräs) 
+P228A    1       Präs Pseudo SC  vormA rPräs.     // #(rPräs) 
+P229A    1       Präs Pseudo SC  vormA rPräs.     // #(rPräs) 
+P230A    1       Präs Pseudo SI  vormA rPräs.     // #(rPräs) 
+P231A    1       Präs Pseudo SI  vormA rPräs.     // #(rPräs) 
+P232A    1       Präs Pseudo SR  vormA rPräs Multi.     // #(rPräs)
+P233A    1       Präs Pseudo SR  vormA rPräs.     // #(rPräs)
+P234A    1       Präs Pseudo SP  vormA rPräs.     // #(rPräs) 
+P235A    1       Präs Pseudo SP  vormA rPräs.     // #(rPräs) 
+P236A    1       Präs Pseudo SG  vormA rPräs.     // #(rPräs) 
+P237A    1       Präs Pseudo SG  vormA rPräs.     // #(rPräs) 
+P238A    1       Präs Pseudo ST  vormA rPräs.     // #(rPräs) 
+P239A    1       Präs Pseudo ST  vormA rPräs.     // #(rPräs) 
+P240A    1       Präs Pseudo TI  vormA rPräs.     // #(rPräs) 
+P241A    1       Präs Pseudo TI  vormA rPräs.     // #(rPräs) 
+P242A    1       Präs Pseudo TA  vormA rPräs.     // #(rPräs) 
+P243A    1       Präs Pseudo TA  vormA rPräs.     // #(rPräs) 
+P244A    1       Präs Pseudo TR  vormA rPräs.     // #(rPräs)
+P245A    1       Präs Pseudo TR  vormA rPräs Multi.     // #(rPräs)
+P246A    1       Präs Pseudo TU  vormA rPräs.     // #(rPräs)
+P247A    1       Präs Pseudo TU  vormA rPräs Multi.     // #(rPräs)
+P248A    1       Präs Pseudo UL  vormA rPräs.     // #(rPräs) 
+P249A    1       Präs Pseudo UL  vormA rPräs.     // #(rPräs) 
+P250A    1       Präs Pseudo VM  vormA rPräs.     // #(rPräs) 
+P251A    1       Präs Pseudo VM  vormA rPräs.     // #(rPräs) 
+P252A    1       Präs Pseudo VI  vormA rPräs Multi.     // #(rPräs)
+P253A    1       Präs Pseudo VI  vormA rPräs.     // #(rPräs)
+P256A    1       Präs Pseudo WA  vormA rPräs.     // #(rPräs) 
+P257A    1       Präs Pseudo WA  vormA rPräs.     // #(rPräs) 
+P258A    1       Präs Pseudo WE  vormA rPräs.     // #(rPräs) 
+P259A    1       Präs Pseudo WE  vormA rPräs.     // #(rPräs) 
+P260A    1       Präs Pseudo ZI  vormA rPräs.     // #(rPräs) 
+P261A    1       Präs Pseudo ZI  vormA rPräs.     // #(rPräs) 
+
+// Fremdbelegung der Räume
+
+R100A    12      SH   Mo1 ND.       // #(SH) 
+R101A    2       SH   Di1 ND.       // #(SH) 
+R102A    8       SH   Di5 ND.       // #(SH) 
+R103A    12      SH   Mi1 ND.       // #(SH) 
+R104A    12      SH   Do1 ND.       // #(SH) 
+R105A    12      SH   Fr1 ND.       // #(SH) 
+R106A    5       rPräs3 Mo2 ND.     // #(rPräs3) 
+R107A    5       rPräs3 Di2 ND.     // #(rPräs3) 
+R108A    5       rPräs3 Mi2 ND.     // #(rPräs3) 
+R109A    5       rPräs3 Do2 ND.     // #(rPräs3) 
+R110A    5       rPräs3 Fr2 ND.     // #(rPräs3) 
+
+// Fremdbelegung der Räume
+
+K100A    5A      1    s6  ND.       
+K101A    5A      1    s6  ND.       
+K102A    5B      1    s6  ND.       
+K103A    5B      1    s6  ND.       
+K104A    5C      1    s6  ND.       
+K105A    5C      1    s6  ND.       
+K106A    6A      1    s6  ND.       
+K107A    6B      1    s6  ND.       
+K108A    6C      1    s6  ND.       
+K109A    6D      1    s6  ND.       
+K110A    6E      1    s6  ND.       
+
+// Unterrichte
+
+U05A01A   E11    EvR  HO  1          vormA.          
+U05A01B   E11    EvR  HO  1          vormB.          
+U05A02A   5A     D    GI  1          vormA.          
+U05A02B   5A     D    GI  1          vormB.          
+U05A02C   5A     D    GI  2          vorm2F.         
+U05A02D   5A     D    GI  1          vormD.          
+U05A03A   5A     E    SP  1          vormA.          
+U05A03B   5A     E    SP  1          vormB.          
+U05A03C   5A     E    SP  1          vormC.          
+U05A03D   5A     E    SP  1          vormD.          
+U05A03E   5A     E    SP  1          vormE.          
+U05A04A   5A     M    SN  1          vormA.          
+U05A04B   5A     M    SN  1          vormB.          
+U05A04C   5A     M    SN  1          vormC.          
+U05A04D   5A     M    SN  1          vormD.          
+U05A04E   5A     M    SN  1          vormE.          
+U05A05A   5A     B    UL  1   RBPh   vormA.          // #(RBPh) 
+U05A05B   5A     B    UL  1   RBPh   vormB.          // #(RBPh) 
+U05A06A   5A     Ek   UL  1          vormA.          
+U05A06B   5A     Ek   UL  1          vormB.          
+U05A07A   5AKu   Ku   SP  3   rKu    vorm3.          // #(rKu) 
+U05A08A   5AW    W    AM  3   RWer   vorm3.          // #(RWer) 
+U05A09A   5A     Mu   RA  1          vormA.          
+U05A09B   5A     Mu   RA  1   MS     vormB.          // #(MS) 
+U05A10A   S61    Sm   HB  2   TH     vorm2D.         // #(TH) 
+U05A11A   5ASw   Sw   KI  2   TH     vorm2D.         // #(TH) 
+U05A12A   5AKR   KR   GI  1          vormA.          
+U05A12B   5AKR   KR   GI  1          vormB.          
+
+U05B01A   5BKR   KR   EU  1          vormA.          
+U05B01B   5BKR   KR   EU  1          vormB.          
+U05B03A   5B     D    MO  1          vormA.          
+U05B03B   5B     D    MO  1          vormB.          
+U05B03C   5B     D    MO  1          vormC.          
+U05B03D   5B     D    MO  1          vormD.          
+U05B03E   5B     D    MO  1          vormE.          
+U05B04A   5B     E    TA  1          vormA.          
+U05B04B   5B     E    TA  1          vormB.          
+U05B04C   5B     E    TA  1          vormC.          
+U05B04D   5B     E    TA  1          vormD.          
+U05B04E   5B     E    TA  1          vormE.          
+U05B05A   5B     M    RA  1          vormA.          
+U05B05B   5B     M    RA  1          vormB.          
+U05B05C   5B     M    RA  1          vormC.          
+U05B05D   5B     M    RA  1          vormD.          
+U05B05E   5B     M    RA  1          vormE.          
+U05B06A   5B     B    UL  1   RBPh   vormA.          // #(RBPh) 
+U05B06B   5B     B    UL  1   RBPh   vormB.          // #(RBPh) 
+U05B07A   5B     Ek   UL  1          vormA.          
+U05B07B   5B     Ek   UL  1          vormB.          
+U05B08A   5BW    W    VM  3   RWer   vorm3.          // #(RWer) 
+U05B09A   5BW1   W    AM  3   RWer   vorm3.          // #(RWer) 
+U05B10A   5B     Mu   RA  1          vormA.          
+U05B10B   5B     Mu   RA  1   MS     vormB.          // #(MS) 
+U05B12A   S63    Sw   HS  2   TH     vorm2D.         // #(TH) 
+
+U05C01A   5C     D    KI  1          vormA.          
+U05C01B   5C     D    KI  1          vormB.          
+U05C01C   5C     D    KI  1          vormC.          
+U05C01D   5C     D    KI  1          vormD.          
+U05C01E   5C     D    KI  1          vormE.          
+U05C02A   5C     E    EU  1          vormA.          
+U05C02B   5C     E    EU  1          vormB.          
+U05C02C   5C     E    EU  1          vormC.          
+U05C02D   5C     E    EU  1          vormD.          
+U05C02E   5C     E    EU  1          vormE.          
+U05C03A   5C     M    DU  1          vormA.          
+U05C03B   5C     M    DU  1          vormB.          
+U05C03C   5C     M    DU  1          vormC.          
+U05C03D   5C     M    DU  1          vormD.          
+U05C03E   5C     M    DU  1          vormE.          
+U05C04A   5C     B    UL  1   RBPh   vormA.          // #(RBPh) 
+U05C04B   5C     B    UL  1   RBPh   vormB.          // #(RBPh) 
+U05C05A   5C     Ek   HA  1          vormA.          
+U05C05B   5C     Ek   HA  1          vormB.          
+U05C06A   5CW    W    VM  3   RWer   vorm3.          // #(RWer) 
+U05C07A   5CW1   W    GL  3   RWer   vorm3.          // #(RWer) 
+U05C08A   5C     Mu   SI  1          vormA.          
+U05C08B   5C     Mu   SI  1   MS     vormB.          // #(MS) 
+U05C09A   5CSm   Sm   KL  2   SH     vorm2D.         // #(SH) 
+U05C11A   5C     KR   EU  1          vormA.          
+U05C11B   5C     KR   EU  1          vormB.          
+
+U06A01A   6A     KR   GR  1          vormA.          
+U06A01B   6A     KR   GR  1          vormB.          
+U06A02A   6A     D    GR  1          vormA.          
+U06A02B   6A     D    GR  1          vormB.          
+U06A02C   6A     D    GR  1          vormC.          
+U06A02D   6A     D    GR  1          vormD.          
+U06A02E   6A     D    GR  2          vorm2F.         
+U06A03A   6A     E    KA  1          vormA.          
+U06A03B   6A     E    KA  1          vormB.          
+U06A03C   6A     E    KA  1          vormC.          
+U06A03D   6A     E    KA  1          vormD.          
+U06A03E   6A     E    KA  1          vormE.          
+U06A04A   6A     M    RA  1          vormA.          
+U06A04B   6A     M    RA  1          vormB.          
+U06A04C   6A     M    RA  1          vormC.          
+U06A04D   6A     M    RA  1          vormD.          
+U06A05A   6A     B    BL  1   RBPh   vormA.          // #(RBPh) 
+U06A05B   6A     B    BL  1   RBPh   vormB.          // #(RBPh) 
+U06A06A   6A     Ek   HA  1          vormA.          
+U06A06B   6A     Ek   HA  1          vormB.          
+U06A07A   6A     G    TA  1          vormA.          
+U06A07B   6A     G    TA  1          vormB.          
+U06A08A   6AW    W    BE  2   RWer   vorm2D.         // #(RWer) 
+U06A09A   6AW1   W    GL  2   RWer   vorm2D.         // #(RWer) 
+U06A10A   6A     Mu   RA  1   MS     vormA.          // #(MS) 
+U06A10B   6A     Mu   RA  1          vormB.          
+U06A11A   S21    Sm   KL  2   TH     vorm2D.         // #(TH) 
+U06A12A   S22    Sw   KI  2   TH     vorm2D.         // #(TH) 
+
+U06B01A   6BKR   KR   LA  1          vormA.          
+U06B01B   6BKR   KR   LA  1          vormB.          
+U06B02A   E02    EvR  SC  1          vormA.          
+U06B02B   E02    EvR  SC  1          vormB.          
+U06B03A   6B     D    AL  1          vormA.          
+U06B03B   6B     D    AL  1          vormB.          
+U06B03C   6B     D    AL  1          vormC.          
+U06B03D   6B     D    AL  1          vormD.          
+U06B03E   6B     D    AL  2          vorm2F.         
+U06B04A   6B     E    TA  1          vormA.          
+U06B04B   6B     E    TA  1          vormB.          
+U06B04C   6B     E    TA  1          vormC.          
+U06B04D   6B     E    TA  1          vormD.          
+U06B04E   6B     E    TA  1          vormE.          
+U06B05A   6B     M    SN  1          vormA.          
+U06B05B   6B     M    SN  1          vormB.          
+U06B05C   6B     M    SN  1          vormC.          
+U06B05D   6B     M    SN  1          vormD.          
+U06B06A   6B     B    BL  1   RBPh   vormA.          // #(RBPh) 
+U06B06B   6B     B    BL  1   RBPh   vormB.          // #(RBPh) 
+U06B07A   6B     Ek   AL  1          vormA.          
+U06B07B   6B     Ek   AL  1          vormB.          
+U06B08A   6B     G    TA  1          vormA.          
+U06B08B   6B     G    TA  1          vormB.          
+U06B09A   6BW    W    BE  2   RWer   vorm2D.         // #(RWer) 
+U06B10A   6BW1   W    AM  2   RWer   vorm2D.         // #(RWer) 
+U06B11A   6B     Mu   SI  1   MS     vormA.          // #(MS) 
+U06B11B   6B     Mu   SI  1          vormB.          
+U06B12A   6BSm   Sm   KL  2   TH     vorm2D.         // #(TH) 
+U06B13A   6BSw   Sw   KI  2   TH     vorm2D.         // #(TH) 
+
+U06C01A   6CKR   KR   GR  1          vormA.          
+U06C01B   6CKR   KR   GR  1          vormB.          
+U06C02A   6C     D    SI  1          vormA.          
+U06C02B   6C     D    SI  1          vormB.          
+U06C02C   6C     D    SI  1          vormC.          
+U06C02D   6C     D    SI  1          vormD.          
+U06C02E   6C     D    SI  2          vorm2F.         
+U06C03A   6C     E    HA  1          vormA.          
+U06C03B   6C     E    HA  1          vormB.          
+U06C03C   6C     E    HA  1          vormC.          
+U06C03D   6C     E    HA  1          vormD.          
+U06C03E   6C     E    HA  1          vormE.          
+U06C04A   6C     M    MÜ  1          vormA.          
+U06C04B   6C     M    MÜ  1          vormB.          
+U06C04C   6C     M    MÜ  1          vormC.          
+U06C04D   6C     M    MÜ  1          vormD.          
+U06C05A   6C     B    KL  1   RBPh   vormA.          // #(RBPh) 
+U06C05B   6C     B    KL  1   RBPh   vormB.          // #(RBPh) 
+U06C06A   6C     Ek   HA  1          vormA.          
+U06C06B   6C     Ek   HA  1          vormB.          
+U06C07A   6C     G    TR  1          vormA.          
+U06C07B   6C     G    TR  1          vormB.          
+U06C08A   6C     Ku   VM  2   rKu    vorm2D.         // #(rKu) 
+U06C09A   6C     Mu   SI  1   MS     vormA.          // #(MS) 
+U06C09B   6C     Mu   SI  1          vormB.          
+
+U06D01A   E21    KR   GR  1          vormA.          
+U06D01B   E21    KR   GR  1          vormB.          
+U06D02A   E22    EvR  SC  1          vormA.          
+U06D02B   E22    EvR  SC  1          vormB.          
+U06D03A   6D     D    RU  1          vormA.          
+U06D03B   6D     D    RU  1          vormB.          
+U06D03C   6D     D    RU  1          vormC.          
+U06D03D   6D     D    RU  1          vormD.          
+U06D03E   6D     D    RU  2          vorm2F.         
+U06D04A   6D     E    EU  1          vormA.          
+U06D04B   6D     E    EU  1          vormB.          
+U06D04C   6D     E    EU  1          vormC.          
+U06D04D   6D     E    EU  1          vormD.          
+U06D04E   6D     E    EU  1          vormE.          
+U06D05A   6D     M    HO  1          vormA.          
+U06D05B   6D     M    HO  1          vormB.          
+U06D05C   6D     M    HO  1          vormC.          
+U06D05D   6D     M    HO  1          vormD.          
+U06D06A   6D     B    KL  1   RBPh   vormA.          // #(RBPh) 
+U06D06B   6D     B    KL  1   RBPh   vormB.          // #(RBPh) 
+U06D07A   6D     G    MO  1          vormA.          
+U06D07B   6D     G    MO  1          vormB.          
+U06D08A   6D     Ek   AL  1          vormA.          
+U06D08B   6D     Ek   AL  1          vormB.          
+U06D09A   s51    Sm   KA  2   TH     vorm2D.         // #(TH) 
+U06D10A   s52    Sw   PA  2   TH     vorm2D.         // #(TH) 
+U06D11A   6D     Mu   RU  1   MS     vormA.          // #(MS) 
+U06D11B   6D     Mu   RU  1          vormB.          
+U06D12A   6D     Ku   NE  2   rKu    vorm2.          // #(rKu) 
+
+U06E02A   6E     D    NA  1          vormA.          
+U06E02B   6E     D    NA  1          vormB.          
+U06E02C   6E     D    NA  1          vormC.          
+U06E02D   6E     D    NA  1          vormD.          
+U06E02E   6E     D    NA  2          vorm2F.         
+U06E03A   6E     E    TR  1          vormA.          
+U06E03B   6E     E    TR  1          vormB.          
+U06E03C   6E     E    TR  1          vormC.          
+U06E03D   6E     E    TR  1          vormD.          
+U06E03E   6E     E    TR  1          vormE.          
+U06E04A   6E     M    SA  1          vormA.          
+U06E04B   6E     M    SA  1          vormB.          
+U06E04C   6E     M    SA  1          vormC.          
+U06E04D   6E     M    SA  1          vormD.          
+U06E05A   6E     B    BL  1   RBPh   vormA.          // #(RBPh) 
+U06E05B   6E     B    BL  1   RBPh   vormB.          // #(RBPh) 
+U06E06A   6E     G    TR  1          vormA.          
+U06E06B   6E     G    TR  1          vormB.          
+U06E07A   6E     Ek   HA  1          vormA.          
+U06E07B   6E     Ek   HA  1          vormB.          
+U06E10A   6E     Mu   RU  1   MS     vormA.          // #(MS) 
+U06E10B   6E     Mu   RU  1          vormB.          
+U06E11A   6E     Ku   VM  2   rKu    vorm2D.         // #(rKu) 
+
+U07A01A   7AKR   KR   EU  1          vormA.          
+U07A01B   7AKR   KR   EU  1          vormB.          
+U07A02A   E32    EvR  HO  1          vormA.          
+U07A02B   E32    EvR  HO  1          vormB.          
+U07A03A   7A     D    MO  1          vormA.          
+U07A03B   7A     D    MO  1          vormB.          
+U07A03C   7A     D    MO  1          vormC.          
+U07A03D   7A     D    MO  1          vormD.          
+U07A04A   7A     G    MO  1          vormA.          
+U07A04B   7A     G    MO  1          vormB.          
+U07A05A   7A     M    DU  1          vormA.          
+U07A05B   7A     M    DU  1          vormB.          
+U07A05C   7A     M    DU  1          vormC.          
+U07A05D   7A     M    DU  1          vormD.          
+U07A06A   7A     B    RE  1   RBPh   vormA.          // #(RBPh) 
+U07A06B   7A     B    RE  1   RBPh   vormB.          // #(RBPh) 
+U07A07A   7A     Ek   SA  1          vormA.          
+U07A07B   7A     Ek   SA  1          vormB.          
+U07A08A   7A     Ku   SP  1   rKu    vorm1.          // #(rKu) 
+U07A09A   7A     Mu   RA  1   MS     vorm1.          // #(MS) 
+U07A10A   7ASm   Sm   KL  2   TH     vorm2D.         // #(TH) 
+U07A11A   7AHE   HE   WA  2   Kü     vorm2D.         // #(Kü) 
+U07A12A   7AHE1  HE   WA  2   Kü     vorm2D.         // #(Kü) 
+U07A13A   7A     E    EU  1          vormA.          
+U07A13B   7A     E    EU  1          vormB.          
+U07A13C   7A     E    EU  1          vormC.          
+U07A13D   7A     E    EU  1          vormD.          
+U07A14A   7A     Ph   DU  1   RPhyÜ  vormA.          // #(RPhyÜ) 
+U07A14B   7A     Ph   DU  1   RPhyÜ  vormB.          // #(RPhyÜ) 
+U07A15A   S42    Sw   KI  2   TH     vorm2D.         // #(TH) 
+U07A16A   7AIT   IT   BE  2   RInf   vorm2D.         // #(RInf) 
+U07A17A   7AIT2  IT   AM  2   Aqua   vorm2D.         // #(Aqua) 
+
+U07B01A   7BKR   KR   GR  1          vormA.          
+U07B01B   7BKR   KR   GR  1          vormB.          
+U07B02A   ex2    EvR  HO  1          vormA.          
+U07B02B   ex2    EvR  HO  1          vormB.          
+U07B03A   7B     D    NA  1          vormA.          
+U07B03B   7B     D    NA  1          vormB.          
+U07B03C   7B     D    NA  1          vormC.          
+U07B03D   7B     D    NA  1          vormD.          
+U07B04A   7B     G    NA  1          vormA.          
+U07B04B   7B     G    NA  1          vormB.          
+U07B05A   7B     E    SP  1          vormA.          
+U07B05B   7B     E    SP  1          vormB.          
+U07B05C   7B     E    SP  1          vormC.          
+U07B05D   7B     E    SP  1          vormD.          
+U07B06A   7B     B    RE  1   RBPh   vormA.          // #(RBPh) 
+U07B06B   7B     B    RE  1   RBPh   vormB.          // #(RBPh) 
+U07B07A   7B     Ek   TU  1          vormA.          
+U07B07B   7B     Ek   TU  1          vormB.          
+U07B08A   7B     Mu   RA  1   MS     vorm1.          // #(MS) 
+U07B09A   7B_2   HE   WA  2   Kü     vorm2D.         // #(Kü) 
+U07B10A   7B     Ku   SP  1   rKu    vorm1.          // #(rKu) 
+U07B12A   7B     M    HB  1          vormA.          
+U07B12B   7B     M    HB  1          vormB.          
+U07B12C   7B     M    HB  1          vormC.          
+U07B13A   7B_2   BwR  TU  1          vormA.          
+U07B13B   7B_2   BwR  TU  1          vormB.          
+U07B13C   7B_2   BwR  TU  1          vormC.          
+U07B14A   7B_a   F    NE  1          vormA.          
+U07B14B   7B_a   F    NE  1          vormB.          
+U07B14C   7B_a   F    NE  1          vormC.          
+U07B22A   7B_a   HE   WA  2   Kü     vorm2D.         // #(Kü) 
+U07B23A   7B     Sw   BL  2   TH     vorm2D.         // #(TH) 
+U07B27A   7B_2   IT   BE  1   RInf   vormA.          // #(RInf) 
+U07B27B   7B_2   IT   BE  1   RInf   vormB.          // #(RInf) 
+U07B28A   7B_a   IT   AM  1   RInf   vormA.          // #(RInf) 
+U07B28B   7B_a   IT   AM  1   RInf   vormB.          // #(RInf) 
+
+U07C01A   7CKR   KR   LA  1          vormA.          
+U07C01B   7CKR   KR   LA  1          vormB.          
+U07C03A   T11    Eth  TI  2          nach2.          
+U07C04A   7C     D    RU  1          vormA.          
+U07C04B   7C     D    RU  1          vormB.          
+U07C04C   7C     D    RU  1          vormC.          
+U07C04D   7C     D    RU  1          vormD.          
+U07C05A   7C     G    ST  1          vormA.          
+U07C05B   7C     G    ST  1          vormB.          
+U07C06A   7C     E    KA  1          vormA.          
+U07C06B   7C     E    KA  1          vormB.          
+U07C06C   7C     E    KA  1          vormC.          
+U07C06D   7C     E    KA  1          vormD.          
+U07C07A   7C     M    SG  1          vormA.          
+U07C07B   7C     M    SG  1          vormB.          
+U07C07C   7C     M    SG  1          vormC.          
+U07C08A   7C     B    BL  1   RBPh   vormA.          // #(RBPh) 
+U07C08B   7C     B    BL  1   RBPh   vormB.          // #(RBPh) 
+U07C09A   7C     Ek   VI  1          vormA.          
+U07C09B   7C     Ek   VI  1          vormB.          
+U07C10A   7C     Mu   RU  1   MS     vorm1.          // #(MS) 
+U07C11A   S43    Sm   HB  2   TH     vorm2D.         // #(TH) 
+U07C13A   7C_2   HE   WA  2   Kü     vorm2D.         // #(Kü) 
+U07C14A   7C     Ku   VM  1   rKu    vorm1.          // #(rKu) 
+U07C15A   7C_2   BwR  VI  1          vormA.          
+U07C15B   7C_2   BwR  VI  1          vormB.          
+U07C15C   7C_2   BwR  VI  1          vormC.          
+U07C16A   7C_b   W    BE  3   RWer   vorm3.          // #(RWer) 
+U07C27A   7C_b   HE   WA  2   Kü     vorm2D.         // #(Kü) 
+U07C31A   7C_2   IT   GL  1   RInf   vormA.          // #(RInf) 
+U07C31B   7C_2   IT   GL  1   RInf   vormB.          // #(RInf) 
+U07C32A   7C_b   IT   AM  1   RInf   vormA.          // #(RInf) 
+U07C32B   7C_b   IT   AM  1   RInf   vormB.          // #(RInf) 
+
+U07D01A   7DKR   KR   LA  1          vormA.          
+U07D01B   7DKR   KR   LA  1          vormB.          
+U07D03A   7D     D    NE  1          vormA.          
+U07D03C   7D     D    NE  2          vorm2F.         
+U07D03D   7D     D    NE  1          vormD.          
+U07D04A   7D     E    SP  1          vormA.          
+U07D04B   7D     E    SP  1          vormB.          
+U07D04C   7D     E    SP  1          vormC.          
+U07D04D   7D     E    SP  1          vormD.          
+U07D05A   7D     M    ZI  1          vormA.          
+U07D05B   7D     M    ZI  1          vormB.          
+U07D05C   7D     M    ZI  1          vormC.          
+U07D05D   7D     M    ZI  1          vormD.          
+U07D06A   7D     B    BL  1   RBPh   vormA.          // #(RBPh) 
+U07D06B   7D     B    BL  1   RBPh   vormB.          // #(RBPh) 
+U07D07A   7D     G    ST  1          vormA.          
+U07D07B   7D     G    ST  1          vormB.          
+U07D08A   7D     Ek   TU  1          vormA.          
+U07D08B   7D     Ek   TU  1          vormB.          
+U07D09A   7D     Mu   RA  1   MS     vorm1.          // #(MS) 
+U07D10A   7DW    W    AM  3   RWer   vorm3.          // #(RWer) 
+U07D11A   7DHE   HE   WA  2   Kü     vorm2D.         // #(Kü) 
+U07D12A   7DHE1  HE   WA  2   Kü     vorm2D.         // #(Kü) 
+U07D15A   7DKu   Ku   NE  3   rKu    vorm3.          // #(rKu) 
+U07D17A   7DIT   IT   BE  2   Aqua   vorm2D.         // #(Aqua) 
+U07D18A   7DIT2  IT   GL  2   RInf   vorm2D.         // #(RInf) 
+
+U08A01A   E41    EvR  SC  1          vormA.          
+U08A01B   E41    EvR  SC  1          vormB.          
+U08A02A   8A     E    TA  1          vormA.          
+U08A02B   8A     E    TA  1          vormB.          
+U08A02C   8A     E    TA  1          vormC.          
+U08A02D   8A     E    TA  1          vormD.          
+U08A03A   8A     M    SA  1          vormA.          
+U08A03B   8A     M    SA  1          vormB.          
+U08A03C   8A     M    SA  1          vormC.          
+U08A03D   8A     M    SA  1          vormD.          
+U08A04A   8A     Ph   DU  1   RPhy   vormA.          // #(RPhy) 
+U08A04B   8A     Ph   DU  1   RPhy   vormB.          // #(RPhy) 
+U08A04C   8A     Ph   DU  1   RPhy   vormC.          // #(RPhy) 
+U08A05A   8A     B    RE  1   RBio   vormA.          // #(RBio) 
+U08A05B   8A     B    RE  1   RBio   vormB.          // #(RBio) 
+U08A06A   8A     Ek   VI  1          vormA.          
+U08A06B   8A     Ek   VI  1          vormB.          
+U08A07A   8A     TZw  AM  2   InfOB  vorm2D.         // #(InfOB) 
+U08A08A   8A     Mu   RA  1   MS     vorm1.          // #(MS) 
+U08A09A   S31    Sm   KA  2   TH     vorm2D.         // #(TH) 
+U08A10A   S32    Sw   KI  2   TH     vorm2D.         // #(TH) 
+U08A11A   E42    KR   LA  1          vormA.          
+U08A11B   E42    KR   LA  1          vormB.          
+U08A12A   8A     D    SC  1          vormA.          
+U08A12B   8A     D    SC  1          vormB.          
+U08A12C   8A     D    SC  1          vormC.          
+U08A12D   8A     D    SC  1          vormD.          
+U08A13A   8A     G    NA  1          vormA.          
+U08A13B   8A     G    NA  1          vormB.          
+U08A14A   8ATvM  TvM  VO  2   RInf   vorm2.          // #(RInf) 
+U08A15A   8ATvM1 TvM  GL  2   Aqua   vorm2.          // #(Aqua) 
+
+U08B01A   ey1    KR   LA  1          vormA.          
+U08B01B   ey1    KR   LA  1          vormB.          
+U08B02A   ey2    EvR  SC  1          vormA.          
+U08B02B   ey2    EvR  SC  1          vormB.          
+U08B04A   8B     G    TA  1          vormA.          
+U08B04B   8B     G    TA  1          vormB.          
+U08B05A   8B     E    TA  1          vormA.          
+U08B05B   8B     E    TA  1          vormB.          
+U08B05C   8B     E    TA  1          vormC.          
+U08B05D   8B     E    TA  1          vormD.          
+U08B06A   8B     M    HB  1          vormA.          
+U08B06B   8B     M    HB  1          vormB.          
+U08B06C   8B     M    HB  1          vormC.          
+U08B07A   8B     Ph   MÜ  1   RPhy1  vormA.          // #(RPhy1) 
+U08B07B   8B     Ph   MÜ  1   RPhy1  vormB.          // #(RPhy1) 
+U08B08A   8B     B    RE  1   RBio   vormA.          // #(RBio) 
+U08B08B   8B     B    RE  1   RBio   vormB.          // #(RBio) 
+U08B09A   8B     Ek   AL  1          vormA.          
+U08B09B   8B     Ek   AL  1          vormB.          
+U08B10A   8B     BwR  SR  1          vormA.          
+U08B10B   8B     BwR  SR  1          vormB.          
+U08B11A   8B     WR   SR  1          vormA.          
+U08B11B   8B     WR   SR  1          vormB.          
+U08B12A   8B     Mu   RA  1   MS     vorm1.          // #(MS) 
+U08B13A   S33    Sm   KL  2   TH     vorm2D.         // #(TH) 
+U08B14A   8BTvK  TvK  GL  1   RInf   vormA.          // #(RInf) 
+U08B14B   8BTvK  TvK  GL  1   RInf   vormB.          // #(RInf) 
+U08B15A   8BInf  Inf  WE  1   Aqua   vormA.          // #(Aqua) 
+U08B15B   8BInf  Inf  WE  1   Aqua   vormB.          // #(Aqua) 
+U08B16A   8B     D    GI  1          vormA.          
+U08B16B   8B     D    GI  1          vormB.          
+U08B16C   8B     D    GI  1          vormC.          
+U08B16D   8B     D    GI  1          vormD.          
+U08B17A   Sx1    Sw   BL  2   TH     nach2.          // #(TH) 
+
+U08C04A   8C     D    JU  1          vormA.          
+U08C04B   8C     D    JU  1          vormB.          
+U08C04C   8C     D    JU  1          vormC.          
+U08C04D   8C     D    JU  1          vormD.          
+U08C05A   8C     G    TR  1          vormA.          
+U08C05B   8C     G    TR  1          vormB.          
+U08C06A   8C     E    TR  1          vormA.          
+U08C06B   8C     E    TR  1          vormB.          
+U08C06C   8C     E    TR  1          vormC.          
+U08C06D   8C     E    TR  1          vormD.          
+U08C07A   8C     Ph   DU  1   RPhy1  vormA.          // #(RPhy1) 
+U08C07B   8C     Ph   DU  1   RPhy1  vormB.          // #(RPhy1) 
+U08C08A   8C     B    KL  1   RBio   vormA.          // #(RBio) 
+U08C08B   8C     B    KL  1   RBio   vormB.          // #(RBio) 
+U08C09A   8C     Ek   VI  1          vormA.          
+U08C09B   8C     Ek   VI  1          vormB.          
+U08C10A   8C     BwR  VI  1          vormA.          
+U08C10B   8C     BwR  VI  1          vormB.          
+U08C11A   8C     WR   ZI  1          vormA.          
+U08C11B   8C     WR   ZI  1          vormB.          
+U08C12A   8C     Mu   RA  1   MS     vorm1.          // #(MS) 
+U08C14A   8CTvK  TvK  GL  1   RInf   vormA.          // #(RInf) 
+U08C14B   8CTvK  TvK  GL  1   RInf   vormB.          // #(RInf) 
+U08C15A   8CInf  Inf  WE  1   RInf   vormA.          // #(RInf) 
+U08C15B   8CInf  Inf  WE  1   RInf   vormB.          // #(RInf) 
+U08C16A   8C     M    ZI  1          vormA.          
+U08C16B   8C     M    ZI  1          vormB.          
+U08C16C   8C     M    ZI  1          vormC.          
+
+U08D01A   8D     KR   GR  1          vormA.          
+U08D01B   8D     KR   GR  1          vormB.          
+U08D02A   8D     D    LA  1          vormA.          
+U08D02B   8D     D    LA  1          vormB.          
+U08D02C   8D     D    LA  1          vormC.          
+U08D02D   8D     D    LA  1          vormD.          
+U08D03A   8D     E    PA  1          vormA.          
+U08D03B   8D     E    PA  1          vormB.          
+U08D03C   8D     E    PA  1          vormC.          
+U08D03D   8D     E    PA  1          vormD.          
+U08D04A   8D     M    SA  1          vormA.          
+U08D04B   8D     M    SA  1          vormB.          
+U08D04C   8D     M    SA  1          vormC.          
+U08D05A   8D     Ph   DU  1   RPhy1  vormA.          // #(RPhy1) 
+U08D05B   8D     Ph   DU  1   RPhy1  vormB.          // #(RPhy1) 
+U08D06A   8D     B    KL  1   RBio   vormA.          // #(RBio) 
+U08D06B   8D     B    KL  1   RBio   vormB.          // #(RBio) 
+U08D07A   8D     G    NA  1          vormA.          
+U08D07B   8D     G    NA  1          vormB.          
+U08D08A   8D     Ek   SA  1          vormA.          
+U08D08B   8D     Ek   SA  1          vormB.          
+U08D09A   8D     WR   HS  1          vormA.          
+U08D09B   8D     WR   HS  1          vormB.          
+U08D10A   8D     Sw   HS  2   TH     nach2.          // #(TH) 
+U08D11A   8D     Mu   SI  1   MS     vorm1.          // #(MS) 
+U08D12A   8D     BwR  HS  1          vormA.          
+U08D12B   8D     BwR  HS  1          vormB.          
+U08D13A   8DInf  Inf  WE  2   RInf   vorm2.          // #(RInf) 
+U08D14A   8DTvK  TvK  VO  2   RInf   vorm2.          // #(RInf) 
+
+U08E03A   8E     D    SC  1          vormA.          
+U08E03B   8E     D    SC  1          vormB.          
+U08E03C   8E     D    SC  1          vormC.          
+U08E03D   8E     D    SC  1          vormD.          
+U08E04A   8E     E    TR  1          vormA.          
+U08E04B   8E     E    TR  1          vormB.          
+U08E04C   8E     E    TR  1          vormC.          
+U08E04D   8E     E    TR  1          vormD.          
+U08E05A   8E     M    WE  1          vormA.          
+U08E05B   8E     M    WE  1          vormB.          
+U08E05C   8E     M    WE  1          vormC.          
+U08E06A   8E     Ph   MÜ  1   RPhyÜ  vormA.          // #(RPhyÜ) 
+U08E06B   8E     Ph   MÜ  1   RPhyÜ  vormB.          // #(RPhyÜ) 
+U08E07A   8E     G    TR  1          vormA.          
+U08E07B   8E     G    TR  1          vormB.          
+U08E08A   8E     Mu   SI  1   MS     vorm1.          // #(MS) 
+U08E09A   8E     Sow  AL  1          vormA.          
+U08E09B   8E     Sow  AL  1          vormB.          
+U08E10A   8EW    W    BE  2   RWer   vorm2.          // #(RWer) 
+U08E11A   8EW1   W    AM  2   RWer   vorm2.          // #(RWer) 
+U08E15A   8ETvM  TvM  VO  2   RInf   vorm2D.         // #(RInf) 
+U08E16A   8E     B    UL  1   RBio   vormA.          // #(RBio) 
+U08E16B   8E     B    UL  1   RBio   vormB.          // #(RBio) 
+U08E17A   8E     Ek   UL  1          vormA.          
+U08E17B   8E     Ek   UL  1          vormB.          
+U08E18A   8ETvM1 TvM  GL  2   Aqua   vorm2D.         // #(Aqua) 
+
+U09A01A   9AKR   KR   GR  1          vormA.          
+U09A01B   9AKR   KR   GR  1          vormB.          
+U09A02A   E62    EvR  SC  1          vormA.          
+U09A02B   E62    EvR  SC  1          vormB.          
+U09A03A   T21    Eth  TI  2          nach2.          
+U09A04A   9A     D    GR  1          vormA.          
+U09A04B   9A     D    GR  1          vormB.          
+U09A04C   9A     D    GR  1          vormC.          
+U09A04D   9A     D    GR  1          vormD.          
+U09A05A   9A     E    SP  1          vormA.          
+U09A05B   9A     E    SP  1          vormB.          
+U09A05C   9A     E    SP  1          vormC.          
+U09A06A   9A     M    ZI  1          vormA.          
+U09A06B   9A     M    ZI  1          vormB.          
+U09A06C   9A     M    ZI  2          vorm2F.         
+U09A06D   9A     M    ZI  1          vormD.          
+U09A07A   9A     Ph   MÜ  1   RPhy1  vormA.          // #(RPhy1) 
+U09A07B   9A     Ph   MÜ  1   RPhy1  vormB.          // #(RPhy1) 
+U09A07C   9A     Ph   MÜ  1   RPhy1  vormC.          // #(RPhy1) 
+U09A08A   9A     Ch   RE  1   RCh    vormA.          // #(RCh) 
+U09A08B   9A     Ch   RE  1   RCh    vormB.          // #(RCh) 
+U09A09A   9A     Ek   HA  1          vormA.          
+U09A09B   9A     Ek   HA  1          vormB.          
+U09A10A   9A     WR   SR  1          vormA.          
+U09A10B   9A     WR   SR  1          vormB.          
+U09A11A   9ATZ   TZw  AM  2   InfOB  vorm2D.         // #(InfOB) 
+U09A12A   9A     Mu   RA  1   MS     vorm1.          // #(MS) 
+U09A13A   9A     Sm   SR  2   TH     nach2.          // #(TH) 
+U09A14A   S81    Sw   PA  2   TH     vorm2D.         // #(TH) 
+U09A15A   9AInf  Inf  WE  2   RInf   vorm2D.         // #(RInf) 
+U09A16A   9A     G    ST  1          vormA.          
+U09A16B   9A     G    ST  1          vormB.          
+
+U09B01A   9BKR   KR   LA  1          vormA.          
+U09B01B   9BKR   KR   LA  1          vormB.          
+U09B03A   9B     D    AL  1          vormA.          
+U09B03B   9B     D    AL  1          vormB.          
+U09B03C   9B     D    AL  1          vormC.          
+U09B03D   9B     D    AL  1          vormD.          
+U09B04A   9B     G    NA  1          vormA.          
+U09B04B   9B     G    NA  1          vormB.          
+U09B05A   9B     E    KA  1          vormA.          
+U09B05B   9B     E    KA  1          vormB.          
+U09B05C   9B     E    KA  1          vormC.          
+U09B06A   9B     Ph   MÜ  1   RPhy1  vormA.          // #(RPhy1) 
+U09B06B   9B     Ph   MÜ  1   RPhy1  vormB.          // #(RPhy1) 
+U09B07A   9B     Ch   UL  1   RCh    vormA.          // #(RCh) 
+U09B07B   9B     Ch   UL  1   RCh    vormB.          // #(RCh) 
+U09B08A   9B     Ek   TU  1          vormA.          
+U09B08B   9B     Ek   TU  1          vormB.          
+U09B09A   9B     WR   TU  1          vormA.          
+U09B09B   9B     WR   TU  1          vormB.          
+U09B10A   9B     Mu   RA  1   MS     vorm1.          // #(MS) 
+U09B11A   9BSm   Sm   SR  2   TH     vorm2D.         // #(TH) 
+U09B12A   9BInf  Inf  MÜ  1   RInf   vormA.          // #(RInf) 
+U09B12B   9BInf  Inf  MÜ  1   Aqua   vormB.          // #(Aqua) 
+U09B13A   9B     BwR  TU  1          vormA.          
+U09B13B   9B     BwR  TU  1          vormB.          
+U09B13C   9B     BwR  TU  1          vormC.          
+U09B14A   9BTvK  TvK  GL  1   RInf   vormA.          // #(RInf) 
+U09B14B   9BTvK  TvK  GL  1   RInf   vormB.          // #(RInf) 
+U09B16A   9B     M    HO  1          vormA.          
+U09B16B   9B     M    HO  1          vormB.          
+U09B16C   9B     M    HO  1          vormC.          
+
+U09C01A   E71    KR   LA  1          vormA.          
+U09C01B   E71    KR   LA  1          vormB.          
+U09C02A   E72    EvR  HO  1          vormA.          
+U09C02B   E72    EvR  HO  1          vormB.          
+U09C03A   9C     D    ST  1          vormA.          
+U09C03B   9C     D    ST  1          vormB.          
+U09C03C   9C     D    ST  1          vormC.          
+U09C03D   9C     D    ST  1          vormD.          
+U09C04A   9C     G    ST  1          vormA.          
+U09C04B   9C     G    ST  1          vormB.          
+U09C05A   9C     E    JU  1          vormA.          
+U09C05B   9C     E    JU  1          vormB.          
+U09C05C   9C     E    JU  1          vormC.          
+U09C06A   9C     M    SN  1          vormA.          
+U09C06B   9C     M    SN  1          vormB.          
+U09C06C   9C     M    SN  1          vormC.          
+U09C07A   9C     Ch   RE  1   RCh    vormA.          // #(RCh) 
+U09C07B   9C     Ch   RE  1   RCh    vormB.          // #(RCh) 
+U09C08A   9C     Ek   SA  1          vormA.          
+U09C08B   9C     Ek   SA  1          vormB.          
+U09C09A   9C     BwR  SN  1          vormA.          
+U09C09B   9C     BwR  SN  1          vormB.          
+U09C09C   9C     BwR  SN  1          vormC.          
+U09C10A   9C     WR   SN  1          vormA.          
+U09C10B   9C     WR   SN  1          vormB.          
+U09C11A   9C     Mu   SI  1   MS     vorm1.          // #(MS) 
+U09C12A   9CTvK  TvK  GL  1   RInf   vormA.          // #(RInf) 
+U09C12B   9CTvK  TvK  GL  1   RInf   vormB.          // #(RInf) 
+U09C13A   9CInf  Inf  WE  1   Aqua   vormA.          // #(Aqua) 
+U09C13B   9CInf  Inf  WE  1   Aqua   vormB.          // #(Aqua) 
+U09C14A   9C     Ph   SG  1   RPhy1  vormA.          // #(RPhy1) 
+U09C14B   9C     Ph   SG  1   RPhy1  vormB.          // #(RPhy1) 
+U09C15A   9C     Sw   BL  2   TH     vorm2D.         // #(TH) 
+
+U09D01A   9DKR   KR   GR  1          vormA.          
+U09D01B   9DKR   KR   GR  1          vormB.          
+U09D04A   9D     D    SC  1          vormA.          
+U09D04B   9D     D    SC  1          vormB.          
+U09D04C   9D     D    SC  1          vormC.          
+U09D04D   9D     D    SC  1          vormD.          
+U09D05A   9D     G    NA  1          vormA.          
+U09D05B   9D     G    NA  1          vormB.          
+U09D06A   9D     E    JU  1          vormA.          
+U09D06B   9D     E    JU  1          vormB.          
+U09D06C   9D     E    JU  1          vormC.          
+U09D07A   9D     M    SG  1          vormA.          
+U09D07B   9D     M    SG  1          vormB.          
+U09D07C   9D     M    SG  1          vormC.          
+U09D08A   9D     Ph   SG  1   RPhy1  vormA.          // #(RPhy1) 
+U09D08B   9D     Ph   SG  1   RPhy1  vormB.          // #(RPhy1) 
+U09D09A   9D     Ch   UL  1   RCh    vormA.          // #(RCh) 
+U09D09B   9D     Ch   UL  1   RCh    vormB.          // #(RCh) 
+U09D10A   9D     Ek   TU  1          vormA.          
+U09D10B   9D     Ek   TU  1          vormB.          
+U09D11A   9D_2   BwR  ZI  1          vormA.          
+U09D11B   9D_2   BwR  ZI  1          vormB.          
+U09D11C   9D_2   BwR  ZI  1          vormC.          
+U09D12A   9D_2   WR   SR  1          vormA.          
+U09D12B   9D_2   WR   SR  1          vormB.          
+U09D13A   9D_2   Mu   RA  1   MS     vorm1.          // #(MS) 
+U09D14A   9DSm   Sm   KA  2   TH     vorm2D.         // #(TH) 
+U09D15A   9D_2   Inf  WE  1   Aqua   vormA.          // #(Aqua) 
+U09D15B   9D_2   Inf  WE  1   Aqua   vormB.          // #(Aqua) 
+U09D17A   9D_3   WR   TU  1          vormA.          
+U09D17B   9D_3   WR   TU  1          vormB.          
+U09D18A   9D_3   Sow  AL  1          vormA.          
+U09D18B   9D_3   Sow  AL  1          vormB.          
+U09D19A   9D_3   W    BE  3   RWer   vorm3.          // #(RWer) 
+
+U09E01A   9E     D    AL  1          vormA.          
+U09E01B   9E     D    AL  1          vormB.          
+U09E01C   9E     D    AL  1          vormC.          
+U09E01D   9E     D    AL  1          vormD.          
+U09E02A   9E     E    HA  1          vormA.          
+U09E02B   9E     E    HA  1          vormB.          
+U09E02C   9E     E    HA  1          vormC.          
+U09E03A   9E     M    MÜ  1          vormA.          
+U09E03B   9E     M    MÜ  1          vormB.          
+U09E03C   9E     M    MÜ  1          vormC.          
+U09E04A   9E     Ch   RE  1   RCh    vormA.          // #(RCh) 
+U09E04B   9E     Ch   RE  1   RCh    vormB.          // #(RCh) 
+U09E05A   9E     G    MO  1          vormA.          
+U09E05B   9E     G    MO  1          vormB.          
+U09E06A   9E     Ek   HA  1          vormA.          
+U09E06B   9E     Ek   HA  1          vormB.          
+U09E07A   9E     WR   SR  1          vormA.          
+U09E07B   9E     WR   SR  1          vormB.          
+U09E08A   9E     Sow  AL  1          vormA.          
+U09E08B   9E     Sow  AL  1          vormB.          
+U09E09A   9E     Mu   SI  1   MS     vorm1.          // #(MS) 
+U09E10A   9EW    W    BE  3   RWer   vorm3.          // #(RWer) 
+U09E11A   9EW1   W    GL  3   RWer   vorm3.          // #(RWer) 
+U09E14A   9E     Sw   HS  2   TH     vorm2D.         // #(TH) 
+U09E16A   9E     Ph   MÜ  1   RPhy1  vormA.          // #(RPhy1) 
+U09E16B   9E     Ph   MÜ  1   RPhy1  vormB.          // #(RPhy1) 
+
+U10A01A   10AKR  KR   GI  1          vormA.          
+U10A01B   10AKR  KR   GI  1          vormB.          
+U10A02A   E92    EvR  HO  1          vormA.          
+U10A02B   E92    EvR  HO  1          vormB.          
+U10A03A   10A    D    SI  1          vormA.          
+U10A03B   10A    D    SI  1          vormB.          
+U10A03C   10A    D    SI  1          vormC.          
+U10A03D   10A    D    SI  1          vormD.          
+U10A04A   10A    G    TI  1          vormA.          
+U10A04B   10A    G    TI  1          vormB.          
+U10A05A   10A    E    KA  1          vormA.          
+U10A05B   10A    E    KA  1          vormB.          
+U10A05C   10A    E    KA  1          vormC.          
+U10A06A   10A    M    HO  1          vormA.          
+U10A06B   10A    M    HO  1          vormB.          
+U10A06C   10A    M    HO  2          vorm2F.         
+U10A06D   10A    M    HO  1          vormD.          
+U10A07A   10A    Ph   SG  1   RPhy1  vormA.          // #(RPhy1) 
+U10A07B   10A    Ph   SG  1   RPhy1  vormB.          // #(RPhy1) 
+U10A07C   10A    Ph   SG  1   RPhy1  vormC.          // #(RPhy1) 
+U10A08A   10A    Ch   UL  1   RCh    vormA.          // #(RCh) 
+U10A08B   10A    Ch   UL  1   RCh    vormB.          // #(RCh) 
+U10A09A   10A    B    UL  1   RBio   vorm1.          // #(RBio) 
+U10A10A   10A    Erz  UL  1          vorm1.          
+U10A11A   10A    Sk   HS  1          vorm1.          
+U10A12A   10A    WR   HS  1          vorm1.          
+U10A13A   10ATZ  TZw  AM  2   InfOB  vorm2D.         // #(InfOB) 
+U10A14A   10A    Mu   SI  1   MS     vorm1.          // #(MS) 
+U10A15A   10ASm  Sm   KA  2   TH     vorm2D.         // #(TH) 
+U10A17A   I42    Inf  WE  2   Aqua   vorm2D.         // #(Aqua) 
+U10A18A   S92    Sw   PA  2   TH     vorm2D.         // #(TH) 
+
+U10B01A   E93    KR   LA  1          vormA.          
+U10B01B   E93    KR   LA  1          vormB.          
+U10B03A   10B    D    LA  1          vormA.          
+U10B03B   10B    D    LA  1          vormB.          
+U10B03C   10B    D    LA  1          vormC.          
+U10B03D   10B    D    LA  1          vormD.          
+U10B04A   10B    G    MO  1          vormA.          
+U10B04B   10B    G    MO  1          vormB.          
+U10B05A   10B    E    PA  1          vormA.          
+U10B05B   10B    E    PA  1          vormB.          
+U10B05C   10B    E    PA  1          vormC.          
+U10B06A   10B    M    HB  1          vormA.          
+U10B06B   10B    M    HB  1          vormB.          
+U10B06C   10B    M    HB  1          vormC.          
+U10B07A   10B    Ph   SG  1   RPhy1  vormA.          // #(RPhy1) 
+U10B07B   10B    Ph   SG  1   RPhy1  vormB.          // #(RPhy1) 
+U10B08A   10B    Ch   SN  1   RCh    vormA.          // #(RCh) 
+U10B08B   10B    Ch   SN  1   RCh    vormB.          // #(RCh) 
+U10B09A   10B    B    KL  1   RBio   vorm1.          // #(RBio) 
+U10B10A   10B    Erz  GI  1          vorm1.          
+U10B11A   10B    Sk   HS  1          vorm1.          
+U10B12A   10B    BwR  HS  1          vormA.          
+U10B12B   10B    BwR  HS  1          vormB.          
+U10B12C   10B    BwR  HS  1          vormC.          
+U10B13A   10B    WR   HS  1          vorm1.          
+U10B14A   10B    Mu   SI  1   MS     vorm1.          // #(MS) 
+U10B15A   S01    Sm   KL  2   TH     vorm2D.         // #(TH) 
+U10B18A   10BTvK TvK  BE  2   RInf   vorm2D.         // #(RInf) 
+U10B19A   S02    Sw   PA  2   TH     vorm2D.         // #(TH) 
+
+U10C01A   E81    EvR  SC  1          vormA.          
+U10C01B   E81    EvR  SC  1          vormB.          
+U10C02A   10C    D    JU  1          vormA.          
+U10C02B   10C    D    JU  1          vormB.          
+U10C02C   10C    D    JU  1          vormC.          
+U10C02D   10C    D    JU  1          vormD.          
+U10C03A   10C    G    MO  1          vormA.          
+U10C03B   10C    G    MO  1          vormB.          
+U10C04A   10C    E    TR  1          vormA.          
+U10C04B   10C    E    TR  1          vormB.          
+U10C04C   10C    E    TR  1          vormC.          
+U10C05A   10C    M    ZI  1          vormA.          
+U10C05B   10C    M    ZI  1          vormB.          
+U10C05C   10C    M    ZI  1          vormC.          
+U10C06A   10C    Ph   SG  1   RPhy1  vormA.          // #(RPhy1) 
+U10C06B   10C    Ph   SG  1   RPhy1  vormB.          // #(RPhy1) 
+U10C07A   10C    Ch   SM  1   RCh    vormA.          // #(RCh) 
+U10C07B   10C    Ch   SM  1   RCh    vormB.          // #(RCh) 
+U10C08A   10C    B    KL  1   RBio   vorm1.          // #(RBio) 
+U10C09A   10C    Erz  GI  1          vorm1.          
+U10C10A   10C    Sk   VI  1          vorm1.          
+U10C11A   10C    BwR  VI  1          vormA.          
+U10C11B   10C    BwR  VI  1          vormB.          
+U10C11C   10C    BwR  VI  1          vormC.          
+U10C12A   10C    WR   VI  1          vorm1.          
+U10C13A   10C    Mu   RA  1   MS     vorm1.          // #(MS) 
+U10C14A   I31    TvK  BE  1   Aqua   vormA.          // #(Aqua) 
+U10C14B   I31    TvK  BE  1   Aqua   vormB.          // #(Aqua) 
+U10C15A   10CInf Inf  WE  1   RInf   vormA.          // #(RInf) 
+U10C15B   10CInf Inf  WE  1   RInf   vormB.          // #(RInf) 
+U10C16A   E82    KR   GI  1          vormA.          
+U10C16B   E82    KR   GI  1          vormB.          
+
+U10D03A   10D    D    TI  1          vormA.          
+U10D03B   10D    D    TI  1          vormB.          
+U10D03C   10D    D    TI  1          vormC.          
+U10D03D   10D    D    TI  1          vormD.          
+U10D04A   10D    G    TI  1          vormA.          
+U10D04B   10D    G    TI  1          vormB.          
+U10D05A   10D    E    EU  1          vormA.          
+U10D05B   10D    E    EU  1          vormB.          
+U10D05C   10D    E    EU  1          vormC.          
+U10D06A   10D    M    SN  1          vormA.          
+U10D06B   10D    M    SN  1          vormB.          
+U10D06C   10D    M    SN  1          vormC.          
+U10D07A   10D    Ph   DU  1   RPhy1  vormA.          // #(RPhy1) 
+U10D07B   10D    Ph   DU  1   RPhy1  vormB.          // #(RPhy1) 
+U10D08A   10D    Ch   SN  1   RCh    vormA.          // #(RCh) 
+U10D08B   10D    Ch   SN  1   RCh    vormB.          // #(RCh) 
+U10D09A   10D    B    KL  1   RBio   vorm1.          // #(RBio) 
+U10D10A   10D    Erz  KL  1          vorm1.          
+U10D11A   10D    Sk   TU  1          vorm1.          
+U10D12A   10D    WR   TU  1          vorm1.          
+U10D13A   10D    Mu   RA  1   MS     vorm1.          // #(MS) 
+U10D14A   S93    Sm   HB  2   TH     vorm2D.         // #(TH) 
+U10D16A   10D    BwR  TU  1          vormA.          
+U10D16B   10D    BwR  TU  1          vormB.          
+U10D16C   10D    BwR  TU  1          vormC.          
+U10D17A   10DInf Inf  MÜ  1   RInf   vormA.          // #(RInf) 
+U10D17B   10DInf Inf  MÜ  1   RInf   vormB.          // #(RInf) 
+
+U10E03A   10E    D    ST  1          vormA.          
+U10E03B   10E    D    ST  1          vormB.          
+U10E03C   10E    D    ST  1          vormC.          
+U10E03D   10E    D    ST  1          vormD.          
+U10E04A   10E    E    HA  1          vormA.          
+U10E04B   10E    E    HA  1          vormB.          
+U10E04C   10E    E    HA  1          vormC.          
+U10E05A   10E    M    SA  1          vormA.          
+U10E05B   10E    M    SA  1          vormB.          
+U10E05C   10E    M    SA  1          vormC.          
+U10E06A   10E    Ch   SM  1   RCh    vormA.          // #(RCh) 
+U10E06B   10E    Ch   SM  1   RCh    vormB.          // #(RCh) 
+U10E07A   10E    B    KL  1   RBio   vorm1.          // #(RBio) 
+U10E08A   10E    Erz  KL  1          vorm1.          
+U10E09A   10E    G    MO  1          vormA.          
+U10E09B   10E    G    MO  1          vormB.          
+U10E10A   10E    WR   ZI  1          vorm1.          
+U10E11A   10E    Sk   ZI  1          vorm1.          
+U10E12A   10E    Sow  AL  1          vormA.          
+U10E12B   10E    Sow  AL  1          vormB.          
+U10E13A   10E    Mu   SI  1   MS     vorm1.          // #(MS) 
+U10E16A   10EW   W    GL  3   RWer   vorm3.          // #(RWer) 
+U10E17A   10EW1  W    BE  3   RWer   vorm3.          // #(RWer) 
+U10E19A   10E    Ph   DU  1   RPhy1  vormA.          // #(RPhy1) 
+U10E19B   10E    Ph   DU  1   RPhy1  vormB.          // #(RPhy1) 
+
+UW01A    HM      NA   3   nach3.    
+UW02A    SSp     HO   1   nach.     
+UW03A    M       MÜ   1   nach.     
+UW04A    HM      GI   2   nach2.    
+UW05A    HM      KI   2   nach2.    
+UW06A    Smd     KL   1   nach.     
+UW07A    Smd     HB   2   nach2.    
+UW08A    EH      HO   1   nach.     
+UW09A    Swd     HS   3   nach3.    
+UW10A    Swd     NA   1   nach.     
+UW11A    Swd     KI   1   nach.     
