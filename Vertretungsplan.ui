@@ -178,7 +178,7 @@ p, li { white-space: pre-wrap; }
            </rect>
           </property>
           <property name="text">
-           <string>Stunde aufallen</string>
+           <string>Stunde entfallen</string>
           </property>
          </widget>
          <widget class="QRadioButton" name="ButtonStundeVertretung">
