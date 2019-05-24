@@ -16,12 +16,12 @@ class Stunde:
         #   tag (int): 0 = Montag,..., 4 = Freitag
         #   stunde (int): 0 = 1.Stunde, 1 = 2.Stunde,..., 6 = 7.Stunde (Mittagspause),...,10 = 11.Stunde
     #--------------------------------------------------
-    def __init__(self,klasse:str,raum:str,lehrer:str,fach:str,woche:int,tag:int,stunde:int):
+    def __init__(self,klasse:str,raum:str,lehrer:str,fach:str,tag:int,stunde:int):
         self.klasse = Klasse.createKlasse(klasse,self)
         self.raum = Raum.createRaum(raum,self)
         self.lehrer = Lehrer.createLehrer(lehrer,self)
         self.fach = Fach.createFach(fach)
-        self.wochentyp = woche # A-week/B-week
+        #self.wochentyp = woche # A-week/B-week
         self.tag = tag
         self.stunde = stunde
 
