@@ -3,7 +3,6 @@ from model import Vertretungsplan
 
 class MainWindow:
 
-#--------------------------------------------------
     def __init__(self):
 
         #create main window
@@ -17,8 +16,9 @@ class MainWindow:
         #Connections
         #self.mainWindow.{Ausloeser}.{Aktion}.connect({MethodenAufruf})
         #Bsp.: self.mainWindow.pushButton.clicked.connect(self.test)
+        #self.mainWindow
 
         #launch GUI --> last step of __init__ because starts loop
         self.mW.show()
         self.app.exec()
-#--------------------------------------------------
+
