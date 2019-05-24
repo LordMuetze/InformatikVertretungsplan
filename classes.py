@@ -7,6 +7,14 @@ from datetime import date
     # by lesson
 #--------------------------------------------------
 class Stunde:
+
+    Stundenliste = []
+    StundenlisteMontag = []
+    StundenlisteDienstag = []
+    StundenlisteMittwoch = []
+    StundenlisteDonnerstag = []
+    StundenlisteFreitag = []
+
     #--------------------------------------------------
         # attributes:
         #   klasse (str): 5a,5b,...,1m1,1pas,qinf,...,2m1,... (case-sensitive!)
@@ -16,7 +24,7 @@ class Stunde:
         #   tag (int): 0 = Montag,..., 4 = Freitag
         #   stunde (int): 0 = 1.Stunde, 1 = 2.Stunde,..., 6 = 7.Stunde (Mittagspause),...,10 = 11.Stunde
     #--------------------------------------------------
-    def __init__(self,klasse:str,raum:str,lehrer:str,fach:str,tag:int,stunde:int):
+    def __init__(self,klasse:str,raum:str,lehrer:str,fach:str,tag:int,stunde:int,ersatzstunde=False):
         self.klasse = Klasse.createKlasse(klasse,self)
         self.raum = Raum.createRaum(raum,self)
         self.lehrer = Lehrer.createLehrer(lehrer,self)
@@ -24,12 +32,32 @@ class Stunde:
         #self.wochentyp = woche # A-week/B-week
         self.tag = tag
         self.stunde = stunde
+        if not ersatzstunde:
+            Stunde.Stundenliste.append(self)
+            if tag == 0:
+                Stunde.StundenlisteMontag.append(self)
+            elif tag == 1:
+                Stunde.StundenlisteDienstag.append(self)
+            elif tag == 2:
+                Stunde.StundenlisteMittwoch.append(self)
+            elif tag == 3:
+                Stunde.StundenlisteDonnerstag.append(self)
+            elif tag == 4:
+                Stunde.StundenlisteFreitag.append(self)
 
 
     def Stunde(self):
         return self.stunde
     def Tag(self):
         return self.tag
+    def Klasse(self):
+        return self.klasse
+    def Raum(self):
+        return self.raum
+    def Lehrer(self):
+        return self.lehrer
+    def Fach(self):
+        return self.fach
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -193,11 +221,28 @@ class Tag(date):
         super().__init__()
         self.blockierteLehrer = []
         self.blockierteRaeume = []
+        self.ersatzstunden = []
+
+        if self.weekday() == 0:
+            self.stunden = Stunde.StundenlisteMontag
+        elif self.weekday() == 1:
+            self.stunden = Stunde.StundenlisteDienstag
+        elif self.weekday() == 2:
+            self.stunden = Stunde.StundenlisteMittwoch
+        elif self.weekday() == 3:
+            self.stunden = Stunde.StundenlisteDonnerstag
+        elif self.weekday() == 4:
+            self.stunden = Stunde.StundenlisteFreitag
+        else:
+            self.stunden = []
+
 
     def addBlockierterLehrer(self,lehrer):
         self.blockierteLehrer.append(lehrer)
     def addBlockierterRaum(self,raum):
         self.blockierteRaeume.append(raum)
+    def addErsatzstunde(self,stunde):
+        self.ersatzstunden.append(stunde)
 #--------------------------------------------------
 #--------------------------------------------------
 
