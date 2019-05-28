@@ -172,6 +172,7 @@ class Lehrer:
         self.stundenliste = []
         self.stundenplan = [[],[],[],[],[]]
         self.absolvierteVertretungen = 0
+        self.faecherliste = []
 
         Lehrer.Lehrerliste.append(self)
         self.addStunde(stunde)
