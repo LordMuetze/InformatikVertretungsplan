@@ -98,15 +98,6 @@ class Klasse:
 #--------------------------------------------------
 
 
-# #--------------------------------------------------
-    # #--------------------------------------------------
-    # class Kurs(Klasse):
-    #     def __init__(self):
-    #         pass
-    # #--------------------------------------------------
-# #--------------------------------------------------
-
-
 #--------------------------------------------------
 #--------------------------------------------------
 class Raum:
@@ -182,6 +173,10 @@ class Lehrer:
     def addStunde(self,stunde):
         self.stundenliste.append(stunde)
         self.stundenplan = Tools.sortStundenliste(self.stundenliste)
+
+        # automatically add fach to faecherliste if not already in it
+        if stunde.Fach() not in self.faecherliste:
+            self.faecherliste.append(stunde.Fach())
     
     def addBlockiert(self,tag,von,bis):
         self.blockiert.append(Blockierung(self,tag,von,bis))
@@ -244,6 +239,7 @@ class Tag(date):
         self.blockierteRaeume.append(raum)
     def addErsatzstunde(self,stunde):
         self.ersatzstunden.append(stunde)
+        self.ersatzstunden.sort(key = lambda c: c.Klasse())
 #--------------------------------------------------
 #--------------------------------------------------
 
