@@ -21,4 +21,3 @@ class MainWindow:
         #launch GUI --> last step of __init__ because starts loop
         self.mW.show()
         self.app.exec()
-

@@ -30,6 +30,11 @@ class Vertretungsplan:
     def unterrichtsschlussErstellen(self):
         pass
 
+    #--------------------------------------------------
+        # aufrufen als (0,0 ist Montag erste Stunde):
+        # vertretungErstellen(0,0,ersatzraum=xy)
+        # vertretungErstellen(0,0,ersatzlehrer=xy)
+    #--------------------------------------------------
     def vertretungErstellen(self,tag:Tag,stunde:Stunde,ersatzraum=0,ersatzlehrer=0):
         if ersatzraum != 0:
             raum = ersatzraum
@@ -42,8 +47,3 @@ class Vertretungsplan:
             lehrer = stunde.Lehrer()
         ersatzStunde = Stunde(stunde.Klasse(),raum,lehrer,stunde.Fach(),stunde.Tag(),stunde.Stunde(),ersatzstunde=True)
         tag.addErsatzstunde(ersatzStunde)
-    
-
-    
-
-    
