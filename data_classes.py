@@ -47,6 +47,11 @@ class Stunde:
                 Stunde.StundenlisteDonnerstag.append(self)
             elif self.tag == 4:
                 Stunde.StundenlisteFreitag.append(self)
+    
+    
+    def __str__(self):
+        s = self.Tag() + "," + self.Stunde() + "," + self.Klasse() + "," + self.Lehrer() + "," + self.Raum() + "," + self.Fach()
+        return s
 
 
     def Stunde(self):
@@ -61,6 +66,12 @@ class Stunde:
         return self.lehrer
     def Fach(self):
         return self.fach
+    def Ersatzstunde(self):
+        return self.ersatzstunde
+
+    @staticmethod
+    def getStundenliste():
+        return Stunde.Stundenliste
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -94,6 +105,10 @@ class Klasse:
     def __post_init__(self):
         Klasse.Klassenliste.append(self)
         self.addStunde(self.stunde)
+
+    
+    def __str__(self):
+        return self.bezeichner
         
     
     def addStunde(self,stunde):
@@ -134,6 +149,10 @@ class Raum:
 
         Raum.Raumliste.append(self)
         self.addStunde(stunde)
+    
+
+    def __str__(self):
+        return self.bezeichner
 
 
     def addStunde(self,stunde):
@@ -177,6 +196,10 @@ class Lehrer:
         Lehrer.Lehrerliste.append(self)
         self.addStunde(stunde)
         self.blockiert = []
+    
+
+    def __str__(self):
+        return self.bezeichner
 
     
     def addStunde(self,stunde):
@@ -216,6 +239,10 @@ class Fach:
     def __init__(self,bezeichner):
         self.bezeichner = bezeichner
         Fach.Fachliste.append(self)
+    
+
+    def __str__(self):
+        return self.bezeichner
 #--------------------------------------------------
 #--------------------------------------------------
 
