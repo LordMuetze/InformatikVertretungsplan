@@ -9,7 +9,7 @@ class Tools:
         returnList = [[],[],[],[],[]]
         stundenliste.sort(key=lambda c: c.getStunde()) #sort stundenliste by lessonnumber on that day
         for stunde in stundenliste:
-            returnList[stunde.getTag].append(stunde)
+            returnList[stunde.Tag()].append(stunde)
         return returnList
 #--------------------------------------------------
 #--------------------------------------------------
