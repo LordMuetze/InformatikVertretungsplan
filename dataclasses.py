@@ -105,10 +105,14 @@ class Klasse:
 
 #--------------------------------------------------
 #--------------------------------------------------
+@dataclass
 class Raum:
 
 
     Raumliste = []
+
+    bezeichner:str
+    #stunde:Stunde
 
 
     @staticmethod #create static method that can be called without object
@@ -123,8 +127,7 @@ class Raum:
                     return element
 
 
-    def __init__(self,bezeichner,stunde):
-        self.bezeichner = bezeichner
+    def __post_init__(self,stunde):
         self.stundenliste = []
         self.stundenplan = [[],[],[],[],[]]
         self.blockiert = []
@@ -145,11 +148,13 @@ class Raum:
 
 #--------------------------------------------------
 #--------------------------------------------------
+@dataclass
 class Lehrer:
 
 
     Lehrerliste = []
 
+    bezeichner:str
 
     @staticmethod #create static method that can be called without object
     #method checks for already existing object and either returns the existing or creates a new one and returns this
@@ -163,8 +168,7 @@ class Lehrer:
                     return element
 
 
-    def __init__(self,bezeichner,stunde):
-        self.bezeichner = bezeichner
+    def __post_init__(self,stunde):
         self.stundenliste = []
         self.stundenplan = [[],[],[],[],[]]
         self.absolvierteVertretungen = 0
@@ -191,6 +195,7 @@ class Lehrer:
 
 #--------------------------------------------------
 #--------------------------------------------------
+@dataclass
 class Fach:
 
 
