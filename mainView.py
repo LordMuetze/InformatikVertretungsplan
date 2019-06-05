@@ -7,7 +7,7 @@ class MainWindow:
 
         #create main window
         self.app = QtWidgets.QApplication([])
-        self.mW = uic.loadUi("Vertretungsplan.ui")
+        self.mW = uic.loadUi("mainWindow.ui")
 
         #create model and set attribute
         #view calls model, not vice-versa! --> no self.view in model
