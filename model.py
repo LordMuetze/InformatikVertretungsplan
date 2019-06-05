@@ -70,3 +70,11 @@ class Vertretungsplan:
 
         dateiZuordnung.close()
         dateiUnter.close()
+
+    
+    def saveCSV(self):
+        pass
+
+    
+    def openCSV(self):
+        pass
