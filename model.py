@@ -1,4 +1,5 @@
 from classes import *
+from tools import Tools
 
 class Vertretungsplan:
 
@@ -72,9 +73,28 @@ class Vertretungsplan:
         dateiUnter.close()
 
     
-    def saveCSV(self):
-        pass
+    # save all objects of Stunde to comma-separated csv
+    def saveCSV(self,path):
+        outputStandard = "Tag,Stunde,Klasse,Lehrer,Raum,Fach\n"
+        outputVertretung = "Datum,Tag,Stunde,Klasse,Lehrer,Raum,Fach\n"
 
-    
-    def openCSV(self):
+        stundenplan = Tools.sortStundenliste(Stunde.getStundenliste())
+        for tag in stundenplan:
+            for stunde in tag:
+                if stunde.Ersatzstunde():
+                    s = stunde.Tag() + stunde.Stunde() + stunde.Klasse() + stunde.Lehrer() + stunde.Raum() + stunde.Fach() + "\n"
+                    outputVertretung += s
+                else:
+                    s = stunde.Tag() + stunde.Stunde() + stunde.Klasse() + stunde.Lehrer() + stunde.Raum() + stunde.Fach() + "\n"
+                    outputStandard += s
+        
+        file = open(path,"w")
+        file.write("[Stundenplan]\n")
+        file.write(outputStandard)
+        file.write("[Vertretungen]\n")
+        file.write(outputVertretung)
+        file.close()
+        
+ 
+    def openCSV(self, path):
         pass
