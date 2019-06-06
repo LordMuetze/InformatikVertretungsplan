@@ -2,7 +2,6 @@ __pycache__/mainView.cpython-36.pyc
 __pycache__/model.cpython-36.pyc
 .vscode/.ropeproject/objectdb
 .vscode/.ropeproject/config.py
-test.py
 __pycache__/tools.cpython-36.pyc
 __pycache__/classes.cpython-36.pyc
 classes_Test.png
@@ -14,4 +13,3 @@ __pycache__/classes.cpython-37.pyc
 __pycache__/dataclasses.cpython-37.pyc
 .vscode/settings.json
 __pycache__/data_classes.cpython-37.pyc
-Testdateien/CSVExports/

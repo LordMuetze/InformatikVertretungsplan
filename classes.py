@@ -14,6 +14,7 @@ class Stunde:
     StundenlisteMittwoch = []
     StundenlisteDonnerstag = []
     StundenlisteFreitag = []
+    Ersatzstundenliste = []
 
     #--------------------------------------------------
         # attributes:
@@ -24,15 +25,17 @@ class Stunde:
         #   tag (int): 0 = Montag,..., 4 = Freitag
         #   stunde (int): 0 = 1.Stunde, 1 = 2.Stunde,..., 6 = 7.Stunde (Mittagspause),...,10 = 11.Stunde
     #--------------------------------------------------
-    def __init__(self,tag:int,stunde:int,klasse:str,lehrer:str,raum:str,fach:str,ersatzstunde=False):
+    def __init__(self,tag:int,stunde:int,klasse:str,lehrer:str,raum:str,fach:str,ersatzstunde=False,datum=None):
         self.tag = tag
         self.stunde = stunde
         self.klasse = Klasse.createKlasse(klasse,self)
         self.raum = Raum.createRaum(raum,self)
         self.lehrer = Lehrer.createLehrer(lehrer,self)
+        print("Hi")
         self.fach = Fach.createFach(fach)
         #self.wochentyp = woche # A-week/B-week
         self.ersatzstunde = ersatzstunde
+        self.datum = datum
 
         if not ersatzstunde:
             Stunde.Stundenliste.append(self)
@@ -46,10 +49,14 @@ class Stunde:
                 Stunde.StundenlisteDonnerstag.append(self)
             elif self.tag == 4:
                 Stunde.StundenlisteFreitag.append(self)
+        
+        if ersatzstunde and datum != None:
+            Stunde.Ersatzstundenliste.append(self)
+            Stunde.Ersatzstundenliste.sort(key = lambda c: c.datum)
 
 
     def __str__(self):
-        s = self.Tag() + "," + self.Stunde() + "," + self.Klasse() + "," + self.Lehrer() + "," + self.Raum() + "," + self.Fach()
+        s = self.tag + "," + self.stunde + "," + self.klasse + "," + self.lehrer + "," + self.raum + "," + self.fach
         return s
 
 
@@ -67,6 +74,8 @@ class Stunde:
         return self.fach
     def Ersatzstunde(self):
         return self.ersatzstunde
+    def Datum(self):
+        return self.datum
 
     @staticmethod
     def getStundenliste():
@@ -112,6 +121,10 @@ class Klasse:
     def addStunde(self,stunde):
         self.stundenliste.append(stunde)
         self.stundenplan = Tools.sortStundenliste(self.stundenliste)
+    
+
+    def Bezeichner(self):
+        return self.bezeichner
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -157,6 +170,10 @@ class Raum:
     
     def addBlockiert(self,tag,von,bis):
         self.blockiert.append(Blockierung(self,tag,von,bis))
+    
+
+    def Bezeichner(self):
+        return self.bezeichner
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -208,6 +225,10 @@ class Lehrer:
     
     def addBlockiert(self,tag,von,bis):
         self.blockiert.append(Blockierung(self,tag,von,bis))
+    
+
+    def Bezeichner(self):
+        return self.bezeichner
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -237,6 +258,10 @@ class Fach:
     
     
     def __str__(self):
+        return self.bezeichner
+    
+
+    def Bezeichner(self):
         return self.bezeichner
 #--------------------------------------------------
 #--------------------------------------------------

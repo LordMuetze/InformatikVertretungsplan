@@ -36,7 +36,7 @@ class Vertretungsplan:
         # vertretungErstellen(0,0,ersatzraum=xy)
         # vertretungErstellen(0,0,ersatzlehrer=xy)
     #--------------------------------------------------
-    def vertretungErstellen(self,tag:Tag,stunde:Stunde,ersatzraum=0,ersatzlehrer=0):
+    def vertretungErstellen(self,datum:Tag,stunde:Stunde,ersatzraum=0,ersatzlehrer=0):
         if ersatzraum != 0:
             raum = ersatzraum
         else:
@@ -46,8 +46,8 @@ class Vertretungsplan:
             lehrer = ersatzlehrer
         else:
             lehrer = stunde.Lehrer()
-        ersatzStunde = Stunde(stunde.Klasse(),raum,lehrer,stunde.Fach(),stunde.Tag(),stunde.Stunde(),ersatzstunde=True)
-        tag.addErsatzstunde(ersatzStunde)
+        ersatzStunde = Stunde(stunde.Tag(),stunde.Stunde(),stunde.Klasse().Bezeichner(),lehrer.Bezeichner(),raum.Bezeichner(),stunde.Fach().Bezeichner(),ersatzstunde=True,datum=datum)
+        datum.addErsatzstunde(ersatzStunde)
 
     def DateienEinlesen(self, pathUnter:str, pathZuordnung:str):
         dateiUnter = open(pathUnter, "r")
@@ -82,11 +82,12 @@ class Vertretungsplan:
         for tag in stundenplan:
             for stunde in tag:
                 if stunde.Ersatzstunde():
-                    s = stunde.Tag() + stunde.Stunde() + stunde.Klasse() + stunde.Lehrer() + stunde.Raum() + stunde.Fach() + "\n"
+                    s = stunde.Datum() + stunde.Tag() + stunde.Stunde() + stunde.Klasse() + stunde.Lehrer() + stunde.Raum() + stunde.Fach() + "\n"
                     outputVertretung += s
                 else:
                     s = stunde.Tag() + stunde.Stunde() + stunde.Klasse() + stunde.Lehrer() + stunde.Raum() + stunde.Fach() + "\n"
                     outputStandard += s
+
         
         file = open(path,"w")
         file.write("[Stundenplan]\n")
@@ -97,4 +98,37 @@ class Vertretungsplan:
         
  
     def openCSV(self, path):
-        pass
+        file = open(path,"r")
+        #content = file.readlines()
+        content = file.read().splitlines() 
+
+        # remove newlines from content
+        # i = 0
+        # while i < len(content):
+        #     content[i].replace("\n","")
+        #     i += 1
+
+        # remove empty lines
+        # while "" in content:
+        #     content.remove("")
+
+        # remove section-header [Stundenplan] & csv-header
+        if content[0] == "[Stundenplan]":
+            content.pop(0)
+            content.pop(0)
+
+        # read content until header [Vertretungen]
+        while content[0] != "[Vertretungen]":
+            line = content.pop(0).split(",")
+            #line[len(line)-1].replace("\n","")
+            Stunde(int(line[0]),int(line[1]),line[2],line[3],line[4],line[5])
+
+        # remove section-header [Vertretungen] & csv-header
+        if content[0] == "[Stundenplan]":
+            content.pop(0)
+            content.pop(0)
+        
+        # read content until file's empty
+        while len(content) > 0:
+            line = content.pop(0).split(",")
+            Stunde(int(line[1]),int(line[2]),line[3],line[4],line[5],line[6],ersatzstunde=True,datum=line[0])
