@@ -82,10 +82,10 @@ class Vertretungsplan:
         for tag in stundenplan:
             for stunde in tag:
                 if stunde.Ersatzstunde():
-                    s = stunde.Datum() + stunde.Tag() + stunde.Stunde() + stunde.Klasse() + stunde.Lehrer() + stunde.Raum() + stunde.Fach() + "\n"
+                    s = str(stunde.Datum()) + "," + str(stunde.Tag()) + "," + str(stunde.Stunde()) + "," + str(stunde.Klasse()) + "," + str(stunde.Lehrer()) + "," + str(stunde.Raum()) + "," + str(stunde.Fach()) + "\n"
                     outputVertretung += s
                 else:
-                    s = stunde.Tag() + stunde.Stunde() + stunde.Klasse() + stunde.Lehrer() + stunde.Raum() + stunde.Fach() + "\n"
+                    s = str(stunde.Tag()) + "," + str(stunde.Stunde()) + "," + str(stunde.Klasse()) + "," + str(stunde.Lehrer()) + "," + str(stunde.Raum()) + "," + str(stunde.Fach()) + "\n"
                     outputStandard += s
 
         
@@ -95,22 +95,11 @@ class Vertretungsplan:
         file.write("[Vertretungen]\n")
         file.write(outputVertretung)
         file.close()
-        
  
     def openCSV(self, path):
         file = open(path,"r")
         #content = file.readlines()
         content = file.read().splitlines() 
-
-        # remove newlines from content
-        # i = 0
-        # while i < len(content):
-        #     content[i].replace("\n","")
-        #     i += 1
-
-        # remove empty lines
-        # while "" in content:
-        #     content.remove("")
 
         # remove section-header [Stundenplan] & csv-header
         if content[0] == "[Stundenplan]":
@@ -124,7 +113,7 @@ class Vertretungsplan:
             Stunde(int(line[0]),int(line[1]),line[2],line[3],line[4],line[5])
 
         # remove section-header [Vertretungen] & csv-header
-        if content[0] == "[Stundenplan]":
+        if content[0] == "[Vertretungen]":
             content.pop(0)
             content.pop(0)
         
@@ -132,3 +121,6 @@ class Vertretungsplan:
         while len(content) > 0:
             line = content.pop(0).split(",")
             Stunde(int(line[1]),int(line[2]),line[3],line[4],line[5],line[6],ersatzstunde=True,datum=line[0])
+
+        for i in Stunde.Stundenliste:
+            print(i)
