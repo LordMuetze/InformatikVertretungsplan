@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets, uic
 from model import Vertretungsplan
+from classes import *
 import sys
 
 class MainWindow:
@@ -27,16 +28,29 @@ class MainWindow:
         self.app.exec()
     
     def on_actionSpeichern_triggered(self):
-        #path = QtWidgets.QFileDialog.getSaveFileName(None,"Speichern unter","","CSV Files (*.csv);;All Files (*)")[0]
-        path = 'C:/Users/Admin/Desktop/Vertretungsplan/InformatikVertretungsplan/Testdateien/CSVExports/test1.csv'
+        path = QtWidgets.QFileDialog.getSaveFileName(None,"Speichern unter","","CSV Files (*.csv);;All Files (*)")[0]
+        #path = 'C:/Users/Admin/Desktop/Vertretungsplan/InformatikVertretungsplan/Testdateien/CSVExports/test1.csv'
         self.model.saveCSV(path)
+        self.update()
     
     def on_action_ffnen_triggered(self):
-        #path = QtWidgets.QFileDialog().getOpenFileName(None,"Datei oeffnen","","CSV Files (*.csv);;All Files (*)")[0]
-        path = 'C:/Users/Admin/Desktop/Vertretungsplan/InformatikVertretungsplan/Testdateien/CSVExports/test1.csv'
+        path = QtWidgets.QFileDialog().getOpenFileName(None,"Datei oeffnen","","CSV Files (*.csv);;All Files (*)")[0]
+        #path = 'C:/Users/Admin/Desktop/Vertretungsplan/InformatikVertretungsplan/Testdateien/CSVExports/test1.csv'
         self.model.openCSV(path)
+        self.update()
+        
+        
 
     def on_actionEinlesen_triggered(self):
         pathUnter = QtWidgets.QFileDialog().getOpenFileName(None,"Datei Unter einlesen","","All Files (*)")[0]
         pathZuordnung = QtWidgets.QFileDialog().getOpenFileName(None,"Datei Zuordnung einlesen","","All Files (*)")[0]
         self.model.DateienEinlesen(pathUnter,pathZuordnung)
+        self.update()
+
+    
+    def update(self):
+        self.mW.ListeZuVertretendeLehrkraft.clear()
+        for i in Lehrer.LehrerListe():
+            self.mW.ListeZuVertretendeLehrkraft.addItem(str(i))
+
+        #self.mW.ListeZuVertretendeLehrkraft.addItems(Lehrer.LehrerListe())
