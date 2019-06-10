@@ -1,9 +1,9 @@
 [Stundenplan]
 Tag,Stunde,Klasse,Lehrer,Raum,Fach
-0,0,5a,L1,AE05,M
-0,1,5a,L1,AE05,M
-0,2,5a,L2,AE05,D
-0,3,5a,L2,AE05,D
+005aL1AE05M
+015aL1AE05M
+025aL2AE05D
+035aL2AE05D
 0,4,5a,L3,AE05,E
 0,5,5a,L3,AE05,E
 [Vertretungen]
