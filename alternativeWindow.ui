@@ -128,7 +128,7 @@
                 <property name="title">
                  <string>zu vertretende Stunden</string>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout">
+                <layout class="QVBoxLayout" name="verticalLayout_11">
                  <item>
                   <widget class="QTableView" name="tv_problemStunden"/>
                  </item>
@@ -142,7 +142,7 @@
                   <property name="title">
                    <string>freie Lehrer</string>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                  <layout class="QVBoxLayout" name="verticalLayout_10">
                    <item>
                     <widget class="QTableView" name="tv_freieLehrer"/>
                    </item>
@@ -154,7 +154,7 @@
                   <property name="title">
                    <string>freie Räume</string>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_6">
+                  <layout class="QVBoxLayout" name="verticalLayout_12">
                    <item>
                     <widget class="QTableView" name="tv_freieRaeume"/>
                    </item>
@@ -334,41 +334,73 @@
        </spacer>
       </item>
       <item>
-       <widget class="QGroupBox" name="gb_fertigeAenderungen">
+       <widget class="QGroupBox" name="gb_uebersicht">
         <property name="title">
-         <string>fertige Änderungen</string>
+         <string>Übersicht</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_7">
          <item>
-          <widget class="QGroupBox" name="gb_abwesendeLehrer">
-           <property name="title">
-            <string>Abwesende Lehrer</string>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_7">
-            <item>
-             <widget class="QTableView" name="lv_abwesendeLehrer"/>
-            </item>
-           </layout>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QGroupBox" name="gb_abwesendeLehrer">
+             <property name="title">
+              <string>Abwesende Lehrer</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QTableView" name="lv_abwesendeLehrer"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="gb_alleLehrer">
+             <property name="title">
+              <string>Alle Lehrer</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QTableWidget" name="tw_alleLehrer"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QGroupBox" name="gb_blockierteRaeume">
-           <property name="title">
-            <string>Blockierte Räume</string>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_8">
-            <item>
-             <widget class="QTableView" name="tv_blockierteRaeume"/>
-            </item>
-           </layout>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <item>
+            <widget class="QGroupBox" name="gb_blockierteRaeume">
+             <property name="title">
+              <string>Blockierte Räume</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QTableView" name="tv_blockierteRaeume"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="gb_alleRaeume">
+             <property name="title">
+              <string>Alle Räume</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QTableWidget" name="tw_alleRaeume"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QGroupBox" name="gb_Vertretungstunden">
            <property name="title">
             <string>Vertretungsstunden</string>
            </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <layout class="QVBoxLayout" name="verticalLayout_13">
             <item>
              <widget class="QTableView" name="tv_vertretungsstunden"/>
             </item>
