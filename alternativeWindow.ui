@@ -444,15 +444,24 @@
    <property name="text">
     <string>Öffnen</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
   <action name="actionSpeichern">
    <property name="text">
     <string>Speichern</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
   </action>
   <action name="actionImportieren">
    <property name="text">
     <string>Importieren</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
    </property>
   </action>
   <action name="actionAbwesenheit_eintragen">
