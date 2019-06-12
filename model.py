@@ -1,4 +1,4 @@
-from classes import *
+from classes import Stunde,Tag
 from tools import Tools
 
 class Vertretungsplan:
@@ -31,6 +31,7 @@ class Vertretungsplan:
     def unterrichtsschlussErstellen(self):
         pass
 
+    
     #--------------------------------------------------
         # aufrufen als (0,0 ist Montag erste Stunde):
         # vertretungErstellen(0,0,ersatzraum=xy)
@@ -49,28 +50,67 @@ class Vertretungsplan:
         ersatzStunde = Stunde(stunde.Tag(),stunde.Stunde(),stunde.Klasse().Bezeichner(),lehrer.Bezeichner(),raum.Bezeichner(),stunde.Fach().Bezeichner(),ersatzstunde=True,datum=datum)
         datum.addErsatzstunde(ersatzStunde)
 
+
+
     def DateienEinlesen(self, pathUnter:str, pathZuordnung:str):
         dateiUnter = open(pathUnter, "r")
-        dateiZuordnung = open(pathZuordnung, "r")
-        stunden = dateiUnter.readlines()
-        zuordnung = dateiZuordnung.readlines()
-        
-        stundenListen = []
-        for element in stunden:
-            a = element.split(" ")
-            while "" in a:
-                a.remove("")
-            stundenListen.append(a)
-
-        zuordnungListen = []
-        for element in zuordnung:
-            a = element.split(" ")
-            while "" in a:
-                a.remove("")
-            zuordnungListen.append(a)
-
-        dateiZuordnung.close()
+        stunden = dateiUnter.read().splitlines()
         dateiUnter.close()
+
+        dateiZuordnung = open(pathZuordnung, "r")
+        zuordnung = dateiZuordnung.read().splitlines()
+        dateiZuordnung.close()
+
+        while "" in stunden:
+            stunden.remove("")
+
+        stundenListen = [] #2d list
+        for element in stunden:
+            if element[0] == "U":
+                a = element.split(" ")
+                while "" in a:
+                    a.remove("")
+                if "//" in a: # if \\ in a
+                    a = a[:a.index("//")]
+                stundenListen.append(a)
+        while [] in stundenListen:
+            stundenListen.remove([])
+
+
+        while "" in zuordnung:
+            zuordnung.remove("")
+
+        zuordnungListen = [] #2d list
+        for element in zuordnung:
+            if element[0] == "U":
+                a = element.split(" ")
+                while "" in a:
+                    a.remove("")
+                if "//" in a: # if \\ in a
+                    a = a[:a.index("//")]
+                zuordnungListen.append(a)
+        while [] in zuordnungListen:
+            zuordnungListen.remove([])
+
+        
+        dictionary = {} # ([unter],[zuord])
+        for element in stundenListen:
+            dictionary[element[0]] = element
+
+        for element in zuordnungListen:
+            dictionary[element[0]] = (dictionary[element[0]],element)
+
+        for _, uz in dictionary.items():
+            tag = Tools.convertWeekdayGerman(uz[0][1])
+            stunde = uz[0][2]
+            klasse = uz[1][1]
+            lehrer = uz[0][5]
+            raum = uz[0][3]
+            fach = uz[1][2]
+
+            Stunde(tag,stunde,klasse,lehrer,raum,fach)
+        
+        print("Import successful")
 
     
     # save all objects of Stunde to comma-separated csv
