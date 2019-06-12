@@ -1,10 +1,10 @@
 [Stundenplan]
-Tag,Stunde,Klasse,Lehrer,Raum,Fach
+Tag;Stunde;Klasse;Lehrer;Raum;Fach
 005aL1AE05M
 015aL1AE05M
 025aL2AE05D
 035aL2AE05D
-0,4,5a,L3,AE05,E
-0,5,5a,L3,AE05,E
+0;4;5a;L3;AE05;E
+0;5;5a;L3;AE05;E
 [Vertretungen]
-Datum,Tag,Stunde,Klasse,Lehrer,Raum,Fach
+Datum;Tag;Stunde;Klasse;Lehrer;Raum;Fach
