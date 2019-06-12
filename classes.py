@@ -1,5 +1,5 @@
+from PyQt5.QtCore import QDate
 from tools import Tools
-from datetime import date
 
 #--------------------------------------------------
     # class Stunde creates objects from all other
@@ -31,9 +31,9 @@ class Stunde:
         self.lehrer = Lehrer.createLehrer(lehrer,self) #needs self.fach
         self.klasse = Klasse.createKlasse(klasse,self) #needs self.lehrer
         self.raum = Raum.createRaum(raum,self)
-        
-        
-        
+
+
+
         #self.wochentyp = woche # A-week/B-week
         self.ersatzstunde = ersatzstunde
         self.datum = datum
@@ -50,8 +50,8 @@ class Stunde:
                 Stunde.StundenlisteDonnerstag.append(self)
             elif self.tag == 4:
                 Stunde.StundenlisteFreitag.append(self)
-        
-        if ersatzstunde and datum != None:
+
+        if ersatzstunde and datum is not None:
             Stunde.Ersatzstundenliste.append(self)
             Stunde.Ersatzstundenliste.sort(key = lambda c: c.datum)
 
@@ -111,15 +111,19 @@ class Klasse:
         self.stundenliste = []
         self.stundenplan = [[],[],[],[],[]]
         self.lehrerliste = []
-        
+
         Klasse.Klassenliste.append(self)
         self.addStunde(stunde)
-    
+
 
     def __str__(self):
         return self.bezeichner
-        
-    
+    def __eq__(self,other):
+        return self.bezeichner==other.Bezeichner()
+    def __lt__(self,other):
+        return self.bezeichner < other.Bezeichner()
+
+
     def addStunde(self,stunde:Stunde):
         self.stundenliste.append(stunde)
         self.addLehrer(stunde.Lehrer())
@@ -127,7 +131,7 @@ class Klasse:
     def addLehrer(self,lehrer): #(self,lehrer:Lehrer)
         if lehrer not in self.lehrerliste:
             self.lehrerliste.append(lehrer)
-    
+
 
     def Bezeichner(self):
         return self.bezeichner
@@ -168,18 +172,26 @@ class Raum:
 
     def __str__(self):
         return self.bezeichner
+    def __eq__(self,other):
+        return self.bezeichner==other.Bezeichner()
+    def __lt__(self,other):
+        return self.bezeichner < other.Bezeichner()
 
 
     def addStunde(self,stunde:Stunde):
         self.stundenliste.append(stunde)
         self.stundenplan = Tools.sortStundenliste(self.stundenliste)
-    
+
     def addBlockiert(self,datum,von:int,bis:int): #(self,datum:Tag,von:int,bis:int)
         self.blockiert.append(Blockierung(self,datum,von,bis))
-    
+
 
     def Bezeichner(self):
         return self.bezeichner
+
+    @staticmethod
+    def RaumListe():
+        return Raum.Raumliste
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -219,6 +231,10 @@ class Lehrer:
 
     def __str__(self):
         return self.bezeichner
+    def __eq__(self,other):
+        return self.bezeichner==other.Bezeichner()
+    def __lt__(self,other):
+        return self.bezeichner < other.Bezeichner()
 
 
     def addStunde(self,stunde:Stunde):
@@ -228,14 +244,17 @@ class Lehrer:
         # automatically add fach to faecherliste if not already in it
         if stunde.Fach() not in self.faecherliste:
             self.faecherliste.append(stunde.Fach())
-    
+
     def addBlockiert(self,datum,von:int,bis:int): #(self,datum:Tag,von:int,bis:int)
         self.blockiert.append(Blockierung(self,datum,von,bis))
-    
+        self.blockiert.sort()
+    def Blockiert(self):
+        return self.blockiert
+
 
     def Bezeichner(self):
         return self.bezeichner
-    
+
     @staticmethod
     def LehrerListe():
         return Lehrer.Lehrerliste
@@ -247,9 +266,7 @@ class Lehrer:
 #--------------------------------------------------
 class Fach:
 
-
     Fachliste = []
-
 
     @staticmethod #create static method that can be called without object
     #method checks for already existing object and either returns the existing or creates a new one and returns this
@@ -265,11 +282,15 @@ class Fach:
     def __init__(self,bezeichner:str):
         self.bezeichner = bezeichner
         Fach.Fachliste.append(self)
-    
-    
+
+
     def __str__(self):
         return self.bezeichner
-    
+    def __eq__(self,other):
+        return self.bezeichner == other.Bezeichner()
+    def __lt__(self,other):
+        return self.bezeichner < other.Bezeichner()
+
 
     def Bezeichner(self):
         return self.bezeichner
@@ -279,25 +300,46 @@ class Fach:
 
 #--------------------------------------------------
 #--------------------------------------------------
-class Tag(date):
-    def __init__(self,jahr:int,monat:int,tag:int):
-        super().__init__()
+class Tag(QDate):
+
+    tagListe = []
+
+    @staticmethod #create static method that can be called without object
+    # method checks for already existing object and either returns the existing or creates a new one and returns this
+    def createTag(qdate:QDate):
+        if qdate not in Tag.tagListe:
+            return Tag(qdate)
+        else:
+            for element in Tag.tagListe:
+                if element == qdate:
+                    return element
+
+    def __init__(self,qdate:QDate):
+        super().__init__(qdate)
         self.blockierteLehrer = []
         self.blockierteRaeume = []
         self.ersatzstunden = []
+        Tag.tagListe.append(self)
 
-        if self.weekday() == 0:
+
+        if self.dayOfWeek()-1 == 0:
             self.stunden = Stunde.StundenlisteMontag
-        elif self.weekday() == 1:
+        elif self.dayOfWeek()-1 == 1:
             self.stunden = Stunde.StundenlisteDienstag
-        elif self.weekday() == 2:
+        elif self.dayOfWeek()-1 == 2:
             self.stunden = Stunde.StundenlisteMittwoch
-        elif self.weekday() == 3:
+        elif self.dayOfWeek()-1 == 3:
             self.stunden = Stunde.StundenlisteDonnerstag
-        elif self.weekday() == 4:
+        elif self.dayOfWeek()-1 == 4:
             self.stunden = Stunde.StundenlisteFreitag
         else:
             self.stunden = []
+
+
+    def __eq__(self,other):
+        return self.getDate() == other.getDate()
+    def __lt__(self,other):
+        return self.getDate() < other.getDate()
 
 
     def addBlockierterLehrer(self,lehrer:Lehrer):
@@ -306,7 +348,13 @@ class Tag(date):
         self.blockierteRaeume.append(raum)
     def addErsatzstunde(self,stunde:Stunde):
         self.ersatzstunden.append(stunde)
-        self.ersatzstunden.sort(key = lambda c: c.Klasse())
+
+    def BlockierteLehrer(self):
+        return self.blockierteLehrer
+    def BlockierteRaeume(self):
+        return self.blockierteRaeume
+    def Ersatzstunden(self):
+        return self.ersatzstunden
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -327,9 +375,23 @@ class Blockierung:
         else:
             self.bis = bis
 
-        if type(blockiertesObject) == Lehrer:
+        if isinstance(blockiertesObject,Lehrer):
             self.datum.addBlockierterLehrer(blockiertesObject)
-        elif type(blockiertesObject) == Raum:
+        elif isinstance(blockiertesObject,Raum):
             self.datum.addBlockierterRaum(blockiertesObject)
+
+    def __str__(self):
+        return str(self.datum) + ", " + str(self.von) + ", " + str(self.bis)
+    def __eq__(self, other):
+        return self.datum == other.Datum()
+    def __lt__(self,other):
+        return self.datum < other.Datum()
+
+    def Datum(self):
+        return self.datum
+    def Von(self):
+        return self.von
+    def Bis(self):
+        return self.bis
 #--------------------------------------------------
 #--------------------------------------------------
