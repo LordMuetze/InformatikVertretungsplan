@@ -11,5 +11,44 @@ class Tools:
         for stunde in stundenliste:
             returnList[stunde.Tag()].append(stunde)
         return returnList
+    
+    @staticmethod
+    def convertWeekdayGerman(day):
+        #weekday as string
+        if day == "Mo":
+            dayformatted = 0
+        elif day == "Di":
+            dayformatted = 1
+        elif day == "Mi":
+            dayformatted = 2
+        elif day == "Do":
+            dayformatted = 3
+        elif day == "Fr":
+            dayformatted = 4
+        elif day == "Sa":
+            dayformatted = 5
+        elif day == "So":
+            dayformatted = 6
+        
+        elif day == 0:
+            dayformatted = "Mo"
+        elif day == 1:
+            dayformatted = "Di"
+        elif day == 2:
+            dayformatted = "Mi"
+        elif day == 3:
+            dayformatted = "Do"
+        elif day == 4:
+            dayformatted = "Fr"
+        elif day == 5:
+            dayformatted = "Sa"
+        elif day == 6:
+            dayformatted = "So"
+        
+        else:
+            dayformatted = None
+            
+        return dayformatted
+        
 #--------------------------------------------------
 #--------------------------------------------------
