@@ -3,8 +3,7 @@ from datetime import date
 
 #--------------------------------------------------
     # class Stunde creates objects from all other
-    # classes --> timetables can be read lesson
-    # by lesson
+    # classes --> schedules can be read lesson by lesson
 #--------------------------------------------------
 class Stunde:
 
@@ -28,10 +27,12 @@ class Stunde:
     def __init__(self,tag:int,stunde:int,klasse:str,lehrer:str,raum:str,fach:str,ersatzstunde=False,datum=None):
         self.tag = tag
         self.stunde = stunde
-        self.klasse = Klasse.createKlasse(klasse,self)
-        self.raum = Raum.createRaum(raum,self)
         self.fach = Fach.createFach(fach)
-        self.lehrer = Lehrer.createLehrer(lehrer,self)
+        self.lehrer = Lehrer.createLehrer(lehrer,self) #needs self.fach
+        self.klasse = Klasse.createKlasse(klasse,self) #needs self.lehrer
+        self.raum = Raum.createRaum(raum,self)
+        
+        
         
         #self.wochentyp = woche # A-week/B-week
         self.ersatzstunde = ersatzstunde
@@ -109,6 +110,7 @@ class Klasse:
 
         self.stundenliste = []
         self.stundenplan = [[],[],[],[],[]]
+        self.lehrerliste = []
         
         Klasse.Klassenliste.append(self)
         self.addStunde(stunde)
@@ -120,7 +122,11 @@ class Klasse:
     
     def addStunde(self,stunde:Stunde):
         self.stundenliste.append(stunde)
+        self.addLehrer(stunde.Lehrer())
         self.stundenplan = Tools.sortStundenliste(self.stundenliste)
+    def addLehrer(self,lehrer): #(self,lehrer:Lehrer)
+        if lehrer not in self.lehrerliste:
+            self.lehrerliste.append(lehrer)
     
 
     def Bezeichner(self):
