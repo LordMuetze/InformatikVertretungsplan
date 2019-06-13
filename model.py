@@ -1,4 +1,4 @@
-from classes import Tag,Stunde,Blockierung
+from classes import *
 from tools import Tools
 
 class Vertretungsplan:
