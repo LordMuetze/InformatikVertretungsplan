@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>973</width>
+    <width>1046</width>
     <height>623</height>
    </rect>
   </property>
@@ -46,7 +46,7 @@
           <second>0</second>
           <year>2019</year>
           <month>9</month>
-          <day>14</day>
+          <day>25</day>
          </datetime>
         </property>
         <property name="minimumDateTime">
@@ -70,6 +70,13 @@
         </property>
         <property name="currentSectionIndex">
          <number>2</number>
+        </property>
+        <property name="date">
+         <date>
+          <year>2019</year>
+          <month>9</month>
+          <day>25</day>
+         </date>
         </property>
        </widget>
       </item>
@@ -139,7 +146,14 @@
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_11">
                  <item>
-                  <widget class="QTableView" name="tv_problemStunden"/>
+                  <widget class="QTableView" name="tv_problemStunden">
+                   <property name="contextMenuPolicy">
+                    <enum>Qt::ActionsContextMenu</enum>
+                   </property>
+                   <property name="selectionMode">
+                    <enum>QAbstractItemView::SingleSelection</enum>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </widget>
@@ -153,7 +167,14 @@
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_10">
                    <item>
-                    <widget class="QTableView" name="tv_freieLehrer"/>
+                    <widget class="QTableView" name="tv_freieLehrer">
+                     <property name="contextMenuPolicy">
+                      <enum>Qt::ActionsContextMenu</enum>
+                     </property>
+                     <property name="selectionMode">
+                      <enum>QAbstractItemView::SingleSelection</enum>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>
@@ -165,7 +186,14 @@
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_12">
                    <item>
-                    <widget class="QTableView" name="tv_freieRaeume"/>
+                    <widget class="QTableView" name="tv_freieRaeume">
+                     <property name="contextMenuPolicy">
+                      <enum>Qt::ActionsContextMenu</enum>
+                     </property>
+                     <property name="selectionMode">
+                      <enum>QAbstractItemView::SingleSelection</enum>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>
@@ -361,15 +389,24 @@
              <layout class="QVBoxLayout" name="verticalLayout_3">
               <item>
                <widget class="QTableWidget" name="tw_abwesendeLehrer">
+                <property name="contextMenuPolicy">
+                 <enum>Qt::ActionsContextMenu</enum>
+                </property>
                 <property name="editTriggers">
                  <set>QAbstractItemView::NoEditTriggers</set>
                 </property>
                 <property name="dragDropOverwriteMode">
                  <bool>true</bool>
                 </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::SingleSelection</enum>
+                </property>
                 <property name="rowCount">
                  <number>0</number>
                 </property>
+                <attribute name="horizontalHeaderCascadingSectionResizes">
+                 <bool>true</bool>
+                </attribute>
                 <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
                  <bool>false</bool>
                 </attribute>
@@ -401,8 +438,14 @@
              <layout class="QVBoxLayout" name="verticalLayout">
               <item>
                <widget class="QTableWidget" name="tw_alleLehrer">
+                <property name="contextMenuPolicy">
+                 <enum>Qt::ActionsContextMenu</enum>
+                </property>
                 <property name="editTriggers">
                  <set>QAbstractItemView::NoEditTriggers</set>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::SingleSelection</enum>
                 </property>
                 <attribute name="horizontalHeaderVisible">
                  <bool>false</bool>
@@ -436,12 +479,21 @@
              <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
                <widget class="QTableWidget" name="tw_blockierteRaeume">
+                <property name="contextMenuPolicy">
+                 <enum>Qt::ActionsContextMenu</enum>
+                </property>
                 <property name="editTriggers">
                  <set>QAbstractItemView::NoEditTriggers</set>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::SingleSelection</enum>
                 </property>
                 <property name="rowCount">
                  <number>0</number>
                 </property>
+                <attribute name="horizontalHeaderCascadingSectionResizes">
+                 <bool>true</bool>
+                </attribute>
                 <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
                  <bool>false</bool>
                 </attribute>
@@ -470,8 +522,14 @@
              <layout class="QVBoxLayout" name="verticalLayout_2">
               <item>
                <widget class="QTableWidget" name="tw_alleRaeume">
+                <property name="contextMenuPolicy">
+                 <enum>Qt::ActionsContextMenu</enum>
+                </property>
                 <property name="editTriggers">
                  <set>QAbstractItemView::NoEditTriggers</set>
+                </property>
+                <property name="selectionMode">
+                 <enum>QAbstractItemView::SingleSelection</enum>
                 </property>
                 <attribute name="horizontalHeaderVisible">
                  <bool>false</bool>
@@ -502,7 +560,20 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_13">
             <item>
-             <widget class="QTableView" name="tv_vertretungsstunden"/>
+             <widget class="QTableWidget" name="tw_vertretungsstunden">
+              <property name="contextMenuPolicy">
+               <enum>Qt::ActionsContextMenu</enum>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+             </widget>
             </item>
            </layout>
           </widget>
@@ -535,8 +606,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>973</width>
-     <height>21</height>
+     <width>1046</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatei">
@@ -548,28 +619,16 @@
     <addaction name="separator"/>
     <addaction name="actionImportieren"/>
    </widget>
-   <widget class="QMenu" name="menuLehrer">
+   <widget class="QMenu" name="menuAenderungen">
     <property name="title">
-     <string>Lehrer</string>
+     <string>Änderungen</string>
     </property>
     <addaction name="actionAbwesenheit_eintragen"/>
-   </widget>
-   <widget class="QMenu" name="menuR_ume">
-    <property name="title">
-     <string>Räume</string>
-    </property>
     <addaction name="actionRaum_blockieren"/>
-   </widget>
-   <widget class="QMenu" name="menuUnterrichtsschluss">
-    <property name="title">
-     <string>Unterrichtsschluss</string>
-    </property>
     <addaction name="actionallgemeiner_Unterrichtsschluss"/>
    </widget>
    <addaction name="menuDatei"/>
-   <addaction name="menuLehrer"/>
-   <addaction name="menuR_ume"/>
-   <addaction name="menuUnterrichtsschluss"/>
+   <addaction name="menuAenderungen"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="action_ffnen">
@@ -598,7 +657,7 @@
   </action>
   <action name="actionAbwesenheit_eintragen">
    <property name="text">
-    <string>Abwesenheit eintragen</string>
+    <string>Lehrer-Abwesenheit eintragen</string>
    </property>
   </action>
   <action name="actionRaum_blockieren">
