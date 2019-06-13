@@ -1,37 +1,7 @@
-from classes import Tag,Stunde
+from classes import Tag,Stunde,Blockierung
 from tools import Tools
 
 class Vertretungsplan:
-
-
-    def __init__(self):
-        pass
-
-    def addStunde(self, daten:str):
-        pass
-
-    def freieLehrer(self):
-        pass
-
-    def freieRaeume(self):
-        pass
-
-    def lehrerBlockieren(self,lehrer):
-        pass
-
-    def raumBlockieren(self,raum):
-        pass
-
-    def lehrerWarnungen(self):
-        pass
-
-    def raumWarnungen(self):
-        pass
-
-    def unterrichtsschlussErstellen(self):
-        pass
-
-
     #--------------------------------------------------
         # aufrufen als (0,0 ist Montag erste Stunde):
         # vertretungErstellen(0,0,ersatzraum=xy)
@@ -49,9 +19,10 @@ class Vertretungsplan:
             lehrer = stunde.Lehrer()
         ersatzStunde = Stunde(stunde.Tag(),stunde.Stunde(),stunde.Klasse().Bezeichner(),lehrer.Bezeichner(),raum.Bezeichner(),stunde.Fach().Bezeichner(),ersatzstunde=True,datum=datum)
         datum.addErsatzstunde(ersatzStunde)
+    #--------------------------------------------------
 
 
-
+    #--------------------------------------------------
     def DateienEinlesen(self, pathUnter:str, pathZuordnung:str):
         dateiUnter = open(pathUnter, "r")
         stunden = dateiUnter.read().splitlines()
@@ -109,14 +80,17 @@ class Vertretungsplan:
             fach = uz[1][2]
 
             Stunde(tag,stunde,klasse,lehrer,raum,fach)
+    #--------------------------------------------------
 
-        print("Import successful")
 
-
-    # save all objects of Stunde to ;-separated csv
+    #--------------------------------------------------
+        # save all objects of Stunde to ;-separated csv
+    #--------------------------------------------------
     def saveCSV(self,path):
         outputStandard = "Tag;Stunde;Klasse;Lehrer;Raum;Fach\n"
         outputVertretung = "Datum;Tag;Stunde;Klasse;Lehrer;Raum;Fach\n"
+        outputAbwesend = "Bezeichner;Datum;von;bis\n"
+        outputBlockiert = "Bezeichner;Datum;von;bis\n"
 
         stundenplan = Tools.sortStundenliste(Stunde.getStundenliste())
         for tag in stundenplan:
@@ -128,35 +102,83 @@ class Vertretungsplan:
                     s = str(stunde.Tag()) + ";" + str(stunde.Stunde()) + ";" + str(stunde.Klasse()) + ";" + str(stunde.Lehrer()) + ";" + str(stunde.Raum()) + ";" + str(stunde.Fach()) + "\n"
                     outputStandard += s
 
+        for block in Blockierung.BlockierteLehrer():
+            s = str(block) + "\n"
+            outputAbwesend += s
+
+        for block in Blockierung.BlockierteRaeume():
+            s = str(block) + "\n"
+            outputBlockiert += s
+
 
         file = open(path,"w")
         file.write("[Stundenplan]\n")
         file.write(outputStandard)
         file.write("[Vertretungen]\n")
         file.write(outputVertretung)
+        file.write("[Abwesend]\n")
+        file.write(outputAbwesend)
+        file.write("[Blockiert]\n")
+        file.write(outputBlockiert)
         file.close()
+    #--------------------------------------------------
 
+
+    #--------------------------------------------------
     def openCSV(self, path):
         file = open(path,"r")
-        #content = file.readlines()
         content = file.read().splitlines()
+        file.close()
+
+        
+
 
         # remove section-header [Stundenplan] & csv-header
         if content[0] == "[Stundenplan]":
             content.pop(0)
             content.pop(0)
-
-        # read content until header [Vertretungen]
+        # read content of [Stundenplan] until header [Vertretungen]
         while content[0] != "[Vertretungen]":
             line = content.pop(0).split(";")
             Stunde(int(line[0]),int(line[1]),line[2],line[3],line[4],line[5])
+
 
         # remove section-header [Vertretungen] & csv-header
         if content[0] == "[Vertretungen]":
             content.pop(0)
             content.pop(0)
-
-        # read content until file's empty
-        while content:
+        # read content of [Vertretungen] until header [Abwesend]
+        while content[0] != "[Abwesend]":
             line = content.pop(0).split(";")
             Stunde(int(line[1]),int(line[2]),line[3],line[4],line[5],line[6],ersatzstunde=True,datum=line[0])
+
+
+        # remove section-header [Abwesend] & csv-header
+        if content[0] == "[Abwesend]":
+            content.pop(0)
+            content.pop(0)
+        # read content of [Abwesend] until header [Blockiert]
+        while content[0] != "[Blockiert]":
+            line = content.pop(0).split(";")
+
+
+        # remove section-header [Blockiert] & csv-header
+        if content[0] == "[Blockiert]":
+            content.pop(0)
+            content.pop(0)
+        # read content of [Blockiert] until file's empty
+        while content:
+            line = content.pop(0).split(";")
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def clearData(self):
+        Stunde.clearData()
+        Klasse.clearData()
+        Raum.clearData()
+        Lehrer.clearData()
+        Fach.clearData()
+        Tag.clearData()
+        Blockierung.clearData()
+    #--------------------------------------------------
