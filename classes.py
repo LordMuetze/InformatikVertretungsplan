@@ -32,8 +32,6 @@ class Stunde:
         self.klasse = Klasse.createKlasse(klasse,self) #needs self.lehrer
         self.raum = Raum.createRaum(raum,self)
 
-
-
         #self.wochentyp = woche # A-week/B-week
         self.ersatzstunde = ersatzstunde
         self.datum = datum
@@ -54,13 +52,66 @@ class Stunde:
         if ersatzstunde and datum is not None:
             Stunde.Ersatzstundenliste.append(self)
             Stunde.Ersatzstundenliste.sort(key = lambda c: c.datum)
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
+    @staticmethod
+    def clearData():
+        for i in Stunde.Stundenliste:
+            del i
+        for i in Stunde.StundenlisteMontag:
+            del i
+        for i in Stunde.StundenlisteDienstag:
+            del i
+        for i in Stunde.StundenlisteMittwoch:
+            del i
+        for i in Stunde.StundenlisteDonnerstag:
+            del i
+        for i in Stunde.StundenlisteFreitag:
+            del i
+        for i in Stunde.Ersatzstundenliste:
+            del i
+        Stunde.Stundenliste.clear()
+        Stunde.StundenlisteMontag.clear()
+        Stunde.StundenlisteDienstag.clear()
+        Stunde.StundenlisteMittwoch.clear()
+        Stunde.StundenlisteDonnerstag.clear()
+        Stunde.StundenlisteFreitag.clear()
+        Stunde.Ersatzstundenliste.clear()
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
     def __str__(self):
-        s = str(self.tag) + "," + str(self.stunde) + "," + str(self.klasse) + "," + str(self.lehrer) + "," + str(self.raum) + "," + str(self.fach)
+        s = str(self.tag) + ";" + str(self.stunde) + ";" + str(self.klasse) + ";" + str(self.lehrer) + ";" + str(self.raum) + ";" + str(self.fach)
         return s
+    def __eq__(self,other):
+        a = self.klasse == other.Klasse()
+        b = self.tag == other.Tag()
+        c = self.stunde == other.Stunde()
+        # d = self.lehrer == other.Lehrer()
+        # e = self.fach == other.Fach()
+        if a and b and c:
+            return True
+        else:
+            return False
+    def __lt__(self,other):
+        a = self.klasse < other.Klasse()
+        b = self.tag < other.Tag()
+        c = self.stunde < other.Stunde()
+
+        if a:
+            return a
+        if b:
+            return b
+        if c:
+            return c
+        return False
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def Stunde(self):
         return self.stunde
     def Tag(self):
@@ -77,10 +128,14 @@ class Stunde:
         return self.ersatzstunde
     def Datum(self):
         return self.datum
+    #--------------------------------------------------
 
+
+    #--------------------------------------------------
     @staticmethod
     def getStundenliste():
         return Stunde.Stundenliste
+    #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -92,9 +147,9 @@ class Klasse:
 
     Klassenliste = []
 
-
+    #--------------------------------------------------
     @staticmethod #create static method that can be called without object
-    #method checks for already existing object and either returns the existing or creates a new one and returns this
+        #method checks for already existing object and either returns the existing or creates a new one and returns this
     def createKlasse(bezeichner:str,stunde:Stunde):
         if bezeichner not in list(map(lambda c: c.bezeichner,Klasse.Klassenliste)):
             return Klasse(bezeichner,stunde)
@@ -103,8 +158,10 @@ class Klasse:
                 if element.bezeichner == bezeichner:
                     element.addStunde(stunde)
                     return element
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def __init__(self,bezeichner:str,stunde:Stunde):
         self.bezeichner = bezeichner
 
@@ -114,16 +171,29 @@ class Klasse:
 
         Klasse.Klassenliste.append(self)
         self.addStunde(stunde)
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
+    @staticmethod
+    def clearData():
+        for i in Klasse.Klassenliste:
+            del i
+        Klasse.Klassenliste.clear()
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
     def __str__(self):
         return self.bezeichner
     def __eq__(self,other):
         return self.bezeichner==other.Bezeichner()
     def __lt__(self,other):
         return self.bezeichner < other.Bezeichner()
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def addStunde(self,stunde:Stunde):
         self.stundenliste.append(stunde)
         self.addLehrer(stunde.Lehrer())
@@ -131,10 +201,13 @@ class Klasse:
     def addLehrer(self,lehrer): #(self,lehrer:Lehrer)
         if lehrer not in self.lehrerliste:
             self.lehrerliste.append(lehrer)
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def Bezeichner(self):
         return self.bezeichner
+    #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -167,7 +240,17 @@ class Raum:
         self.blockiert = []
 
         Raum.Raumliste.append(self)
-        self.addStunde(stunde)
+        if stunde != "":
+            self.addStunde(stunde)
+
+
+    #--------------------------------------------------
+    @staticmethod
+    def clearData():
+        for i in Raum.Raumliste:
+            del i
+        Raum.Raumliste.clear()
+    #--------------------------------------------------
 
 
     def __str__(self):
@@ -229,6 +312,15 @@ class Lehrer:
         self.blockiert = []
 
 
+    #--------------------------------------------------
+    @staticmethod
+    def clearData():
+        for i in Lehrer.Lehrerliste:
+            del i
+        Lehrer.Lehrerliste.clear()
+    #--------------------------------------------------
+
+
     def __str__(self):
         return self.bezeichner
     def __eq__(self,other):
@@ -284,6 +376,15 @@ class Fach:
         Fach.Fachliste.append(self)
 
 
+    #--------------------------------------------------
+    @staticmethod
+    def clearData():
+        for i in Fach.Fachliste:
+            del i
+        Fach.Fachliste.clear()
+    #--------------------------------------------------
+
+
     def __str__(self):
         return self.bezeichner
     def __eq__(self,other):
@@ -336,6 +437,15 @@ class Tag(QDate):
             self.stunden = []
 
 
+    #--------------------------------------------------
+    @staticmethod
+    def clearData():
+        for i in Tag.tagListe:
+            del i
+        Tag.tagListe.clear()
+    #--------------------------------------------------
+
+
     def __eq__(self,other):
         return self.getDate() == other.getDate()
     def __lt__(self,other):
@@ -343,10 +453,19 @@ class Tag(QDate):
 
 
     def addBlockierterLehrer(self,lehrer:Lehrer):
-        self.blockierteLehrer.append(lehrer)
+        if lehrer not in self.blockierteLehrer:
+            # auf alte Blockierung pruefen, um Doppelung zu vermeiden
+            self.blockierteLehrer.append(lehrer)
     def addBlockierterRaum(self,raum:Raum):
-        self.blockierteRaeume.append(raum)
+        if raum not in self.blockierteRaeume:
+            # auf alte Blockierung pruefen, um Doppelung zu vermeiden
+            self.blockierteRaeume.append(raum)
     def addErsatzstunde(self,stunde:Stunde):
+        if stunde in self.stunden:
+            self.stunden.remove(stunde) # Originalstunde aus Liste entfernen
+        if stunde in self.ersatzstunden:
+            # auf alte Vertretungsstunde pruefen, um Doppelung zu vermeiden
+            self.ersatzstunden.remove(stunde)
         self.ersatzstunden.append(stunde)
 
     def BlockierteLehrer(self):
@@ -355,6 +474,8 @@ class Tag(QDate):
         return self.blockierteRaeume
     def Ersatzstunden(self):
         return self.ersatzstunden
+    def Stunden(self):
+        return self.stunden
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -362,12 +483,15 @@ class Tag(QDate):
 #--------------------------------------------------
 #--------------------------------------------------
 class Blockierung:
+    blockierteLehrer = []
+    blockierteRaeume = []
     #--------------------------------------------------
         # attributes:
         #   tag: Tag object
         #   von/bis: 0-10; if bis is smaller than von bis is replaced by 10 (end of day)
     #--------------------------------------------------
     def __init__(self,blockiertesObject,datum:Tag,von:int,bis:int):
+        self.blockiertesObjekt = blockiertesObject
         self.datum = datum
         self.von = von
         if bis < von:
@@ -375,23 +499,42 @@ class Blockierung:
         else:
             self.bis = bis
 
-        if isinstance(blockiertesObject,Lehrer):
-            self.datum.addBlockierterLehrer(blockiertesObject)
-        elif isinstance(blockiertesObject,Raum):
-            self.datum.addBlockierterRaum(blockiertesObject)
+        if isinstance(self.blockiertesObjekt,Lehrer):
+            self.datum.addBlockierterLehrer(self.blockiertesObjekt)
+            Blockierung.blockierteLehrer.append(self)
+        elif isinstance(self.blockiertesObjekt,Raum):
+            self.datum.addBlockierterRaum(self.blockiertesObjekt)
+            Blockierung.blockierteRaeume.append(self)
+
+
+    #--------------------------------------------------
+    @staticmethod
+    def clearData():
+        Blockierung.blockierteLehrer.clear()
+        Blockierung.blockierteRaeume.clear()
+    #--------------------------------------------------
 
     def __str__(self):
-        return str(self.datum) + ", " + str(self.von) + ", " + str(self.bis)
+        return str(self.blockiertesObjekt) + ";" + str(self.datum) + ";" + str(self.von) + ";" + str(self.bis)
     def __eq__(self, other):
-        return self.datum == other.Datum()
+        return self.blockiertesObjekt == other.BlockiertesObjekt()
     def __lt__(self,other):
-        return self.datum < other.Datum()
+        return self.blockiertesObjekt < other.BlockiertesObjekt()
 
+    def BlockiertesObjekt(self):
+        return self.blockiertesObjekt
     def Datum(self):
         return self.datum
     def Von(self):
         return self.von
     def Bis(self):
         return self.bis
+
+    @staticmethod
+    def BlockierteLehrer():
+        return Blockierung.blockierteLehrer
+    @staticmethod
+    def BlockierteRaeume():
+        return Blockierung.blockierteRaeume
 #--------------------------------------------------
 #--------------------------------------------------
