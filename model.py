@@ -3,22 +3,24 @@ from tools import Tools
 
 class Vertretungsplan:
     #--------------------------------------------------
-        # aufrufen als (0,0 ist Montag erste Stunde):
-        # vertretungErstellen(0,0,ersatzraum=xy)
-        # vertretungErstellen(0,0,ersatzlehrer=xy)
-    #--------------------------------------------------
     def vertretungErstellen(self,datum:Tag,stunde:Stunde,ersatzraum=0,ersatzlehrer=0):
         if ersatzraum != 0:
             raum = ersatzraum
         else:
-            raum = stunde.Raum()
+            raum = str(stunde.Raum())
 
         if ersatzlehrer != 0:
             lehrer = ersatzlehrer
         else:
-            lehrer = stunde.Lehrer()
-        ersatzStunde = Stunde(stunde.Tag(),stunde.Stunde(),stunde.Klasse().Bezeichner(),lehrer.Bezeichner(),raum.Bezeichner(),stunde.Fach().Bezeichner(),ersatzstunde=True,datum=datum)
-        datum.addErsatzstunde(ersatzStunde)
+            lehrer = str(stunde.Lehrer())
+
+        tag = stunde.Tag()
+        unterrichtsstunde = stunde.Stunde()
+        klasse = str(stunde.Klasse())
+        fach = str(stunde.Fach())
+
+        ersatzStunde = Stunde(tag,unterrichtsstunde,klasse,lehrer,raum,fach,ersatzstunde=True,datum=datum)
+        datum.addErsatzstunde(ersatzStunde)  
     #--------------------------------------------------
 
 
@@ -121,6 +123,10 @@ class Vertretungsplan:
         file.write("[Blockiert]\n")
         file.write(outputBlockiert)
         file.close()
+
+        file = open("config.ini","w")
+        file.write(path)
+        file.close()
     #--------------------------------------------------
 
 
@@ -129,10 +135,6 @@ class Vertretungsplan:
         file = open(path,"r")
         content = file.read().splitlines()
         file.close()
-
-        
-
-
         # remove section-header [Stundenplan] & csv-header
         if content[0] == "[Stundenplan]":
             content.pop(0)
@@ -169,6 +171,9 @@ class Vertretungsplan:
         # read content of [Blockiert] until file's empty
         while content:
             line = content.pop(0).split(";")
+        file = open("config.ini","w")
+        file.write(path)
+        file.close()
     #--------------------------------------------------
 
 
