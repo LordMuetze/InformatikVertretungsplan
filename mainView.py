@@ -36,12 +36,20 @@ class MainWindow:
         self.mW.actionallgemeiner_Unterrichtsschluss.triggered.connect(self.on_actionallgemeiner_Unterrichtsschluss_eintragen_triggered)
         self.mW.btn_datumHeute.clicked.connect(self.on_btn_datumHeute_clicked)
         self.mW.de_mainDatum.dateChanged.connect(self.on_de_mainDatum_dateChanged)
-        
 
+
+        self.mW.show()
+        #open last file
+        try:
+            file = open("config.ini","r")
+            path = file.readline()
+            self.model.openCSV(path)
+            file.close()
+        except:
+            pass
+        self.update()
 
         #launch GUI --> last step of __init__ because starts loop
-        self.update()
-        self.mW.show()
         self.app.exec()
     #--------------------------------------------------
 
@@ -102,6 +110,7 @@ class MainWindow:
     def on_actionallgemeiner_Unterrichtsschluss_eintragen_triggered(self):
         self.dialog = uic.loadUi("DialogUnterrichtsschluss.ui")
         self.dialog.btn_eintragen.clicked.connect(self.on_btn_eintragen_clicked)
+        self.dialog.calendarWidget.setSelectedDate(self.mW.de_mainDatum.date())
         self.dialog.show()
     #--------------------------------------------------
 
@@ -113,14 +122,11 @@ class MainWindow:
         tag = Tag.createTag(datum)
         stunden = list(filter(lambda c: c.Stunde() >= ab,tag.Stunden()))
         for s in stunden:
-            tag = s.Tag()
-            stunde = s.Stunde()
-            klasse = s.Klasse().Bezeichner()
             lehrer = "Entfall"
             raum = ""
-            fach = ""
-            tag.addErsatzstunde(Stunde(tag,stunde,klasse,lehrer,raum,fach,True,datum))
+            self.model.vertretungErstellen(tag,s,ersatzlehrer=lehrer,ersatzraum=raum)
         self.dialog.done(0)
+        self.update()
     #--------------------------------------------------
 
 
@@ -140,7 +146,7 @@ class MainWindow:
         self.mW.tw_alleLehrer.setColumnCount(1)
         lehrerliste.sort()
         for i,item in enumerate(lehrerliste):
-            self.mW.tw_alleLehrer.setItem(0,i, QtWidgets.QTableWidgetItem(str(item)))
+            self.mW.tw_alleLehrer.setItem(i,0, QtWidgets.QTableWidgetItem(str(item)))
 
 
         # update QtableWidget tw_alleRaeume
@@ -149,7 +155,7 @@ class MainWindow:
         self.mW.tw_alleRaeume.setColumnCount(1)
         raumliste.sort()
         for i,item in enumerate(raumliste):
-            self.mW.tw_alleRaeume.setItem(0,i, QtWidgets.QTableWidgetItem(str(item)))
+            self.mW.tw_alleRaeume.setItem(i,0, QtWidgets.QTableWidgetItem(str(item)))
 
 
         # update QtableWidget tw_abwesendeLehrer
@@ -164,9 +170,9 @@ class MainWindow:
             von = item.Von()
             bis = item.Bis()
             lehrer = item.BlockiertesObjekt()
-            self.mW.tw_abwesendeLehrer.setItem(0,i, QtWidgets.QTableWidgetItem(str(lehrer)))
-            self.mW.tw_abwesendeLehrer.setItem(1,i, QtWidgets.QTableWidgetItem(str(von)))
-            self.mW.tw_abwesendeLehrer.setItem(2,i, QtWidgets.QTableWidgetItem(str(bis)))
+            self.mW.tw_abwesendeLehrer.setItem(i,0, QtWidgets.QTableWidgetItem(str(lehrer)))
+            self.mW.tw_abwesendeLehrer.setItem(i,1, QtWidgets.QTableWidgetItem(str(von)))
+            self.mW.tw_abwesendeLehrer.setItem(i,2, QtWidgets.QTableWidgetItem(str(bis)))
 
 
         # update QtableWidget tw_blockierteRaeume
@@ -181,26 +187,28 @@ class MainWindow:
             von = item.Von()
             bis = item.Bis()
             raum = item.BlockiertesObjekt()
-            self.mW.tw_blockierteRaeume.setItem(0,i, QtWidgets.QTableWidgetItem(str(raum)))
-            self.mW.tw_blockierteRaeume.setItem(1,i, QtWidgets.QTableWidgetItem(str(von)))
-            self.mW.tw_blockierteRaeume.setItem(2,i, QtWidgets.QTableWidgetItem(str(bis)))
+            self.mW.tw_blockierteRaeume.setItem(i,0, QtWidgets.QTableWidgetItem(str(raum)))
+            self.mW.tw_blockierteRaeume.setItem(i,1, QtWidgets.QTableWidgetItem(str(von)))
+            self.mW.tw_blockierteRaeume.setItem(i,2, QtWidgets.QTableWidgetItem(str(bis)))
 
 
         # update QtableWidget tw_vertretungsstunden
         vertretungsliste = self.datum.Ersatzstunden()
         self.mW.tw_vertretungsstunden.setRowCount(len(vertretungsliste))
         self.mW.tw_vertretungsstunden.setColumnCount(4)
-        self.mW.tw_vertretungsstunden.setHorizontalHeaderLabels(["Klasse","Stunde", "Vertretung", "Raum"])
+        self.mW.tw_vertretungsstunden.setHorizontalHeaderLabels(["Klasse","Stunde","Fach","Vertretung","Raum"])
         vertretungsliste.sort()
         for i,item in enumerate(vertretungsliste):
-            klasse = item.Klasse
+            klasse = item.Klasse()
             stunde = item.Stunde()
             lehrer = item.Lehrer()
             raum = item.Raum()
-            self.mW.tw_vertretungsstunden.setItem(0,i, QtWidgets.QTableWidgetItem(str(klasse)))
-            self.mW.tw_vertretungsstunden.setItem(1,i, QtWidgets.QTableWidgetItem(str(stunde)))
-            self.mW.tw_vertretungsstunden.setItem(2,i, QtWidgets.QTableWidgetItem(str(lehrer)))
-            self.mW.tw_vertretungsstunden.setItem(3,i, QtWidgets.QTableWidgetItem(str(raum)))
+            fach = item.Fach()
+            self.mW.tw_vertretungsstunden.setItem(i,0, QtWidgets.QTableWidgetItem(str(klasse)))
+            self.mW.tw_vertretungsstunden.setItem(i,1, QtWidgets.QTableWidgetItem(str(stunde)))
+            self.mW.tw_vertretungsstunden.setItem(i,2, QtWidgets.QTableWidgetItem(str(fach)))
+            self.mW.tw_vertretungsstunden.setItem(i,3, QtWidgets.QTableWidgetItem(str(lehrer)))
+            self.mW.tw_vertretungsstunden.setItem(i,4, QtWidgets.QTableWidgetItem(str(raum)))
 
         self.mW.setEnabled(True)
     #--------------------------------------------------
