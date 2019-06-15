@@ -1,8 +1,7 @@
-from PyQt5 import QtWidgets, uic, QtCore
+from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import QDate
 from model import Vertretungsplan
-from classes import *
-#from classes import Stunde
+from classes import Lehrer,Raum,Tag,Blockierung
 
 class MainWindow:
 
