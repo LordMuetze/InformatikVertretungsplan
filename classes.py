@@ -25,6 +25,13 @@ class Stunde:
         #   stunde (int): 0 = 1.Stunde, 1 = 2.Stunde,..., 6 = 7.Stunde (Mittagspause),...,10 = 11.Stunde
     #--------------------------------------------------
     def __init__(self,tag:int,stunde:int,klasse:str,lehrer:str,raum:str,fach:str,ersatzstunde=False,datum=None):
+        try:
+            int(fach[:2])
+            klasse = fach
+            fach = fach[2:len(fach)-1]
+        except:
+            pass
+
         self.tag = tag
         self.stunde = stunde
         self.fach = Fach.createFach(fach)
@@ -189,7 +196,28 @@ class Klasse:
     def __eq__(self,other):
         return self.bezeichner==other.Bezeichner()
     def __lt__(self,other):
-        return self.bezeichner < other.Bezeichner()
+        b1 = self.bezeichner
+        b2 = other.Bezeichner()
+
+        try:
+            b1_z = int(b1[:2])
+        except:
+            try:
+                b1_z = int(b1[:1])
+            except:
+                b1_z = 20
+        try:
+            b2_z = int(b2[:2])
+        except:
+            try:
+                b2_z = int(b2[:1])
+            except:
+                b2_z = 20
+
+        if b1_z == b2_z:
+            return b1 < b2
+        else:
+            return b1_z < b2_z
     #--------------------------------------------------
 
 
@@ -240,8 +268,7 @@ class Raum:
         self.blockiert = []
 
         Raum.Raumliste.append(self)
-        if stunde != "":
-            self.addStunde(stunde)
+        self.addStunde(stunde)
 
 
     #--------------------------------------------------
