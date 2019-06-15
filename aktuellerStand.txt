@@ -1,0 +1,7 @@
+- automatisches Laden der letzten geoeffnete/gespeicherten Datei
+- importieren von unter.spm & zuord.spm Dateien
+- oeffnen/speichern aller Daten (Stundenplan,Vertretungen,Blockierungen,Abwesenheiten) mittels CSV
+- Anzeigen aller Lehrer & Raeume
+- Anzeigen aller Vertretungsstunden fuer den jeweiligen Tag
+- Eintragen von allgemeinem Unterrichtsschluss (Dialog ueber Menubar oeffnen)
+- automatisches Updaten der GUI
