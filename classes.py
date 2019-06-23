@@ -298,6 +298,8 @@ class Raum:
 
     def Bezeichner(self):
         return self.bezeichner
+    def Stundenplan(self):
+        return self.stundenplan
 
     @staticmethod
     def RaumListe():
@@ -373,6 +375,10 @@ class Lehrer:
 
     def Bezeichner(self):
         return self.bezeichner
+    def Stundenliste(self):
+        return self.stundenliste
+    def Stundenplan(self):
+        return self.stundenplan
 
     @staticmethod
     def LehrerListe():
@@ -477,13 +483,17 @@ class Tag(QDate):
         return self.getDate() == other.getDate()
     def __lt__(self,other):
         return self.getDate() < other.getDate()
+    def __str__(self):
+        s = str(self.getDate())
+        s = s[1:len(s)-1]
+        return s
 
 
-    def addBlockierterLehrer(self,lehrer:Lehrer):
+    def addBlockierterLehrer(self,lehrer): #(self,lehrer:Blockierung)
         if lehrer not in self.blockierteLehrer:
             # auf alte Blockierung pruefen, um Doppelung zu vermeiden
             self.blockierteLehrer.append(lehrer)
-    def addBlockierterRaum(self,raum:Raum):
+    def addBlockierterRaum(self,raum): #(self,raum:Blockierung)
         if raum not in self.blockierteRaeume:
             # auf alte Blockierung pruefen, um Doppelung zu vermeiden
             self.blockierteRaeume.append(raum)
@@ -527,10 +537,10 @@ class Blockierung:
             self.bis = bis
 
         if isinstance(self.blockiertesObjekt,Lehrer):
-            self.datum.addBlockierterLehrer(self.blockiertesObjekt)
+            self.datum.addBlockierterLehrer(self)
             Blockierung.blockierteLehrer.append(self)
         elif isinstance(self.blockiertesObjekt,Raum):
-            self.datum.addBlockierterRaum(self.blockiertesObjekt)
+            self.datum.addBlockierterRaum(self)
             Blockierung.blockierteRaeume.append(self)
 
 
@@ -542,7 +552,11 @@ class Blockierung:
     #--------------------------------------------------
 
     def __str__(self):
-        return str(self.blockiertesObjekt) + ";" + str(self.datum) + ";" + str(self.von) + ";" + str(self.bis)
+        bO = str(self.blockiertesObjekt)
+        d = str(self.datum)
+        v = str(self.von)
+        b = str(self.bis)
+        return bO + ";" + d + ";" + v + ";" + b
     def __eq__(self, other):
         return self.blockiertesObjekt == other.BlockiertesObjekt()
     def __lt__(self,other):
