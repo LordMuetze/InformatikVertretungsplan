@@ -20,7 +20,7 @@ class Vertretungsplan:
         fach = str(stunde.Fach())
 
         ersatzStunde = Stunde(tag,unterrichtsstunde,klasse,lehrer,raum,fach,ersatzstunde=True,datum=datum)
-        datum.addErsatzstunde(ersatzStunde)  
+        datum.addErsatzstunde(ersatzStunde)
     #--------------------------------------------------
 
 
@@ -162,6 +162,15 @@ class Vertretungsplan:
         # read content of [Abwesend] until header [Blockiert]
         while content[0] != "[Blockiert]":
             line = content.pop(0).split(";")
+            leh = line[0]
+            ds = line[1]
+            dl = ds.split(",")
+            datum = Tag.createTag(QDate(int(dl[0]),int(dl[1]),int(dl[2])))
+            ab = int(line[2])
+            bis = int(line[3])
+            lehrer = list(filter(lambda c: str(c)==leh,Lehrer.LehrerListe()))[0]
+            tag = Tag.createTag(datum)
+            Blockierung(lehrer,tag,ab,bis)
 
 
         # remove section-header [Blockiert] & csv-header
