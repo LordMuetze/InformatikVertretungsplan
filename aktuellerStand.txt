@@ -3,5 +3,10 @@
 - oeffnen/speichern aller Daten (Stundenplan,Vertretungen,Blockierungen,Abwesenheiten) mittels CSV
 - Anzeigen aller Lehrer & Raeume
 - Anzeigen aller Vertretungsstunden fuer den jeweiligen Tag
-- Eintragen von allgemeinem Unterrichtsschluss (Dialog ueber Menubar oeffnen)
+- Eintragen von allgemeinem Unterrichtsschluss ab Stunde x
+  mit automatischem Erstellen der entsprechenden Vertretungsstunden (Dialog ueber Menubar oeffnen)
+- Eintragen von Lehrerabwesenheit von Stunde x bis Stunde y (Dialog ueber Menubar oeffnen)
+- Eintragen von blockierten Raeumen von Stunde x bis Stunde y (Dialog ueber Menubar oeffnen)
+- Anzeigen der zu aendernden Stundenplan ("ProblemStunden")
+- bei Auswahl einer ProblemStunde automatisches Anzeigen freier Lehrer/freier Raeume (je nach Problemart)
 - automatisches Updaten der GUI
