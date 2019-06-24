@@ -13,6 +13,7 @@ class MainWindow:
         self.app = QtWidgets.QApplication([])
         #self.mW = uic.loadUi("GUI/mainWindow.ui")
         self.mW = uic.loadUi("GUI/alternativeWindow.ui")
+        self.mW.setEnabled(False)
         self.dialog = None
 
 
@@ -41,16 +42,16 @@ class MainWindow:
 
 
         self.mW.show()
-        #open last file
+        # open last file
         try:
-            file = open("config.ini","r")
-            path = file.readline()
-            self.model.openCSV(path)
+            file = open("config/config.ini","r")
+            self.path = file.readline()
+            self.model.openCSV(self.path)
             file.close()
-        except:
+        except FileNotFoundError:
             pass
         self.update()
-
+        self.mW.setEnabled(True)
         #launch GUI --> last step of __init__ because starts loop
         self.app.exec()
     #--------------------------------------------------
@@ -217,8 +218,8 @@ class MainWindow:
         self.mW.tw_alleRaeume.setRowCount(0)
         self.mW.tw_blockierteRaeume.setRowCount(0)
         self.mW.tw_abwesendeLehrer.setRowCount(0)
-        self.mW.tw_freieLehrer.setRowCount(0)
-        self.mW.tw_freieRaeume.setRowCount(0)
+        self.mW.frei.setRowCount(0)
+        self.mW.gb_frei.setTitle(" ")
         self.mW.tw_problemStunden.setRowCount(0)
         self.mW.tw_vertretungsstunden.setRowCount(0)
     #--------------------------------------------------
@@ -336,38 +337,38 @@ class MainWindow:
         # update TableWidgets for free Rooms and Teachers if problemStunde is selected
         # if it's a room problem only show free rooms and vice versa
         # clear Widgets first
-        self.mW.tw_freieLehrer.setRowCount(0)
-        self.mW.tw_freieRaeume.setRowCount(0)
+        self.mW.tw_frei.setRowCount(0)
+        self.mW.gb_frei.setTitle(" ")
         if self.mW.tw_problemStunden.currentItem() is not None:
             row = self.mW.tw_problemStunden.currentItem().row()
             stunde = int(self.mW.tw_problemStunden.item(row,1).text())
 
             if self.mW.tw_problemStunden.item(row,5).text() == "Lehrer":
-                # update tw_freieLehrer
+                # update tw_frei
                 lehrerliste = []
                 for lehrer in Lehrer.LehrerListe():
                     l = list(filter(lambda c: c.Stunde() == stunde,lehrer.Stundenplan()[self.datum.dayOfWeek()-1]))
                     if not l:
                         lehrerliste.append(lehrer)
-
+                self.mW.gb_frei.setTitle("freie Lehrer")
                 for i,item in enumerate(lehrerliste):
-                    self.mW.tw_freieLehrer.setRowCount(len(lehrerliste))
-                    self.mW.tw_freieLehrer.setColumnCount(1)
-                    self.mW.tw_freieLehrer.setItem(i,0, QtWidgets.QTableWidgetItem(str(item)))
+                    self.mW.tw_frei.setRowCount(len(lehrerliste))
+                    self.mW.tw_frei.setColumnCount(1)
+                    self.mW.tw_frei.setItem(i,0, QtWidgets.QTableWidgetItem(str(item)))
 
             if self.mW.tw_problemStunden.item(row,5).text() == "Raum":
-                # update tw_freieRaeume
+                # update tw_frei
                 raumliste = []
                 for raum in Raum.RaumListe():
                     r = list(filter(lambda c: c.Stunde() == stunde,raum.Stundenplan()[self.datum.dayOfWeek()-1]))
                     if not r:
                         raumliste.append(raum)
 
+                self.mW.gb_frei.setTitle("freie Raeume")
                 for i,item in enumerate(raumliste):
-                    self.mW.tw_freieRaeume.setRowCount(len(raumliste))
-                    self.mW.tw_freieRaeume.setColumnCount(1)
-                    self.mW.tw_freieRaeume.setItem(i,0, QtWidgets.QTableWidgetItem(str(item)))
-
+                    self.mW.tw_frei.setRowCount(len(raumliste))
+                    self.mW.tw_frei.setColumnCount(1)
+                    self.mW.tw_frei.setItem(i,0, QtWidgets.QTableWidgetItem(str(item)))
 
         self.mW.setEnabled(True)
     #--------------------------------------------------
