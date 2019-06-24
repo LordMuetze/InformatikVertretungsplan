@@ -11,8 +11,8 @@ class MainWindow:
 
         #create main window
         self.app = QtWidgets.QApplication([])
-        #self.mW = uic.loadUi("mainWindow.ui")
-        self.mW = uic.loadUi("alternativeWindow.ui")
+        #self.mW = uic.loadUi("GUI/mainWindow.ui")
+        self.mW = uic.loadUi("GUI/alternativeWindow.ui")
         self.dialog = None
 
 
@@ -112,7 +112,7 @@ class MainWindow:
 
     #--------------------------------------------------
     def on_actionallgemeiner_Unterrichtsschluss_eintragen_triggered(self):
-        self.dialog = uic.loadUi("DialogUnterrichtsschluss.ui")
+        self.dialog = uic.loadUi("GUI/DialogUnterrichtsschluss.ui")
         self.dialog.btn_eintragen.clicked.connect(self.on_btn_unterrichtsschlussEintragen_clicked)
         self.dialog.calendarWidget.setSelectedDate(self.mW.de_mainDatum.date())
         self.dialog.show()
@@ -136,7 +136,7 @@ class MainWindow:
 
     #--------------------------------------------------
     def on_actionRaum_blockieren_eintragen_triggered(self):
-        self.dialog = uic.loadUi("DialogBlockierung.ui")
+        self.dialog = uic.loadUi("GUI/DialogBlockierung.ui")
         self.dialog.btn_eintragen.clicked.connect(self.on_btn_blockierungEintragen_clicked)
         self.dialog.calendarWidget.setSelectedDate(self.mW.de_mainDatum.date())
 
@@ -167,7 +167,7 @@ class MainWindow:
 
     #--------------------------------------------------
     def on_actionAbwesenheit_eintragen_triggered(self):
-        self.dialog = uic.loadUi("DialogAbwesenheit.ui")
+        self.dialog = uic.loadUi("GUI/DialogAbwesenheit.ui")
         self.dialog.btn_eintragen.clicked.connect(self.on_btn_abwesenheitEintragen_clicked)
         self.dialog.calendarWidget.setSelectedDate(self.mW.de_mainDatum.date())
 
