@@ -124,7 +124,7 @@ class Vertretungsplan:
         file.write(outputBlockiert)
         file.close()
 
-        file = open("config.ini","w")
+        file = open("config/config.ini","w")
         file.write(path)
         file.close()
     #--------------------------------------------------
@@ -180,7 +180,7 @@ class Vertretungsplan:
         # read content of [Blockiert] until file's empty
         while content:
             line = content.pop(0).split(";")
-        file = open("config.ini","w")
+        file = open("config/config.ini","w")
         file.write(path)
         file.close()
     #--------------------------------------------------
