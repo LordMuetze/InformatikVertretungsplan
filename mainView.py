@@ -12,7 +12,7 @@ class MainWindow:
         #create main window
         self.app = QtWidgets.QApplication([])
         #self.mW = uic.loadUi("GUI/mainWindow.ui")
-        self.mW = uic.loadUi("GUI/alternativeWindow.ui")
+        self.mW = uic.loadUi("GUI/mainWindow.ui")
         self.mW.setEnabled(False)
         self.dialog = None
 
