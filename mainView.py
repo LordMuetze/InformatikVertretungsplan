@@ -24,12 +24,12 @@ class MainWindow:
         self.datum = Tag.createTag(self.mW.de_mainDatum.date())
 
         self.warnungsliste = []
-
+        self.path = ""
 
         #Connections
         #QtCore.QMetaObject.connectSlotsByName(self.mW)
         #self.mainWindow.{Ausloeser}.{Aktion}.connect({MethodenAufruf})
-        self.mW.actionSpeichern.triggered.connect(self.on_actionSpeichern_triggered)
+        self.mW.actionSpeichern_unter.triggered.connect(self.on_actionSpeichernUnter_triggered)
         self.mW.action_ffnen.triggered.connect(self.on_action_ffnen_triggered)
         self.mW.actionImportieren.triggered.connect(self.on_actionImportieren_triggered)
         self.mW.actionAbwesenheit_eintragen.triggered.connect(self.on_actionAbwesenheit_eintragen_triggered)
@@ -65,10 +65,21 @@ class MainWindow:
     #--------------------------------------------------
     def on_actionSpeichern_triggered(self):
         self.mW.setEnabled(False)
+        if self.path != "":
+            self.model.saveCSV(self.path)
+            self.update()
+        self.mW.setEnabled(True)
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def on_actionSpeichernUnter_triggered(self):
+        self.mW.setEnabled(False)
         path = QtWidgets.QFileDialog.getSaveFileName(None,"Speichern unter","","CSV Files (*.csv);;All Files (*)")[0]
         if path != "":
             self.model.saveCSV(path)
             self.update()
+            self.path = path
         self.mW.setEnabled(True)
     #--------------------------------------------------
 
@@ -81,6 +92,7 @@ class MainWindow:
             self.clear()
             self.model.openCSV(path)
             self.update()
+            self.path = path
         self.mW.setEnabled(True)
     #--------------------------------------------------
 

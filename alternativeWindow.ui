@@ -693,6 +693,7 @@
     </property>
     <addaction name="action_ffnen"/>
     <addaction name="actionSpeichern"/>
+    <addaction name="actionSpeichern_unter"/>
     <addaction name="separator"/>
     <addaction name="actionImportieren"/>
    </widget>
@@ -745,6 +746,14 @@
   <action name="actionallgemeiner_Unterrichtsschluss">
    <property name="text">
     <string>allgemeiner Unterrichtsschluss</string>
+   </property>
+  </action>
+  <action name="actionSpeichern_unter">
+   <property name="text">
+    <string>Speichern unter</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
    </property>
   </action>
  </widget>
