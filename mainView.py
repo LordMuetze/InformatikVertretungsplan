@@ -1,7 +1,8 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import QDate
+from PyQt5.QtGui import QBrush, QColor
 from model import Vertretungsplan
-from classes import Lehrer,Raum,Tag,Blockierung
+from classes import Lehrer,Raum,Tag,Blockierung,Stunde
 
 class MainWindow:
 
@@ -30,6 +31,7 @@ class MainWindow:
         #Connections
         #QtCore.QMetaObject.connectSlotsByName(self.mW)
         #self.mainWindow.{Ausloeser}.{Aktion}.connect({MethodenAufruf})
+        self.mW.actionSpeichern.triggered.connect(self.on_actionSpeichern_triggered)
         self.mW.actionSpeichern_unter.triggered.connect(self.on_actionSpeichernUnter_triggered)
         self.mW.action_ffnen.triggered.connect(self.on_action_ffnen_triggered)
         self.mW.actionImportieren.triggered.connect(self.on_actionImportieren_triggered)
@@ -39,6 +41,7 @@ class MainWindow:
         self.mW.btn_datumHeute.clicked.connect(self.on_btn_datumHeute_clicked)
         self.mW.de_mainDatum.dateChanged.connect(self.on_de_mainDatum_dateChanged)
         self.mW.tw_problemStunden.itemSelectionChanged.connect(self.on_tw_problemStunden_selectionChanged)
+        self.mW.btn_vertretungsEintragen.clicked.connect(self.on_btn_vertretungErstellen_clicked)
 
 
         self.mW.show()
@@ -113,6 +116,7 @@ class MainWindow:
 
     #--------------------------------------------------
     def on_actionallgemeiner_Unterrichtsschluss_eintragen_triggered(self):
+        self.mW.setEnabled(False)
         self.dialog = uic.loadUi("GUI/DialogUnterrichtsschluss.ui")
         self.dialog.btn_eintragen.clicked.connect(self.on_btn_unterrichtsschlussEintragen_clicked)
         self.dialog.calendarWidget.setSelectedDate(self.mW.de_mainDatum.date())
@@ -132,11 +136,13 @@ class MainWindow:
             self.model.vertretungErstellen(tag,s,ersatzlehrer=lehrer,ersatzraum=raum)
         self.dialog.done(0)
         self.update()
+        self.mW.setEnabled(True)
     #--------------------------------------------------
 
 
     #--------------------------------------------------
     def on_actionRaum_blockieren_eintragen_triggered(self):
+        self.mW.setEnabled(False)
         self.dialog = uic.loadUi("GUI/DialogBlockierung.ui")
         self.dialog.btn_eintragen.clicked.connect(self.on_btn_blockierungEintragen_clicked)
         self.dialog.calendarWidget.setSelectedDate(self.mW.de_mainDatum.date())
@@ -163,11 +169,13 @@ class MainWindow:
         Blockierung(raum,tag,ab,bis)
         self.dialog.done(0)
         self.update()
+        self.mW.setEnabled(True)
     #--------------------------------------------------
 
 
     #--------------------------------------------------
     def on_actionAbwesenheit_eintragen_triggered(self):
+        self.mW.setEnabled(False)
         self.dialog = uic.loadUi("GUI/DialogAbwesenheit.ui")
         self.dialog.btn_eintragen.clicked.connect(self.on_btn_abwesenheitEintragen_clicked)
         self.dialog.calendarWidget.setSelectedDate(self.mW.de_mainDatum.date())
@@ -194,6 +202,142 @@ class MainWindow:
         Blockierung(lehrer,tag,ab,bis)
         self.dialog.done(0)
         self.update()
+        self.mW.setEnabled(True)
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def on_btn_vertretungErstellen_clicked(self):
+        if self.mW.tw_problemStunden.currentItem() is not None: # check if problem lesson is selected
+            self.mW.setEnabled(False)
+            # set dialog and connect button to method
+            self.dialog = uic.loadUi("GUI/DialogVertretung.ui")
+            self.dialog.tw_vergleich.setRowCount(2)
+            self.dialog.tw_vergleich.setColumnCount(6)
+            self.dialog.tw_vergleich.setHorizontalHeaderLabels(["Klasse","Stunde","Fach","Lehrer","Raum","Problem"])
+            self.dialog.tw_vergleich.setVerticalHeaderLabels(["Original","Vertretung"])
+            
+            self.dialog.btn_eintragen.clicked.connect(self.on_btn_vertretungEintragen_clicked)
+            self.dialog.tw_frei.itemSelectionChanged.connect(self.on_tw_frei_selectionChanged)
+
+            row = self.mW.tw_problemStunden.currentItem().row()
+
+            klasse = self.mW.tw_problemStunden.item(row,0).text()
+            stunde = self.mW.tw_problemStunden.item(row,1).text()
+            fach = self.mW.tw_problemStunden.item(row,2).text()
+            lehrer = self.mW.tw_problemStunden.item(row,3).text()
+            raum = self.mW.tw_problemStunden.item(row,4).text()
+            problem = self.mW.tw_problemStunden.item(row,5).text()
+
+            self.dialog.tw_vergleich.setItem(0,0, QtWidgets.QTableWidgetItem(klasse))
+            self.dialog.tw_vergleich.setItem(0,1, QtWidgets.QTableWidgetItem(stunde))
+            self.dialog.tw_vergleich.setItem(0,2, QtWidgets.QTableWidgetItem(fach))
+            self.dialog.tw_vergleich.setItem(0,3, QtWidgets.QTableWidgetItem(lehrer))
+            self.dialog.tw_vergleich.setItem(0,4, QtWidgets.QTableWidgetItem(raum))
+            self.dialog.tw_vergleich.setItem(0,5, QtWidgets.QTableWidgetItem(problem))
+
+            self.dialog.tw_vergleich.setItem(1,0, QtWidgets.QTableWidgetItem(klasse))
+            self.dialog.tw_vergleich.setItem(1,1, QtWidgets.QTableWidgetItem(stunde))
+            self.dialog.tw_vergleich.setItem(1,2, QtWidgets.QTableWidgetItem(fach))
+            self.dialog.tw_vergleich.setItem(1,3, QtWidgets.QTableWidgetItem(lehrer))
+            self.dialog.tw_vergleich.setItem(1,4, QtWidgets.QTableWidgetItem(raum))
+
+            stunde = int(stunde)
+
+            # update TableWidgets for free Rooms and Teachers if problemStunde is selected
+            # if it's a room problem only show free rooms and vice versa
+            # clear Widgets first
+            self.dialog.tw_frei.setRowCount(0)
+            self.dialog.gb_frei.setTitle(" ")
+            self.dialog.tw_frei.setColumnCount(1)
+
+            if problem == "Lehrer":
+                # update tw_frei
+                lehrerliste = []
+                for lehrer in Lehrer.LehrerListe():
+                    l = list(filter(lambda c: c.Stunde() == stunde,lehrer.Stundenplan()[self.datum.dayOfWeek()-1]))
+                    if not l:
+                        lehrerliste.append(lehrer)
+                self.dialog.gb_frei.setTitle("freie Lehrer")
+                self.dialog.tw_frei.setRowCount(len(lehrerliste))
+                for i,item in enumerate(lehrerliste):
+                    self.dialog.tw_frei.setItem(i,0, QtWidgets.QTableWidgetItem(str(item)))
+
+            elif problem == "Raum":
+                # update tw_frei
+                raumliste = []
+                for raum in Raum.RaumListe():
+                    r = list(filter(lambda c: c.Stunde() == stunde,raum.Stundenplan()[self.datum.dayOfWeek()-1]))
+                    if not r:
+                        raumliste.append(raum)
+
+                self.dialog.gb_frei.setTitle("freie Raeume")
+                self.dialog.tw_frei.setRowCount(len(raumliste))
+                for i,item in enumerate(raumliste):
+                    self.dialog.tw_frei.setItem(i,0, QtWidgets.QTableWidgetItem(str(item)))
+
+            if self.mW.tw_frei.currentItem() is not None:
+                row = self.mW.tw_frei.currentItem().row()
+                item = self.dialog.tw_frei.item(row,0).setSelected(True)
+                selected = self.mW.tw_frei.item(row,0).text()
+                if problem == "Lehrer":
+                    self.dialog.tw_vergleich.setItem(1,3, QtWidgets.QTableWidgetItem(selected))
+                elif problem == "Raum":
+                    self.dialog.tw_vergleich.setItem(1,4, QtWidgets.QTableWidgetItem(selected))
+
+            self.updateDialog()
+            self.dialog.show()
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def on_btn_vertretungEintragen_clicked(self):
+        tag = self.datum.dayOfWeek()-1
+        stu = int(self.dialog.tw_vergleich.item(0,1).text())
+        klasse = self.dialog.tw_vergleich.item(0,0).text()
+        lehrer = self.dialog.tw_vergleich.item(0,3).text()
+        if self.dialog.tw_vergleich.item(0,4).text() != self.dialog.tw_vergleich.item(1,4).text():
+            ersatzraum = self.dialog.tw_vergleich.item(1,4).text()
+            ersatzlehrer = 0
+        elif self.dialog.tw_vergleich.item(0,3).text() != self.dialog.tw_vergleich.item(1,3).text():
+            ersatzraum = 0
+            ersatzlehrer = self.dialog.tw_vergleich.item(1,3).text()
+        else:
+            raise TypeError
+
+        stunde = list(filter(lambda c: c.Tag()==tag and c.Stunde()==stu and str(c.Klasse())==klasse and str(c.Lehrer()) == lehrer,Stunde.StundenListe()))[0]
+        self.model.vertretungErstellen(self.datum,stunde,ersatzraum=ersatzraum,ersatzlehrer=ersatzlehrer)
+
+        self.dialog.done(0)
+        self.update()
+        self.mW.setEnabled(True)
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def on_tw_frei_selectionChanged(self):
+        self.updateDialog()
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def updateDialog(self):
+        problem = self.dialog.tw_vergleich.item(0,5).text()
+        if self.dialog.tw_frei.currentItem() is not None:
+            selection = self.dialog.tw_frei.currentItem().text()
+            if problem == "Lehrer":
+                self.dialog.tw_vergleich.setItem(1,3,QtWidgets.QTableWidgetItem(selection))
+            elif problem == "Raum":
+                self.dialog.tw_vergleich.setItem(1,4,QtWidgets.QTableWidgetItem(selection))
+
+        if problem == "Lehrer" and self.dialog.tw_vergleich.item(0,3).text() == self.dialog.tw_vergleich.item(1,3).text():
+            self.dialog.tw_vergleich.item(0,3).setBackground(QBrush(QColor(255,179,179)))
+            self.dialog.tw_vergleich.item(1,3).setBackground(QBrush(QColor(255,179,179)))
+            self.dialog.tw_vergleich.item(1,4).setBackground(QBrush(QColor(255,255,255)))
+        elif problem == "Problem" and self.dialog.tw_vergleich.item(0,4).text() == self.dialog.tw_vergleich.item(1,4).text():
+            self.dialog.tw_vergleich.item(0,4).setBackground(QBrush(QColor(255,179,179)))
+            self.dialog.tw_vergleich.item(1,4).setBackground(QBrush(QColor(255,179,179)))
+            self.dialog.tw_vergleich.item(1,3).setBackground(QBrush(QColor(255,255,255)))
     #--------------------------------------------------
 
 
@@ -356,7 +500,7 @@ class MainWindow:
                     self.mW.tw_frei.setColumnCount(1)
                     self.mW.tw_frei.setItem(i,0, QtWidgets.QTableWidgetItem(str(item)))
 
-            if self.mW.tw_problemStunden.item(row,5).text() == "Raum":
+            elif self.mW.tw_problemStunden.item(row,5).text() == "Raum":
                 # update tw_frei
                 raumliste = []
                 for raum in Raum.RaumListe():
