@@ -1067,9 +1067,10 @@ Tag;Stunde;Klasse;Lehrer;Raum;Fach
 4;9;6und7;L711;P2;Vb
 [Vertretungen]
 Datum;Tag;Stunde;Klasse;Lehrer;Raum;Fach
+2019, 9, 25;2;5;5a;L086;A208;E
 [Abwesend]
 Bezeichner;Datum;von;bis
 L019;2019, 9, 25;1;11
 [Blockiert]
 Bezeichner;Datum;von;bis
-MZR;2019, 9, 25;1;11
+A103;2019, 9, 25;1;11
