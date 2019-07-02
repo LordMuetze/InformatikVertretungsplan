@@ -57,6 +57,7 @@ class Stunde:
                 Stunde.StundenlisteFreitag.append(self)
 
         if ersatzstunde and datum is not None:
+            datum.addErsatzstunde(self)
             Stunde.Ersatzstundenliste.append(self)
             Stunde.Ersatzstundenliste.sort(key = lambda c: c.datum)
     #--------------------------------------------------
@@ -140,8 +141,11 @@ class Stunde:
 
     #--------------------------------------------------
     @staticmethod
-    def getStundenliste():
+    def StundenListe():
         return Stunde.Stundenliste
+    @staticmethod
+    def ErsatzstundenListe():
+        return Stunde.Ersatzstundenliste
     #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
