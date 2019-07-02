@@ -94,15 +94,15 @@ class Vertretungsplan:
         outputAbwesend = "Bezeichner;Datum;von;bis\n"
         outputBlockiert = "Bezeichner;Datum;von;bis\n"
 
-        stundenplan = Tools.sortStundenliste(Stunde.getStundenliste())
+        stundenplan = Tools.sortStundenliste(Stunde.StundenListe())
         for tag in stundenplan:
             for stunde in tag:
-                if stunde.Ersatzstunde():
-                    s = str(stunde.Datum()) + ";" + str(stunde.Tag()) + ";" + str(stunde.Stunde()) + ";" + str(stunde.Klasse()) + ";" + str(stunde.Lehrer()) + ";" + str(stunde.Raum()) + ";" + str(stunde.Fach()) + "\n"
-                    outputVertretung += s
-                else:
-                    s = str(stunde.Tag()) + ";" + str(stunde.Stunde()) + ";" + str(stunde.Klasse()) + ";" + str(stunde.Lehrer()) + ";" + str(stunde.Raum()) + ";" + str(stunde.Fach()) + "\n"
-                    outputStandard += s
+                s = str(stunde.Tag()) + ";" + str(stunde.Stunde()) + ";" + str(stunde.Klasse()) + ";" + str(stunde.Lehrer()) + ";" + str(stunde.Raum()) + ";" + str(stunde.Fach()) + "\n"
+                outputStandard += s
+
+        for stunde in Stunde.ErsatzstundenListe():
+            s = str(stunde.Datum()) + ";" + str(stunde.Tag()) + ";" + str(stunde.Stunde()) + ";" + str(stunde.Klasse()) + ";" + str(stunde.Lehrer()) + ";" + str(stunde.Raum()) + ";" + str(stunde.Fach()) + "\n"
+            outputVertretung += s
 
         for block in Blockierung.BlockierteLehrer():
             s = str(block) + "\n"
@@ -152,7 +152,9 @@ class Vertretungsplan:
         # read content of [Vertretungen] until header [Abwesend]
         while content[0] != "[Abwesend]":
             line = content.pop(0).split(";")
-            Stunde(int(line[1]),int(line[2]),line[3],line[4],line[5],line[6],ersatzstunde=True,datum=line[0])
+            datumL = line[0].split(", ")
+            datum = Tag.createTag(QDate(int(datumL[0]),int(datumL[1]),int(datumL[2])))
+            Stunde(int(line[1]),int(line[2]),line[3],line[4],line[5],line[6],ersatzstunde=True,datum=datum)
 
 
         # remove section-header [Abwesend] & csv-header
