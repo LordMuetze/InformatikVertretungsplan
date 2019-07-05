@@ -25,12 +25,16 @@ class Stunde:
         #   stunde (int): 0 = 1.Stunde, 1 = 2.Stunde,..., 6 = 7.Stunde (Mittagspause),...,10 = 11.Stunde
     #--------------------------------------------------
     def __init__(self,tag:int,stunde:int,klasse:str,lehrer:str,raum:str,fach:str,ersatzstunde=False,datum=None):
-        try:
-            int(fach[:2])
+        # try:
+            # int(fach[:2])
+            # klasse = fach
+            # fach = fach[2:len(fach)-1]
+        # except:
+            # pass
+        if fach[:2].isdigit():
             klasse = fach
             fach = fach[2:len(fach)-1]
-        except:
-            pass
+
 
         self.tag = tag
         self.stunde = stunde
@@ -57,9 +61,9 @@ class Stunde:
                 Stunde.StundenlisteFreitag.append(self)
 
         if ersatzstunde and datum is not None:
-            datum.addErsatzstunde(self)
             Stunde.Ersatzstundenliste.append(self)
             Stunde.Ersatzstundenliste.sort(key = lambda c: c.datum)
+            datum.addErsatzstunde(self)
     #--------------------------------------------------
 
 
@@ -203,19 +207,27 @@ class Klasse:
         b1 = self.bezeichner
         b2 = other.Bezeichner()
 
-        try:
+        # try:
+        if b1[:2].isdigit():
             b1_z = int(b1[:2])
-        except:
-            try:
+        # except:
+        else:
+            # try:
+            if b1[:1].isdigit():
                 b1_z = int(b1[:1])
-            except:
+            # except:
+            else:
                 b1_z = 20
-        try:
+        # try:
+        if b2[:2].isdigit():
             b2_z = int(b2[:2])
-        except:
-            try:
+        # except:
+        else:
+            # try:
+            if b2[:1].isdigit():
                 b2_z = int(b2[:1])
-            except:
+            # except:
+            else:
                 b2_z = 20
 
         if b1_z == b2_z:
