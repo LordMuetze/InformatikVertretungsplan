@@ -1,5 +1,7 @@
-from classes import *
+from PyQt5.QtCore import QDate
+from classes import Stunde,Klasse,Lehrer,Raum,Fach,Tag,Blockierung
 from tools import Tools
+
 
 class Vertretungsplan:
     #--------------------------------------------------
@@ -182,6 +184,16 @@ class Vertretungsplan:
         # read content of [Blockiert] until file's empty
         while content:
             line = content.pop(0).split(";")
+            rau = line[0]
+            ds = line[1]
+            dl = ds.split(",")
+            datum = Tag.createTag(QDate(int(dl[0]),int(dl[1]),int(dl[2])))
+            ab = int(line[2])
+            bis = int(line[3])
+            raum = list(filter(lambda c: str(c)==rau,Raum.RaumListe()))[0]
+            tag = Tag.createTag(datum)
+            Blockierung(raum,tag,ab,bis)
+
         file = open("config/config.ini","w")
         file.write(path)
         file.close()
