@@ -13,7 +13,6 @@ class Stunde:
     StundenlisteMittwoch = []
     StundenlisteDonnerstag = []
     StundenlisteFreitag = []
-    Ersatzstundenliste = []
 
     #--------------------------------------------------
         # attributes:
@@ -24,13 +23,7 @@ class Stunde:
         #   tag (int): 0 = Montag,..., 4 = Freitag
         #   stunde (int): 0 = 1.Stunde, 1 = 2.Stunde,..., 6 = 7.Stunde (Mittagspause),...,10 = 11.Stunde
     #--------------------------------------------------
-    def __init__(self,tag:int,stunde:int,klasse:str,lehrer:str,raum:str,fach:str,ersatzstunde=False,datum=None):
-        # try:
-            # int(fach[:2])
-            # klasse = fach
-            # fach = fach[2:len(fach)-1]
-        # except:
-            # pass
+    def __init__(self,tag:int,stunde:int,klasse:str,lehrer:str,raum:str,fach:str,ersatzstunde=False):
         if fach[:2].isdigit():
             klasse = fach
             fach = fach[2:len(fach)-1]
@@ -42,10 +35,6 @@ class Stunde:
         self.lehrer = Lehrer.createLehrer(lehrer,self) #needs self.fach
         self.klasse = Klasse.createKlasse(klasse,self) #needs self.lehrer
         self.raum = Raum.createRaum(raum,self)
-
-        #self.wochentyp = woche # A-week/B-week
-        self.ersatzstunde = ersatzstunde
-        self.datum = datum
 
         if not ersatzstunde:
             Stunde.Stundenliste.append(self)
@@ -59,11 +48,6 @@ class Stunde:
                 Stunde.StundenlisteDonnerstag.append(self)
             elif self.tag == 4:
                 Stunde.StundenlisteFreitag.append(self)
-
-        if ersatzstunde and datum is not None:
-            Stunde.Ersatzstundenliste.append(self)
-            Stunde.Ersatzstundenliste.sort(key = lambda c: c.datum)
-            datum.addErsatzstunde(self)
     #--------------------------------------------------
 
 
@@ -71,26 +55,59 @@ class Stunde:
     @staticmethod
     def clearData():
         for i in Stunde.Stundenliste:
+            i.tag = None
+            i.stunde = None
+            i.lehrer = None
+            i.fach = None
+            i.raum = None
+            i.klasse = None
             del i
         for i in Stunde.StundenlisteMontag:
+            i.tag = None
+            i.stunde = None
+            i.lehrer = None
+            i.fach = None
+            i.raum = None
+            i.klasse = None
             del i
         for i in Stunde.StundenlisteDienstag:
+            i.tag = None
+            i.stunde = None
+            i.lehrer = None
+            i.fach = None
+            i.raum = None
+            i.klasse = None
             del i
         for i in Stunde.StundenlisteMittwoch:
+            i.tag = None
+            i.stunde = None
+            i.lehrer = None
+            i.fach = None
+            i.raum = None
+            i.klasse = None
             del i
         for i in Stunde.StundenlisteDonnerstag:
+            i.tag = None
+            i.stunde = None
+            i.lehrer = None
+            i.fach = None
+            i.raum = None
+            i.klasse = None
             del i
         for i in Stunde.StundenlisteFreitag:
+            i.tag = None
+            i.stunde = None
+            i.lehrer = None
+            i.fach = None
+            i.raum = None
+            i.klasse = None
             del i
-        for i in Stunde.Ersatzstundenliste:
-            del i
-        Stunde.Stundenliste.clear()
-        Stunde.StundenlisteMontag.clear()
-        Stunde.StundenlisteDienstag.clear()
-        Stunde.StundenlisteMittwoch.clear()
-        Stunde.StundenlisteDonnerstag.clear()
-        Stunde.StundenlisteFreitag.clear()
-        Stunde.Ersatzstundenliste.clear()
+        Stunde.Stundenliste = []
+        Stunde.StundenlisteMontag = []
+        Stunde.StundenlisteDienstag = []
+        Stunde.StundenlisteMittwoch = []
+        Stunde.StundenlisteDonnerstag = []
+        Stunde.StundenlisteFreitag = []
     #--------------------------------------------------
 
 
@@ -136,10 +153,6 @@ class Stunde:
         return self.lehrer
     def Fach(self):
         return self.fach
-    def Ersatzstunde(self):
-        return self.ersatzstunde
-    def Datum(self):
-        return self.datum
     #--------------------------------------------------
 
 
@@ -147,9 +160,50 @@ class Stunde:
     @staticmethod
     def StundenListe():
         return Stunde.Stundenliste
+    #--------------------------------------------------
+#--------------------------------------------------
+#--------------------------------------------------
+
+
+#--------------------------------------------------
+#--------------------------------------------------
+class Vertretungsstunde(Stunde):
+
+    Vertretungsstundenliste = []
+
+    #--------------------------------------------------
+    def __init__(self,tag:int,stunde:int,klasse:str,lehrer:str,raum:str,fach:str,datum,bemerkung:str): #datum:Tag
+        super().__init__(tag,stunde,klasse,lehrer,raum,fach,True)
+        self.datum = datum
+        self.bemerkung = bemerkung
+
+        Vertretungsstunde.Vertretungsstundenliste.append(self)
+        Vertretungsstunde.Vertretungsstundenliste.sort(key = lambda c: c.datum)
+        self.datum.addErsatzstunde(self)
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
     @staticmethod
-    def ErsatzstundenListe():
-        return Stunde.Ersatzstundenliste
+    def clearData():
+        for i in Vertretungsstunde.Vertretungsstundenliste:
+            del i
+        Vertretungsstunde.Vertretungsstundenliste = []
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def Datum(self):
+        return self.datum
+    def Bemerkung(self):
+        return self.bemerkung
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    @staticmethod
+    def VertretungsstundenListe():
+        return Vertretungsstunde.Vertretungsstundenliste
     #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
@@ -159,12 +213,13 @@ class Stunde:
 #--------------------------------------------------
 class Klasse:
 
-
     Klassenliste = []
 
     #--------------------------------------------------
-    @staticmethod #create static method that can be called without object
+        #create static method that can be called without object
         #method checks for already existing object and either returns the existing or creates a new one and returns this
+    #--------------------------------------------------
+    @staticmethod
     def createKlasse(bezeichner:str,stunde:Stunde):
         if bezeichner not in list(map(lambda c: c.bezeichner,Klasse.Klassenliste)):
             return Klasse(bezeichner,stunde)
@@ -193,8 +248,12 @@ class Klasse:
     @staticmethod
     def clearData():
         for i in Klasse.Klassenliste:
+            i.stundenliste = None
+            i.stundenplan = None
+            i.lehrerliste = None
+            i.bezeichner = None
             del i
-        Klasse.Klassenliste.clear()
+        Klasse.Klassenliste = []
     #--------------------------------------------------
 
 
@@ -260,12 +319,13 @@ class Klasse:
 #--------------------------------------------------
 class Raum:
 
-
     Raumliste = []
 
-
-    @staticmethod #create static method that can be called without object
-    #method checks for already existing object and either returns the existing or creates a new one and returns this
+    #--------------------------------------------------
+        #create static method that can be called without object
+        #method checks for already existing object and either returns the existing or creates a new one and returns this
+    #--------------------------------------------------
+    @staticmethod
     def createRaum(bezeichner:str,stunde:Stunde):
         if bezeichner not in list(map(lambda c: c.bezeichner,Raum.Raumliste)):
             return Raum(bezeichner,stunde)
@@ -274,8 +334,10 @@ class Raum:
                 if element.bezeichner == bezeichner:
                     element.addStunde(stunde)
                     return element
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def __init__(self,bezeichner:str,stunde:Stunde):
         self.bezeichner = bezeichner
 
@@ -285,41 +347,53 @@ class Raum:
 
         Raum.Raumliste.append(self)
         self.addStunde(stunde)
+    #--------------------------------------------------
 
 
     #--------------------------------------------------
     @staticmethod
     def clearData():
         for i in Raum.Raumliste:
+            i.bezeichner = None
+            i.stundenliste = None
+            i.stundenplan = None
             del i
-        Raum.Raumliste.clear()
+        Raum.Raumliste = []
     #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def __str__(self):
         return self.bezeichner
     def __eq__(self,other):
         return self.bezeichner==other.Bezeichner()
     def __lt__(self,other):
         return self.bezeichner < other.Bezeichner()
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def addStunde(self,stunde:Stunde):
         self.stundenliste.append(stunde)
         self.stundenplan = Tools.sortStundenliste(self.stundenliste)
-
     def addBlockiert(self,datum,von:int,bis:int): #(self,datum:Tag,von:int,bis:int)
         self.blockiert.append(Blockierung(self,datum,von,bis))
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def Bezeichner(self):
         return self.bezeichner
     def Stundenplan(self):
         return self.stundenplan
+    #--------------------------------------------------
 
+
+    #--------------------------------------------------
     @staticmethod
     def RaumListe():
         return Raum.Raumliste
+    #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -328,12 +402,13 @@ class Raum:
 #--------------------------------------------------
 class Lehrer:
 
-
     Lehrerliste = []
 
-
-    @staticmethod #create static method that can be called without object
-    #method checks for already existing object and either returns the existing or creates a new one and returns this
+    #--------------------------------------------------
+        #create static method that can be called without object
+        #method checks for already existing object and either returns the existing or creates a new one and returns this
+    #--------------------------------------------------
+    @staticmethod
     def createLehrer(bezeichner:str,stunde:Stunde):
         if bezeichner not in list(map(lambda c: c.bezeichner,Lehrer.Lehrerliste)):
             return Lehrer(bezeichner,stunde)
@@ -342,8 +417,10 @@ class Lehrer:
                 if element.bezeichner == bezeichner:
                     element.addStunde(stunde)
                     return element
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def __init__(self,bezeichner:str,stunde:Stunde):
         self.bezeichner = bezeichner
 
@@ -355,29 +432,38 @@ class Lehrer:
         Lehrer.Lehrerliste.append(self)
         self.addStunde(stunde)
         self.blockiert = []
+    #--------------------------------------------------
 
 
     #--------------------------------------------------
     @staticmethod
     def clearData():
         for i in Lehrer.Lehrerliste:
+            i.bezeichner = None
+            i.stundenliste = None
+            i.stundenplan = None
+            i.absolvierteVertretungen = None
+            i.faecherliste = None
+            i.blockiert = None
             del i
-        Lehrer.Lehrerliste.clear()
+        Lehrer.Lehrerliste = []
     #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def __str__(self):
         return self.bezeichner
     def __eq__(self,other):
         return self.bezeichner==other.Bezeichner()
     def __lt__(self,other):
         return self.bezeichner < other.Bezeichner()
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def addStunde(self,stunde:Stunde):
         self.stundenliste.append(stunde)
         self.stundenplan = Tools.sortStundenliste(self.stundenliste)
-
         # automatically add fach to faecherliste if not already in it
         if stunde.Fach() not in self.faecherliste:
             self.faecherliste.append(stunde.Fach())
@@ -387,18 +473,24 @@ class Lehrer:
         self.blockiert.sort()
     def Blockiert(self):
         return self.blockiert
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def Bezeichner(self):
         return self.bezeichner
     def Stundenliste(self):
         return self.stundenliste
     def Stundenplan(self):
         return self.stundenplan
+    #--------------------------------------------------
 
+
+    #--------------------------------------------------
     @staticmethod
     def LehrerListe():
         return Lehrer.Lehrerliste
+    #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -409,8 +501,11 @@ class Fach:
 
     Fachliste = []
 
-    @staticmethod #create static method that can be called without object
-    #method checks for already existing object and either returns the existing or creates a new one and returns this
+    #--------------------------------------------------
+        #create static method that can be called without object
+        #method checks for already existing object and either returns the existing or creates a new one and returns this
+    #--------------------------------------------------
+    @staticmethod
     def createFach(bezeichner:str):
         if bezeichner not in list(map(lambda c: c.bezeichner,Fach.Fachliste)):
             return Fach(bezeichner)
@@ -418,32 +513,40 @@ class Fach:
             for element in Fach.Fachliste:
                 if element.bezeichner == bezeichner:
                     return element
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def __init__(self,bezeichner:str):
         self.bezeichner = bezeichner
         Fach.Fachliste.append(self)
+    #--------------------------------------------------
 
 
     #--------------------------------------------------
     @staticmethod
     def clearData():
         for i in Fach.Fachliste:
+            i.bezeichner = None
             del i
-        Fach.Fachliste.clear()
+        Fach.Fachliste = []
     #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def __str__(self):
         return self.bezeichner
     def __eq__(self,other):
         return self.bezeichner == other.Bezeichner()
     def __lt__(self,other):
         return self.bezeichner < other.Bezeichner()
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def Bezeichner(self):
         return self.bezeichner
+    #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -454,8 +557,11 @@ class Tag(QDate):
 
     tagListe = []
 
-    @staticmethod #create static method that can be called without object
-    # method checks for already existing object and either returns the existing or creates a new one and returns this
+    #--------------------------------------------------
+        #create static method that can be called without object
+        # method checks for already existing object and either returns the existing or creates a new one and returns this
+    #--------------------------------------------------
+    @staticmethod
     def createTag(qdate:QDate):
         if qdate not in Tag.tagListe:
             return Tag(qdate)
@@ -463,13 +569,17 @@ class Tag(QDate):
             for element in Tag.tagListe:
                 if element == qdate:
                     return element
+    #--------------------------------------------------
 
+
+    #--------------------------------------------------
     def __init__(self,qdate:QDate):
         super().__init__(qdate)
         self.blockierteLehrer = []
         self.blockierteRaeume = []
         self.ersatzstunden = []
         Tag.tagListe.append(self)
+        self.informationen = ""
 
 
         if self.dayOfWeek()-1 == 0:
@@ -484,17 +594,24 @@ class Tag(QDate):
             self.stunden = Stunde.StundenlisteFreitag
         else:
             self.stunden = []
+    #--------------------------------------------------
 
 
     #--------------------------------------------------
     @staticmethod
     def clearData():
         for i in Tag.tagListe:
+            i.informationen = None
+            i.blockierteLehrer = None
+            i.blockierteRaeume = None
+            i.ersatzstunden = None
+            i.stunden = None
             del i
-        Tag.tagListe.clear()
+        Tag.tagListe = []
     #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def __eq__(self,other):
         return self.getDate() == other.getDate()
     def __lt__(self,other):
@@ -503,8 +620,10 @@ class Tag(QDate):
         s = str(self.getDate())
         s = s[1:len(s)-1]
         return s
+    #--------------------------------------------------
 
 
+    #--------------------------------------------------
     def addBlockierterLehrer(self,lehrer): #(self,lehrer:Blockierung)
         if lehrer not in self.blockierteLehrer:
             # auf alte Blockierung pruefen, um Doppelung zu vermeiden
@@ -520,7 +639,14 @@ class Tag(QDate):
             # auf alte Vertretungsstunde pruefen, um Doppelung zu vermeiden
             self.ersatzstunden.remove(stunde)
         self.ersatzstunden.append(stunde)
+    def addInformationen(self,info:str):
+        if self.informationen != "":
+            self.informationen += "\n"
+        self.informationen += info
+    #--------------------------------------------------
 
+
+    #--------------------------------------------------
     def BlockierteLehrer(self):
         return self.blockierteLehrer
     def BlockierteRaeume(self):
@@ -529,6 +655,22 @@ class Tag(QDate):
         return self.ersatzstunden
     def Stunden(self):
         return self.stunden
+    def Informationen(self):
+        return self.informationen
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def setInformationen(self,info:str):
+        self.informationen = info
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    @staticmethod
+    def TagListe():
+        return Tag.tagListe
+    #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
 
@@ -536,8 +678,10 @@ class Tag(QDate):
 #--------------------------------------------------
 #--------------------------------------------------
 class Blockierung:
+
     blockierteLehrer = []
     blockierteRaeume = []
+
     #--------------------------------------------------
         # attributes:
         #   tag: Tag object
@@ -558,15 +702,18 @@ class Blockierung:
         elif isinstance(self.blockiertesObjekt,Raum):
             self.datum.addBlockierterRaum(self)
             Blockierung.blockierteRaeume.append(self)
+    #--------------------------------------------------
 
 
     #--------------------------------------------------
     @staticmethod
     def clearData():
-        Blockierung.blockierteLehrer.clear()
-        Blockierung.blockierteRaeume.clear()
+        Blockierung.blockierteLehrer = []
+        Blockierung.blockierteRaeume = []
     #--------------------------------------------------
 
+
+    #--------------------------------------------------
     def __str__(self):
         bO = str(self.blockiertesObjekt)
         d = str(self.datum)
@@ -577,7 +724,10 @@ class Blockierung:
         return self.blockiertesObjekt == other.BlockiertesObjekt()
     def __lt__(self,other):
         return self.blockiertesObjekt < other.BlockiertesObjekt()
+    #--------------------------------------------------
 
+
+    #--------------------------------------------------
     def BlockiertesObjekt(self):
         return self.blockiertesObjekt
     def Datum(self):
@@ -586,12 +736,16 @@ class Blockierung:
         return self.von
     def Bis(self):
         return self.bis
+    #--------------------------------------------------
 
+
+    #--------------------------------------------------
     @staticmethod
     def BlockierteLehrer():
         return Blockierung.blockierteLehrer
     @staticmethod
     def BlockierteRaeume():
         return Blockierung.blockierteRaeume
+    #--------------------------------------------------
 #--------------------------------------------------
 #--------------------------------------------------
