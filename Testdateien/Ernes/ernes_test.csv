@@ -1067,10 +1067,14 @@ Tag;Stunde;Klasse;Lehrer;Raum;Fach
 4;9;6und7;L711;P2;Vb
 [Vertretungen]
 Datum;Tag;Stunde;Klasse;Lehrer;Raum;Fach
-2019, 9, 25;2;5;5a;L086;A208;E
+2019, 9, 25;2;2;5b;L655;A205;E;Raumtausch
+2019, 9, 25;2;3;5b;L189;C108;Geo;Raumtausch, TestBemerkung
 [Abwesend]
 Bezeichner;Datum;von;bis
 L019;2019, 9, 25;1;11
 [Blockiert]
 Bezeichner;Datum;von;bis
-A103;2019, 9, 25;1;11
+A204;2019, 9, 25;1;11
+[Informationen]
+Datum;Information
+2019, 9, 25;Allgemeiner Unterrichtsschluss nach Stunde 6
