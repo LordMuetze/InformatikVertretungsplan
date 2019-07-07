@@ -18,6 +18,9 @@
     <widget class="QCalendarWidget" name="calendarWidget"/>
    </item>
    <item>
+    <widget class="QLineEdit" name="le_bemerkung"/>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer_4">
