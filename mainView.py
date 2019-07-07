@@ -35,6 +35,7 @@ class MainWindow:
         self.mW.actionSpeichern_unter.triggered.connect(self.on_actionSpeichernUnter_triggered)
         self.mW.action_ffnen.triggered.connect(self.on_action_ffnen_triggered)
         self.mW.actionImportieren.triggered.connect(self.on_actionImportieren_triggered)
+        self.mW.actionPDF_exportieren.triggered.connect(self.on_actionExportieren_triggered)
         self.mW.actionAbwesenheit_eintragen.triggered.connect(self.on_actionAbwesenheit_eintragen_triggered)
         self.mW.actionRaum_blockieren.triggered.connect(self.on_actionRaum_blockieren_eintragen_triggered)
         self.mW.actionallgemeiner_Unterrichtsschluss.triggered.connect(self.on_actionallgemeiner_Unterrichtsschluss_eintragen_triggered)
@@ -49,11 +50,14 @@ class MainWindow:
         try:
             file = open("config/config.ini","r")
             self.path = file.readline()
-            self.model.openCSV(self.path)
+            if self.path != "":
+                self.model.openCSV(self.path)
             file.close()
         except FileNotFoundError:
             pass
         self.update()
+        title = "Vertretungsplan     " + self.path
+        self.mW.setWindowTitle(title)
         self.mW.setEnabled(True)
         #launch GUI --> last step of __init__ because starts loop
         self.app.exec()
@@ -67,16 +71,6 @@ class MainWindow:
 
 
     #--------------------------------------------------
-    def on_actionSpeichern_triggered(self):
-        self.mW.setEnabled(False)
-        if self.path != "":
-            self.model.saveCSV(self.path)
-            self.update()
-        self.mW.setEnabled(True)
-    #--------------------------------------------------
-
-
-    #--------------------------------------------------
     def on_actionSpeichernUnter_triggered(self):
         self.mW.setEnabled(False)
         path = QtWidgets.QFileDialog.getSaveFileName(None,"Speichern unter","","CSV Files (*.csv);;All Files (*)")[0]
@@ -84,6 +78,22 @@ class MainWindow:
             self.model.saveCSV(path)
             self.update()
             self.path = path
+            title = "Vertretungsplan     " + self.path
+            self.mW.setWindowTitle(title)
+        self.mW.setEnabled(True)
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def on_actionSpeichern_triggered(self):
+        self.mW.setEnabled(False)
+        if self.path != "":
+            self.model.saveCSV(self.path)
+            self.update()
+            title = "Vertretungsplan     " + self.path
+            self.mW.setWindowTitle(title)
+        else:
+            self.on_actionSpeichernUnter_triggered()
         self.mW.setEnabled(True)
     #--------------------------------------------------
 
@@ -97,6 +107,8 @@ class MainWindow:
             self.model.openCSV(path)
             self.update()
             self.path = path
+        title = "Vertretungsplan     " + self.path
+        self.mW.setWindowTitle(title)
         self.mW.setEnabled(True)
     #--------------------------------------------------
 
@@ -110,13 +122,25 @@ class MainWindow:
             self.clear()
             self.model.DateienEinlesen(pathUnter,pathZuordnung)
             self.update()
+            self.path = ""
+            title = "Vertretungsplan     " + self.path + "*"
+            self.mW.setWindowTitle(title)
+        self.mW.setEnabled(True)
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def on_actionExportieren_triggered(self):
+        self.mW.setEnabled(False)
+        path = QtWidgets.QFileDialog().getSaveFileName(None,"Vertretungen als PDF exportieren","","PDF Files (*.pdf);;All Files (*)")[0]
+        if path != "":
+            self.model.exportierenPDF(path,self.datum)
         self.mW.setEnabled(True)
     #--------------------------------------------------
 
 
     #--------------------------------------------------
     def on_actionallgemeiner_Unterrichtsschluss_eintragen_triggered(self):
-        self.mW.setEnabled(False)
         self.dialog = uic.loadUi("GUI/DialogUnterrichtsschluss.ui")
         self.dialog.btn_eintragen.clicked.connect(self.on_btn_unterrichtsschlussEintragen_clicked)
         self.dialog.calendarWidget.setSelectedDate(self.mW.de_mainDatum.date())
@@ -129,20 +153,21 @@ class MainWindow:
         datum = self.dialog.calendarWidget.selectedDate()
         ab = self.dialog.sb_abStunde.value()
         tag = Tag.createTag(datum)
-        stunden = list(filter(lambda c: c.Stunde() >= ab,tag.Stunden()))
-        for s in stunden:
-            lehrer = "Entfall"
-            raum = ""
-            self.model.vertretungErstellen(tag,s,ersatzlehrer=lehrer,ersatzraum=raum)
+        info = "Allgemeiner Unterrichtsschluss nach Stunde " + str(ab)
+        if self.dialog.le_bemerkung.text() != "":
+            info += ": " + self.dialog.le_bemerkung.text() + "\n"
+        tag.addInformationen(info)
+
+        title = "Vertretungsplan     " + self.path + "*"
+        self.mW.setWindowTitle(title)
+
         self.dialog.done(0)
         self.update()
-        self.mW.setEnabled(True)
     #--------------------------------------------------
 
 
     #--------------------------------------------------
     def on_actionRaum_blockieren_eintragen_triggered(self):
-        self.mW.setEnabled(False)
         self.dialog = uic.loadUi("GUI/DialogBlockierung.ui")
         self.dialog.btn_eintragen.clicked.connect(self.on_btn_blockierungEintragen_clicked)
         self.dialog.calendarWidget.setSelectedDate(self.mW.de_mainDatum.date())
@@ -167,15 +192,17 @@ class MainWindow:
         raum = list(filter(lambda c: str(c)==ra,Raum.RaumListe()))[0]
         tag = Tag.createTag(datum)
         Blockierung(raum,tag,ab,bis)
+
+        title = "Vertretungsplan     " + self.path + "*"
+        self.mW.setWindowTitle(title)
+
         self.dialog.done(0)
         self.update()
-        self.mW.setEnabled(True)
     #--------------------------------------------------
 
 
     #--------------------------------------------------
     def on_actionAbwesenheit_eintragen_triggered(self):
-        self.mW.setEnabled(False)
         self.dialog = uic.loadUi("GUI/DialogAbwesenheit.ui")
         self.dialog.btn_eintragen.clicked.connect(self.on_btn_abwesenheitEintragen_clicked)
         self.dialog.calendarWidget.setSelectedDate(self.mW.de_mainDatum.date())
@@ -200,25 +227,28 @@ class MainWindow:
         lehrer = list(filter(lambda c: str(c)==leh,Lehrer.LehrerListe()))[0]
         tag = Tag.createTag(datum)
         Blockierung(lehrer,tag,ab,bis)
+
+        title = "Vertretungsplan     " + self.path + "*"
+        self.mW.setWindowTitle(title)
+
         self.dialog.done(0)
         self.update()
-        self.mW.setEnabled(True)
     #--------------------------------------------------
 
 
     #--------------------------------------------------
     def on_btn_vertretungErstellen_clicked(self):
         if self.mW.tw_problemStunden.currentItem() is not None: # check if problem lesson is selected
-            self.mW.setEnabled(False)
             # set dialog and connect button to method
             self.dialog = uic.loadUi("GUI/DialogVertretung.ui")
             self.dialog.tw_vergleich.setRowCount(2)
             self.dialog.tw_vergleich.setColumnCount(6)
             self.dialog.tw_vergleich.setHorizontalHeaderLabels(["Klasse","Stunde","Fach","Lehrer","Raum","Problem"])
             self.dialog.tw_vergleich.setVerticalHeaderLabels(["Original","Vertretung"])
-            
+
             self.dialog.btn_eintragen.clicked.connect(self.on_btn_vertretungEintragen_clicked)
             self.dialog.tw_frei.itemSelectionChanged.connect(self.on_tw_frei_selectionChanged)
+            self.dialog.cB_enfall.stateChanged.connect(self.on_cB_enfall_clicked)
 
             row = self.mW.tw_problemStunden.currentItem().row()
 
@@ -304,13 +334,21 @@ class MainWindow:
             ersatzlehrer = self.dialog.tw_vergleich.item(1,3).text()
         else:
             raise TypeError
-
+        bemerkung = self.dialog.le_bemerkung.text()
         stunde = list(filter(lambda c: c.Tag()==tag and c.Stunde()==stu and str(c.Klasse())==klasse and str(c.Lehrer()) == lehrer,Stunde.StundenListe()))[0]
-        self.model.vertretungErstellen(self.datum,stunde,ersatzraum=ersatzraum,ersatzlehrer=ersatzlehrer)
+        self.model.vertretungErstellen(self.datum,stunde,bemerkung,ersatzraum=ersatzraum,ersatzlehrer=ersatzlehrer)
+
+        title = "Vertretungsplan     " + self.path + "*"
+        self.mW.setWindowTitle(title)
 
         self.dialog.done(0)
         self.update()
-        self.mW.setEnabled(True)
+    #--------------------------------------------------
+
+
+    #--------------------------------------------------
+    def on_cB_enfall_clicked(self, state):
+        self.updateDialog()
     #--------------------------------------------------
 
 
@@ -322,14 +360,24 @@ class MainWindow:
 
     #--------------------------------------------------
     def updateDialog(self):
+        # get problem from last cell in first row
         problem = self.dialog.tw_vergleich.item(0,5).text()
-        if self.dialog.tw_frei.currentItem() is not None:
-            selection = self.dialog.tw_frei.currentItem().text()
-            if problem == "Lehrer":
-                self.dialog.tw_vergleich.setItem(1,3,QtWidgets.QTableWidgetItem(selection))
-            elif problem == "Raum":
-                self.dialog.tw_vergleich.setItem(1,4,QtWidgets.QTableWidgetItem(selection))
 
+        # check if checkBox is checked and enabled/disable rest of window and set lehrer and so on
+        if self.dialog.cB_enfall.isChecked():
+            self.dialog.tw_frei.setEnabled(False)
+            self.dialog.tw_vergleich.setItem(1,3,QtWidgets.QTableWidgetItem("Entfall"))
+            self.dialog.tw_vergleich.setItem(1,4,QtWidgets.QTableWidgetItem(""))
+        else:
+            self.dialog.tw_frei.setEnabled(True)
+            if self.dialog.tw_frei.currentItem() is not None:
+                selection = self.dialog.tw_frei.currentItem().text()
+                if problem == "Lehrer":
+                    self.dialog.tw_vergleich.setItem(1,3,QtWidgets.QTableWidgetItem(selection))
+                elif problem == "Raum":
+                    self.dialog.tw_vergleich.setItem(1,4,QtWidgets.QTableWidgetItem(selection))
+
+        # update warning colors by comparing cell values
         if problem == "Lehrer" and self.dialog.tw_vergleich.item(0,3).text() == self.dialog.tw_vergleich.item(1,3).text():
             self.dialog.tw_vergleich.item(0,3).setBackground(QBrush(QColor(255,179,179)))
             self.dialog.tw_vergleich.item(1,3).setBackground(QBrush(QColor(255,179,179)))
@@ -356,16 +404,24 @@ class MainWindow:
 
     #--------------------------------------------------
     def clear(self):
+        self.datum = None
         self.model.clearData()
+        self.model = None
         self.warnungsliste = []
         self.mW.tw_alleLehrer.setRowCount(0)
         self.mW.tw_alleRaeume.setRowCount(0)
         self.mW.tw_blockierteRaeume.setRowCount(0)
         self.mW.tw_abwesendeLehrer.setRowCount(0)
-        self.mW.frei.setRowCount(0)
+        self.mW.tw_frei.setRowCount(0)
         self.mW.gb_frei.setTitle(" ")
         self.mW.tw_problemStunden.setRowCount(0)
         self.mW.tw_vertretungsstunden.setRowCount(0)
+        self.mW.te_allgInfos.setText("")
+        self.path = ""
+        title = "Vertretungsplan     " + self.path
+        self.datum = Tag.createTag(self.mW.de_mainDatum.date())
+        self.model = Vertretungsplan()
+        self.mW.setWindowTitle(title)
     #--------------------------------------------------
 
 
@@ -427,8 +483,8 @@ class MainWindow:
         # update QtableWidget tw_vertretungsstunden
         vertretungsliste = self.datum.Ersatzstunden()
         self.mW.tw_vertretungsstunden.setRowCount(len(vertretungsliste))
-        self.mW.tw_vertretungsstunden.setColumnCount(5)
-        self.mW.tw_vertretungsstunden.setHorizontalHeaderLabels(["Klasse","Stunde","Fach","Vertretung","Raum"])
+        self.mW.tw_vertretungsstunden.setColumnCount(6)
+        self.mW.tw_vertretungsstunden.setHorizontalHeaderLabels(["Klasse","Stunde","Fach","Vertretung","Raum","Bemerkung"])
         vertretungsliste.sort()
         for i,item in enumerate(vertretungsliste):
             klasse = item.Klasse()
@@ -436,11 +492,13 @@ class MainWindow:
             lehrer = item.Lehrer()
             raum = item.Raum()
             fach = item.Fach()
+            bemerkung = item.Bemerkung()
             self.mW.tw_vertretungsstunden.setItem(i,0, QtWidgets.QTableWidgetItem(str(klasse)))
             self.mW.tw_vertretungsstunden.setItem(i,1, QtWidgets.QTableWidgetItem(str(stunde)))
             self.mW.tw_vertretungsstunden.setItem(i,2, QtWidgets.QTableWidgetItem(str(fach)))
             self.mW.tw_vertretungsstunden.setItem(i,3, QtWidgets.QTableWidgetItem(str(lehrer)))
             self.mW.tw_vertretungsstunden.setItem(i,4, QtWidgets.QTableWidgetItem(str(raum)))
+            self.mW.tw_vertretungsstunden.setItem(i,5, QtWidgets.QTableWidgetItem(bemerkung))
 
 
         # update QtableWidget tw_problemStunden
@@ -513,6 +571,9 @@ class MainWindow:
                     self.mW.tw_frei.setRowCount(len(raumliste))
                     self.mW.tw_frei.setColumnCount(1)
                     self.mW.tw_frei.setItem(i,0, QtWidgets.QTableWidgetItem(str(item)))
+
+        # update te_allgInfos
+        self.mW.te_allgInfos.setText(self.datum.Informationen())
 
         self.mW.setEnabled(True)
     #--------------------------------------------------
