@@ -55,52 +55,16 @@ class Stunde:
     @staticmethod
     def clearData():
         for i in Stunde.Stundenliste:
-            i.tag = None
-            i.stunde = None
-            i.lehrer = None
-            i.fach = None
-            i.raum = None
-            i.klasse = None
             del i
         for i in Stunde.StundenlisteMontag:
-            i.tag = None
-            i.stunde = None
-            i.lehrer = None
-            i.fach = None
-            i.raum = None
-            i.klasse = None
             del i
         for i in Stunde.StundenlisteDienstag:
-            i.tag = None
-            i.stunde = None
-            i.lehrer = None
-            i.fach = None
-            i.raum = None
-            i.klasse = None
             del i
         for i in Stunde.StundenlisteMittwoch:
-            i.tag = None
-            i.stunde = None
-            i.lehrer = None
-            i.fach = None
-            i.raum = None
-            i.klasse = None
             del i
         for i in Stunde.StundenlisteDonnerstag:
-            i.tag = None
-            i.stunde = None
-            i.lehrer = None
-            i.fach = None
-            i.raum = None
-            i.klasse = None
             del i
         for i in Stunde.StundenlisteFreitag:
-            i.tag = None
-            i.stunde = None
-            i.lehrer = None
-            i.fach = None
-            i.raum = None
-            i.klasse = None
             del i
         Stunde.Stundenliste = []
         Stunde.StundenlisteMontag = []
@@ -186,6 +150,7 @@ class Vertretungsstunde(Stunde):
     #--------------------------------------------------
     @staticmethod
     def clearData():
+        super().clearData()
         for i in Vertretungsstunde.Vertretungsstundenliste:
             del i
         Vertretungsstunde.Vertretungsstundenliste = []
@@ -248,10 +213,6 @@ class Klasse:
     @staticmethod
     def clearData():
         for i in Klasse.Klassenliste:
-            i.stundenliste = None
-            i.stundenplan = None
-            i.lehrerliste = None
-            i.bezeichner = None
             del i
         Klasse.Klassenliste = []
     #--------------------------------------------------
@@ -354,9 +315,6 @@ class Raum:
     @staticmethod
     def clearData():
         for i in Raum.Raumliste:
-            i.bezeichner = None
-            i.stundenliste = None
-            i.stundenplan = None
             del i
         Raum.Raumliste = []
     #--------------------------------------------------
@@ -439,12 +397,6 @@ class Lehrer:
     @staticmethod
     def clearData():
         for i in Lehrer.Lehrerliste:
-            i.bezeichner = None
-            i.stundenliste = None
-            i.stundenplan = None
-            i.absolvierteVertretungen = None
-            i.faecherliste = None
-            i.blockiert = None
             del i
         Lehrer.Lehrerliste = []
     #--------------------------------------------------
@@ -527,7 +479,6 @@ class Fach:
     @staticmethod
     def clearData():
         for i in Fach.Fachliste:
-            i.bezeichner = None
             del i
         Fach.Fachliste = []
     #--------------------------------------------------
@@ -601,11 +552,11 @@ class Tag(QDate):
     @staticmethod
     def clearData():
         for i in Tag.tagListe:
-            i.informationen = None
-            i.blockierteLehrer = None
-            i.blockierteRaeume = None
-            i.ersatzstunden = None
-            i.stunden = None
+            i.informationen = ""
+            i.blockierteLehrer = []
+            i.blockierteRaeume = []
+            i.ersatzstunden = []
+            i.stunden = []
             del i
         Tag.tagListe = []
     #--------------------------------------------------

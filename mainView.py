@@ -405,7 +405,7 @@ class MainWindow:
 
     #--------------------------------------------------
     def clear(self):
-        self.datum = None
+        #self.datum = None
         self.model.clearData()
         self.model = None
         self.warnungsliste = []
