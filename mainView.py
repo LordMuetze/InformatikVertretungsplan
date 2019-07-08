@@ -399,6 +399,7 @@ class MainWindow:
     #--------------------------------------------------
     def on_tw_problemStunden_selectionChanged(self):
         self.update()
+        self.mW.tw_problemStunden.setFocus()
     #--------------------------------------------------
 
 
