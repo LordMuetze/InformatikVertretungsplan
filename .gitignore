@@ -17,3 +17,5 @@ test.py
 Testdateien/Ernes/~$Unter-Zuordnungen-anonym.xlsx
 test.txt
 config.ini
+__pycache__/main.cpython-36.pyc
+__pycache__/test.cpython-36.pyc
